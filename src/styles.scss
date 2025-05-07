@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../node_modules/primeflex/primeflex.css';
+@import 'assets/style.css';
+body {
+    background: linear-gradient(to right, rgb(90, 0, 0), rgb(0, 0, 80), black)
+}
+
+@font-face {
+    font-family: 'Cyberverse';
+    src: url("assets/fonts/Cyberverse.otf");
+}
+
+@font-face {
+    font-family: 'Timeburner';
+    src: url("assets/fonts/Timeburner.ttf");
+}
+
+@font-face {
+    font-family: 'Enceladus';
+    src: url("assets/fonts/Enceladus.otf");
+}
+
+@font-face {
+    font-family: 'NugoSansLight';
+    src: url('assets/fonts/NugoSansLight.ttf');
+}
+
+h1{
+    font-family: 'Cyberverse';
+}
+
+h2, h3 {
+    font-family: 'NugoSansLight';
+    font-weight: bolder;
+}

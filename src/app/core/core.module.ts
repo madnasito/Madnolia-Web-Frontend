@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { MatchService } from './services/match.service';
 
 
 
@@ -8,7 +9,8 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
   providers: [
     provideHttpClient(
       withFetch()
-    )
+    ),
+    MatchService
   ],
   declarations: [],
   imports: [
