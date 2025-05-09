@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Menubar, MenubarModule } from 'primeng/menubar';
 import { LandingComponent } from './landing.component';
 
 
@@ -12,8 +11,6 @@ import { LandingComponent } from './landing.component';
   ],
   imports: [
     CommonModule,
-    MenubarModule,
-    Menubar
   ]
 })
 export class LandingModule { }
