@@ -4,7 +4,14 @@ import { MatchPageComponent } from './features/match/match-page/match-page.compo
 import { PlatformsComponent } from './features/platforms/platforms.component';
 
 export const routes: Routes = [
-    { path: '', component: LandingComponent},
-    { path: 'match', component: MatchPageComponent},
-    { path: 'platforms', component: PlatformsComponent}
-];
+    { path: '', component: LandingComponent },
+    { 
+      path: 'match', 
+      children: [
+        { path: '', redirectTo: '/', pathMatch: 'full' },
+        { path: ':id', component: MatchPageComponent }
+      ]
+    },
+    { path: 'platforms', component: PlatformsComponent },
+    { path: '**', redirectTo: '' }
+  ];

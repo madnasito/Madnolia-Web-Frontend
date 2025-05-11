@@ -1,0 +1,22 @@
+#platform {
+    padding: 40px;
+    font-size: 8vh;
+}
+
+h6 {
+    color: dimgray;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+li{
+    list-style: none;
+    padding: 5px;
+}
+
+.container {
+    width: 80% !important;
+}
