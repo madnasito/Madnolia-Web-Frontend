@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LandingComponent } from './landing/landing.component';
-import { PlatformsComponent } from './platforms/platforms.component';
 import { AtomsModule } from '../shared/atoms/atoms.module';
+import { PlatformsModule } from './platforms/platforms.module';
 
 
 
 @NgModule({
-  declarations: [PlatformsComponent],
+  declarations: [],
   imports: [
     CommonModule,
-    AtomsModule
+    AtomsModule,
+    PlatformsModule
   ],
   exports: []
 })
