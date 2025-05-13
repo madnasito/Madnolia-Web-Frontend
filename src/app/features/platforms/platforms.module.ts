@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PlatformsComponent } from './platforms.component';
 import { PlatformComponent } from './platform/platform.component';
 import { AtomsModule } from '../../shared/atoms/atoms.module';
-import { provideRouter, RouterOutlet } from '@angular/router';
+import { provideRouter, RouterModule, RouterOutlet } from '@angular/router';
 import { routes } from './platforms.routes';
 
 
@@ -12,7 +12,8 @@ import { routes } from './platforms.routes';
   imports: [
     CommonModule,
     AtomsModule,
-    RouterOutlet
+    RouterOutlet,
+    RouterModule
   ],
   declarations: [
     PlatformsComponent,

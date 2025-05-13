@@ -1,1 +1,18 @@
-<p>platform works!</p>
+@if(platformWithMatches$ | async; as platforms) {
+
+    <div class="container" *ngFor="let platform of platforms">
+        <div class="row">
+            <a [routerLink]="['/matches', 'r2']"   class="col-sm-12 col-md-4" >
+                <h1>{{platform.name}} </h1>
+                <div class="card" *ngFor="let match of platform.matches">
+                    <img class="card-img-top" [src]="match.background" alt="Card image cap">
+                    <div class="card-body" style="background-color: transparent;">
+                      <h5 class="card-title"> {{ match.name }} </h5>
+                      <p class="card-text">There are {{ match.count }} matches</p>
+                      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                  </div>
+            </a>
+        </div>
+    </div>
+}
