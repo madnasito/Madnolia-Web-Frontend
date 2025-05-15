@@ -5,6 +5,8 @@ import { PlatformComponent } from './platform/platform.component';
 import { AtomsModule } from '../../shared/atoms/atoms.module';
 import { provideRouter, RouterModule, RouterOutlet } from '@angular/router';
 import { routes } from './platforms.routes';
+import { PlatformGameComponent } from './platform-game/platform-game.component';
+import { AboutModule } from '../about/about.module';
 
 
 
@@ -13,11 +15,13 @@ import { routes } from './platforms.routes';
     CommonModule,
     AtomsModule,
     RouterOutlet,
-    RouterModule
+    RouterModule,
+    AboutModule
   ],
   declarations: [
     PlatformsComponent,
-    PlatformComponent
+    PlatformComponent,
+    PlatformGameComponent
   ],
   providers: [
     provideRouter(routes),

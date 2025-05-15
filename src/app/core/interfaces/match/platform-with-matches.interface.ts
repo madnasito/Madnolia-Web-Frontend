@@ -3,6 +3,7 @@ import { MinimalMatch } from "./minimal-match.interface";
 export interface PlatformWithMatches {
     name:    string;
     apiId:   number;
+    slug:    string;
     matches: MinimalMatch[];
 }
 

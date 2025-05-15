@@ -11,6 +11,14 @@ import { PlatformWithMatches } from '../interfaces/match/platform-with-matches.i
 export class MatchService {
 
   private http = inject(HttpClient);
+  
+  getMatchById(matchId: string): Observable<MatchInfo> {
+    try {
+      return this.http.get<MatchInfo>(`${environment.apiUrl}/match/info/${matchId}`);
+    } catch (error) {
+      throw error;
+    }
+  }
 
   getMatchesByPlatformParent(parent: number): Observable<PlatformWithMatches[]> {
     try {
@@ -22,12 +30,12 @@ export class MatchService {
       throw error;
     }
   }
-
-  getMatchById(matchId: string): Observable<MatchInfo> {
+  getMatchesByGameSlugAndPlatform(platform: number, game: string): Observable<MatchInfo[]>  {
     try {
-      return this.http.get<MatchInfo>(`${environment.apiUrl}/match/info/${matchId}`);
+      return this.http.get<MatchInfo[]>(`${environment.apiUrl}/match/by-platform-and-game-slug/${platform}/${game}`);
     } catch (error) {
       throw error;
     }
   }
+
 }

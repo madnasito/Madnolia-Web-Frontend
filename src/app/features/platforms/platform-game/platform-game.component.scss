@@ -1,0 +1,117 @@
+img {
+    height: 95vh;
+    width: 100%;
+}
+.back{
+    height: 95vh;
+    width: 100%;
+    position: absolute;
+    background: linear-gradient(
+    to bottom, 
+    transparent 0%, 
+    rgba(0, 0, 0, 0.7) 100%
+  );
+    z-index: 1;
+}
+
+
+h2 {
+    text-align: center;
+    color: white;
+    position: absolute;
+    bottom: 10%;
+    left: 1%;
+    font-weight: bolder;
+    z-index: 1;
+    font-size: 3em;
+}
+
+.container {
+    max-width: 95%;
+}
+
+/* Estilos actualizados con mayor transparencia */
+.table-container {
+    background-color: rgba(255, 255, 255, 0.03); /* Más transparente */
+    backdrop-filter: blur(12px); /* Efecto de vidrio más pronunciado */
+    border: 1px solid rgba(255, 255, 255, 0.08); /* Borde más sutil */
+    border-radius: 12px; /* Bordes más redondeados */
+    overflow: hidden; /* Para que los bordes redondeados se apliquen correctamente */
+  }
+  
+  .table-modern {
+    color: #fff;
+    margin-bottom: 0;
+    
+    thead {
+      th {
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.6); /* Texto más transparente */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Línea más sutil */
+        padding: 1rem 1.5rem; /* Más espacio interno */
+        background-color: rgba(255, 255, 255, 0.02); /* Fondo muy sutil para headers */
+      }
+    }
+    
+    tbody {
+      tr {
+        cursor: pointer;
+        transition: all 0.25s ease;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.03); /* Líneas casi invisibles */
+        
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.05) !important; /* Efecto hover muy sutil */
+        }
+        
+        &:last-child {
+          border-bottom: none; /* Elimina borde de la última fila */
+        }
+        
+        td {
+          padding: 1.2rem 1.5rem;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+  
+  /* Mantenemos los estilos de logos y badges igual */
+  .game-logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    object-fit: cover;
+  }
+  
+  .platform-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    
+    &.platform-playstation {
+      background-color: rgba(0, 100, 255, 0.15); /* Más transparente */
+      color: #5d9cff;
+    }
+    
+    &.platform-xbox {
+      background-color: rgba(16, 185, 129, 0.15); /* Más transparente */
+      color: #10b981;
+    }
+    
+    &.platform-pc {
+      background-color: rgba(245, 158, 11, 0.15); /* Más transparente */
+      color: #f59e0b;
+    }
+
+    &.platform-nintendo {
+        background-color: rgba(245, 11, 70, 0.15); /* Más transparente */
+        color: #e60012;
+    }
+
+    &.platform-mobile {
+        background-color: rgba(61, 220, 132, 0.15);
+        color: #3ddc84;
+    }
+  }
+  
