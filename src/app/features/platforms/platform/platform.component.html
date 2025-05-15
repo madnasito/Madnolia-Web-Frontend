@@ -1,38 +1,44 @@
 @if(platformWithMatches$ | async; as platforms) {
-    <div class="container" *ngFor="let platform of platforms">
-      <div class="row">
-        <!-- Título con animación inmediata (sin delay) -->
-        <h2 class="platform-title animate__animated animate__fadeIn">{{platform.name}}</h2>
-        
-        <!-- Mensaje cuando no hay matches con delay de 500ms -->
-        <div *ngIf="platform.matches.length == 0" class="no-matches-container">
-          <div class="no-matches-card animate__animated animate__fadeIn animate__delay-500ms">
-            <div class="no-matches-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
-                <line x1="12" y1="9" x2="12" y2="13"></line>
-                <line x1="12" y1="17" x2="12.01" y2="17"></line>
-              </svg>
-            </div>
-            <h3 class="no-matches-title">No encontramos matches</h3>
-            <p class="no-matches-text">Sé el primero en crear un match para {{platform.name}}</p>
-            <a routerLink="/download" class="no-matches-button animate__animated animate__fadeIn animate__delay-1s">
-              Descargar App y Crear Match
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
-            </a>
+  <div class="container" *ngFor="let platform of platforms">
+    <div class="row">
+      <!-- Improved heading structure with schema markup -->
+      <h2 class="platform-title animate__animated animate__fadeIn">
+        {{platform.name}} Games
+        <meta itemprop="name" content="{{platform.name}} Games on Madnolia">
+      </h2>
+      
+      <!-- No matches section with improved content -->
+      <div *ngIf="platform.matches.length == 0" class="no-matches-container">
+        <div class="no-matches-card animate__animated animate__fadeIn animate__delay-500ms" itemscope itemtype="https://schema.org/Game">
+          <div class="no-matches-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+              <line x1="12" y1="9" x2="12" y2="13"></line>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
           </div>
+          <h2 class="no-matches-title">No matches found for {{platform.name}}</h2>
+          <p class="no-matches-text">Be the first to create a match for {{platform.name}} games</p>
+          <a routerLink="/download" class="no-matches-button animate__animated animate__fadeIn animate__delay-1s" >
+            Download App to Create Match
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
         </div>
-  
-        <!-- Grid de matches con delay de 500ms -->
-        <div class="col-sm-12 col-md-4" *ngFor="let match of platform.matches">
-          <a [routerLink]="`/platform/${platform.slug}/${match.slug}`" *ngIf="platform.matches.length > 0">
+      </div>
+
+      <!-- Matches grid with improved semantic markup -->
+      <div class="row" itemscope itemtype="https://schema.org/ItemList">
+        <div class="col-sm-12 col-md-4" *ngFor="let match of platform.matches; let i = index" itemprop="itemListElement" itemscope itemtype="https://schema.org/Game">
+          <a [routerLink]="`/platform/${platform.slug}/${match.slug}`" *ngIf="platform.matches.length > 0" itemprop="url">
             <div class="card animate__animated animate__fadeIn animate__delay-500ms">
-              <img class="card-img-top" [src]="match.background" alt="Card image cap">
+              <img class="card-img-top" [src]="match.background" [alt]="match.name + ' game cover'" itemprop="image">
               <div class="card-body">
-                <h5 class="card-title">{{ match.name }}</h5>
-                <p class="card-text">There are {{ match.count }} matches</p>
+                <h3 class="card-title" itemprop="name">{{ match.name }}</h3>
+                <p class="card-text" itemprop="description">Join {{ match.count }} active matches</p>
+                <meta itemprop="gamePlatform" content="{{platform.name}}">
+                <meta itemprop="position" content="{{i + 1}}">
               </div>
             </div>
           </a>
@@ -40,4 +46,5 @@
         </div>
       </div>
     </div>
-  }
+  </div>
+}

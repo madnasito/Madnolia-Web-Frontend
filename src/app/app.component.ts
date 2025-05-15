@@ -1,7 +1,8 @@
-import { Component} from '@angular/core';
+import { Component, inject} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FeaturesModule } from './features/features.module';
 import { SharedModule } from './shared/shared.module';
+import { SeoService } from './core/services/seo.service';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +12,9 @@ import { SharedModule } from './shared/shared.module';
 })
 export class AppComponent {
   title = 'madnolia-web-frontend';
+  seoService: SeoService = inject(SeoService);
+
+  ngOnInit(): void {
+    this.seoService.init();
+  }
 }

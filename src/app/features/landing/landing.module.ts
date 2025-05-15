@@ -5,7 +5,7 @@ import { LandingComponent } from './landing.component';
 
 @NgModule({
   providers: [
-    
+    LandingComponent
   ],
   declarations: [
   ],
