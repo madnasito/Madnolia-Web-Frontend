@@ -21,7 +21,7 @@ export class PlatformComponent implements OnInit {
   
   platformWithMatches$!: Observable<PlatformWithMatches[]>;
   private parentId: number = 0;
-  currentPlatformName: string = '';
+  currentPlatformName!: string;
 
   ngOnInit() {
     this.platformWithMatches$ = this.route.params.pipe(

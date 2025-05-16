@@ -1,57 +1,68 @@
 @if (matchInfo$ | async; as match) {
+  <div class="match-container animate__animated animate__fadeIn" itemscope itemtype="https://schema.org/Event">
+    <!-- Schema.org metadata -->
+    <meta itemprop="name" content="{{match.title}} - {{match.game.name}}">
+    <meta itemprop="startDate" content="{{match.date | date:'yyyy-MM-ddTHH:mm'}}">
+    <meta itemprop="description" content="{{match.description || 'Join this gaming match'}}">
     
-    <div class="container main-center animate__animated  animate__fadeIn animate__faster" style="padding: 2%;">
-        <div class="row">
-            <div class="col-sm-12 col-md-6">
-                <i class="fs-1 icon-playstation"></i>
-            </div>
-            <div class="col-sm-12 col-md-6">
-                <br>
-                <h5>{{match.title}}</h5>
-                <h6>{{ match.description }}</h6>
-            </div>
+    <div class="container match-details">
+      <!-- Breadcrumb navigation -->
+
+      <div class="row match-header">
+        <div class="col-md-6 platform-info">
+          <i class="platform-icon" [ngClass]="'icon-' + currentPlatform.father" 
+             [attr.aria-label]="currentPlatform + ' icon'"></i>
+          <h1 class="match-title" itemprop="name">{{match.title}}</h1>
+        </div>
+        <div class="col-md-6 game-info">
+          <br>
+          <h2 class="game-name" itemprop="about">{{match.game.name}}</h2>
+          <p class="game-description" itemprop="description">{{match.description}}</p>
+        </div>
+      </div>
+      
+      <div class="row match-stats">
+        <div class="col-md-6 player-stats">
+          <div class="stat-card" >
+            <h3 class="stat-label">Players Invited</h3>
+            <p class="stat-value" itemprop="maximumAttendeeCapacity">{{match.inviteds.length}}</p>
+          </div>
+          <div class="stat-card">
+            <h3 class="stat-label">Players Joined</h3>
+            <p class="stat-value" itemprop="attendeeCount">{{match.inviteds.length}}</p>
+          </div>
         </div>
         
-        <div class="row">
-            <div class="col-sm-12 col-md-6">
-                <br>
-                <h6>Match inviteds</h6>
-                <ul>
-                    <li>Username 1</li>
-                    <li>Username 2</li>
-                    <li>Username 3</li>
-                </ul>
-            </div>
-            <div class="col-sm-12 col-md-6">
-                <h6>Match Date</h6>
-                <h5>2000-01-01</h5>
-                <hr>
-            </div>
-            <div class="col-sm-12 col-md-6 offset-md-6">
-                <h6>Time</h6>
-                <h5>00:00</h5>
-                <hr>
-            </div>
+        <div class="col-md-6 time-stats">
+          <div class="stat-card">
+            <h3 class="stat-label">Match Date</h3>
+            <p class="stat-value" itemprop="startDate">{{match.date | date:'fullDate'}}</p>
+          </div>
+          <div class="stat-card">
+            <h3 class="stat-label">Match Time</h3>
+            <p class="stat-value">{{match.date | date:'shortTime'}}</p>
+          </div>
         </div>
-        <div class="row text-center">
-            <div class="col-sm-12 col-md-4">
-                <h5>#username</h5>
-            </div>
-            <div class="col-sm-12 col-md-4">
-                <h5>PlayStation</h5>
-            </div>
-            <div class="col-sm-12 col-md-4">
-                <h5>The last of us</h5>
-            </div>
-            <div class="col-sm-12">
-                <br>
-                <hr>
-                <a class="btn bg-light text-dark" routerLink="download" >Join now</a>
-            </div>
+      </div>
+
+      <div class="row match-footer">
+        <div class="col-12 platform-info">
+          <h3 class="platform-name">{{currentPlatform.name}}</h3>
         </div>
+        <div class="col-12 join-section">
+          <a class="btn btn-primary join-button" routerLink="/download" itemprop="url">
+            Join Now
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
     </div>
+  </div>
 } @else {
-    <div class="spinner-border" role="status">
-        <span class="visually-hidden">Loading...</span>
+  <div class="loading-spinner">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
     </div>
+    <p>Loading match details...</p>
+  </div>
 }

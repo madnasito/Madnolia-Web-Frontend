@@ -1,6 +1,4 @@
-export function getPlatformIdBySlug(slug: string): PlatformInfo {
-    try {
-        const platforms: PlatformInfo[] = [
+const platforms: PlatformInfo[] = [
           { id: 4, slug: 'pc', name: 'PC', father: 'pc' },
           { id: 187, slug: 'playstation-5', name: 'PlayStation 5', father: 'playstation'},
           { id: 1, slug: 'xbox-one', name: 'Xbox One', father: 'xbox' },
@@ -19,10 +17,27 @@ export function getPlatformIdBySlug(slug: string): PlatformInfo {
           { id: 10, slug: 'wii-u', name: 'Wii U', father: 'nintendo' },
           { id: 11, slug: 'wii', name: 'Wii', father: 'nintendo' }
         ];
-      
+
+export function getPlatformIdBySlug(slug: string): PlatformInfo {
+    try {
+        
         const platform = platforms.find(p => p.slug === slug);
         if (!platform) {
             throw new Error(`Platform with slug "${slug}" not found`);
+        }
+        return platform;
+        
+    } catch (error) {
+        throw error;
+    }
+  }
+
+export function getPlatformById(id: number): PlatformInfo {
+    try {
+        
+        const platform = platforms.find(p => p.id === id);
+        if (!platform) {
+            throw new Error(`Platform with slug "${id}" not found`);
         }
         return platform;
         

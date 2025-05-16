@@ -4,6 +4,7 @@ import { AtomsModule } from '../shared/atoms/atoms.module';
 import { PlatformsModule } from './platforms/platforms.module';
 import { DownloadModule } from './download/download.module';
 import { LandingModule } from './landing/landing.module';
+import { MatchModule } from './match/match.module';
 
 
 
@@ -14,7 +15,8 @@ import { LandingModule } from './landing/landing.module';
     LandingModule,
     AtomsModule,
     PlatformsModule,
-    DownloadModule
+    DownloadModule,
+    MatchModule
   ],
   exports: []
 })

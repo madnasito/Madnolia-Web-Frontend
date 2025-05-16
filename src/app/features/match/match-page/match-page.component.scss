@@ -1,22 +1,114 @@
-#platform {
-    padding: 40px;
-    font-size: 8vh;
+.match-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  .match-breadcrumb {
+    margin-bottom: 2rem;
+    
+    .breadcrumb {
+      background-color: transparent;
+      padding: 0;
+      
+      .breadcrumb-item {
+        font-size: 0.9rem;
+        
+        
+        a {
+          
+          text-decoration: none;
+          
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  
+  .match-header {
+    margin-bottom: 2rem;
+    
+    .platform-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      
+      .platform-icon {
+        font-size: 3rem;
+      }
+      
+      .match-title {
+        font-size: 2rem;
+        margin: 0;
+      }
+    }
+    
+    .game-info {
+      .game-name {
+        font-size: 1.5rem;
+      }
+      
+      .game-description {
+        line-height: 1.6;
+      }
+    }
+  }
+  
+  .match-stats {
+    margin: 2rem 0;
+    
+    .stat-card {
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      
+      .stat-label {
+        font-size: 0.9rem;
+        margin: 0 0 0.5rem 0;
+      }
+      
+      .stat-value {
+        font-size: 1.2rem;
+        margin: 0;
+        font-weight: 500;
+      }
+    }
+  }
+  
+  .match-footer {
+    margin-top: 2rem;
+    text-align: center;
+    
+    .platform-name {
+      margin-bottom: 1.5rem;
+    }
+    
+    .join-button {
+      padding: 0.75rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+    }
+  }
 }
 
-h6 {
-    color: dimgray;
-}
-
-ul {
-    display: flex;
-    justify-content: space-around;
-}
-
-li{
-    list-style: none;
-    padding: 5px;
-}
-
-.container {
-    width: 80% !important;
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  
+  .spinner-border {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 1rem;
+  }
+  
 }

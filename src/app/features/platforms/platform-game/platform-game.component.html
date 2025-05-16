@@ -1,50 +1,73 @@
-<div class="page-entrance" *ngIf="game$ | async as game">
+<div class="page-entrance" *ngIf="game$ | async as game" itemscope itemtype="https://schema.org/VideoGame">
+  <!-- Schema.org metadata -->
+  <meta itemprop="name" content="{{game.name}}">
+  <meta itemprop="gamePlatform" content="{{currentPlatformName}}">
+  <meta itemprop="applicationCategory" content="Game">
+  
   <!-- Fondo animado -->
-  <div class="back animate__animated animate__fadeIn "></div>
+  <div class="back animate__animated animate__fadeIn"></div>
   
   <!-- Imagen principal con efecto de zoom suave -->
-  <img [src]="game.background" alt="" 
-  class="animate__animated animate__fadeIn ">
+  <img [src]="game.background" [alt]="game.name + ' cover image'" 
+       class="animate__animated animate__fadeIn" itemprop="image">
   
   <!-- Título con efecto de aparición -->
-  <h2 class="animate__animated animate__fadeInUp">{{game.name}}</h2>
-  
+  <h1 class="animate__animated animate__fadeInUp" itemprop="name">{{game.name}}</h1>
+
   <!-- Contenido de matches con animación escalonada -->
   @if(matches$ | async; as matches) {
-    
-      <div  class="animate__animated animate__fadeIn animate__slow ">
-        <div class="table-container p-3 rounded-4">
-          <table class="table table-modern table-hover">
-            <thead>
-              <tr class="animate__animated animate__fadeIn animate__slow ">
-                <th class="ps-4">Game Name</th>
-                <th>Match</th>
-                <th>Date</th>
-                <th class="pe-4">Platform</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let match of matches; let i = index" 
-                  [routerLink]="['/match', match._id]"
-                  class="animate__animated animate__fadeInUp" 
-                  [style.animation-delay]="(i * 0.1) + 1 + 's'">
-                <td class="ps-4 bg-transparent">
-                  <div class="d-flex align-items-center">
-                    <span><i alt="Game logo" class="game-logo me-3" [ngClass]="'icon-' + platform.father"></i> {{game.name}}</span>
-                  </div>
-                </td>
-                <td class="bg-transparent">{{match.title}}</td>
-                <td class="bg-transparent">{{match.date | date:'medium'}}</td>
-                <td class="pe-4 bg-transparent">
-                  <span class="platform-badge" [ngClass]="'platform-' + platform.father">
-                    {{platform.name}}
+    <div class="animate__animated animate__fadeIn animate__slow">
+      <div class="table-container p-3 rounded-4">
+        <p class="matches-description">Join existing matches or create your own for {{game.name}} on {{currentPlatformName}}</p>
+        
+        <table class="table table-modern table-hover">
+          <thead>
+            <tr class="animate__animated animate__fadeIn animate__slow">
+              <th class="ps-4">Game Name</th>
+              <th>Match</th>
+              <th>Date</th>
+              <th class="pe-4">Platform</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let match of matches; let i = index" 
+                [routerLink]="['/match', match._id]"
+                class="animate__animated animate__fadeInUp" 
+                [style.animation-delay]="(i * 0.1) + 1 + 's'"
+                itemprop="gameLocation" itemscope itemtype="https://schema.org/Event">
+              <td class="ps-4 bg-transparent" itemprop="name">
+                <div class="d-flex align-items-center">
+                  <span>
+                    <i [attr.aria-label]="currentPlatformName + ' logo'" 
+                       class="game-logo me-3" 
+                       [ngClass]="'icon-' + platform.father"></i> 
+                    {{game.name}}
                   </span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+                </div>
+              </td>
+              <td class="bg-transparent" itemprop="description">{{match.title}}</td>
+              <td class="bg-transparent" itemprop="startDate">{{match.date | date:'medium'}}</td>
+              <td class="pe-4 bg-transparent">
+                <span class="platform-badge" [ngClass]="'platform-' + platform.father" itemprop="gamePlatform">
+                  {{platform.name}}
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    
+    </div>
     <br><br>
   }
+
+  <!-- No matches section -->
+  @if((matches$ | async)?.length === 0) {
+    <div class="no-matches-section animate__animated animate__fadeIn">
+      <h2>No matches available yet</h2>
+      <p>Be the first to create a match for {{game.name}} on {{currentPlatformName}}!</p>
+      <a routerLink="/download" class="btn btn-primary">
+        Download App to Create Match
+      </a>
+    </div>
+  }
+</div>

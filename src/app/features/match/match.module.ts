@@ -10,7 +10,8 @@ import { CoreModule } from '../../core/core.module';
   imports: [
     CommonModule,
     RouterModule,
+    
   ],
-  declarations: [],
+  declarations: [MatchPageComponent],
 })
 export class MatchModule { }
