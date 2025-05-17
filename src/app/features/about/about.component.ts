@@ -17,8 +17,8 @@ export class AboutComponent {
       { name: 'description', content: 'Learn about our game matchmaking platform that connects players across all devices. Organize multiplayer matches with ease and never play alone again.' },
       { property: 'og:title', content: 'About Our Game Matchmaking Platform' },
       { property: 'og:description', content: 'Connect with gamers worldwide and organize multiplayer matches seamlessly across all platforms.' },
-      { property: 'og:image', content: 'https://yourdomain.com/assets/social-preview.jpg' },
-      { property: 'og:url', content: 'https://yourdomain.com/about' },
+      // { property: 'og:image', content: 'https://yourdomain.com/assets/social-preview.jpg' },
+      { property: 'og:url', content: 'https://madnolia.app/about' },
       { name: 'twitter:card', content: 'summary_large_image' }
     ]);
   }

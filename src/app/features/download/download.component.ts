@@ -17,8 +17,8 @@ export class DownloadComponent {
       { name: 'description', content: 'Download GameMatch app to organize multiplayer matches, connect with players across platforms, and never game alone again. Available on Google Play.' },
       { property: 'og:title', content: 'Download GameMatch - The Ultimate Gaming Companion' },
       { property: 'og:description', content: 'Organize matches, connect with players, and never game alone again. Download now on Google Play.' },
-      { property: 'og:image', content: 'https://yourdomain.com/assets/social-preview.jpg' },
-      { property: 'og:url', content: 'https://yourdomain.com/download' },
+      // { property: 'og:image', content: 'https://madnolia.app/assets/social-preview.jpg' },
+      { property: 'og:url', content: 'https://madnolia.app/download' },
       { name: 'twitter:card', content: 'summary_large_image' }
     ]);
   }

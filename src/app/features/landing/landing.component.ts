@@ -21,7 +21,7 @@ export class LandingComponent implements OnInit {
       { name: 'keywords', content: 'gaming, scheduled matches, gamers, retro consoles, gaming community' },
       { property: 'og:title', content: 'Madnolia - Connect with Players' },
       { property: 'og:description', content: 'Platform to schedule matches for any console' },
-      { property: 'og:image', content: 'https://madnolia.app/assets/images/og-image.jpg' },
+      // { property: 'og:image', content: 'https://madnolia.app/assets/images/og-image.jpg' },
       { property: 'og:url', content: 'https://madnolia.app.com' },
       { property: 'og:type', content: 'website' },
       { name: 'twitter:card', content: 'summary_large_image' }

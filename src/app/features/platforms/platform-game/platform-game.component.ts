@@ -27,34 +27,42 @@ export class PlatformGameComponent implements OnInit {
   platform!: PlatformInfo;
   currentGameName: string = '';
   currentPlatformName: string = '';
+  imageUrl: string = '';
 
   ngOnInit() {
-    try {
-      this.game$ = this.route.params.pipe(
-        switchMap(params => {
-          const gameSlug = params['game-slug'];
-          this.updateGameSEOMetadata();
-          return this.gamesService.getGameBySlug(gameSlug).pipe(
-            tap(game => {
-              this.currentGameName = this.formatName(game.name);
-            })
-          );
-        })
-      );
+  try {
+    this.game$ = this.route.params.pipe(
+      switchMap(params => {
+        const gameSlug = params['game-slug'];
+        return this.gamesService.getGameBySlug(gameSlug).pipe(
+          tap(game => {
+            this.currentGameName = this.formatName(game.name);
+            this.imageUrl = game.background || this.getGameImageUrl();
+            this.updateGameSEOMetadata();
+          })
+        );
+      })
+    );
 
-      this.matches$ = this.route.params.pipe(
-        switchMap(params => {
-          const platformSlug = params['platform-slug'];
-          const gameSlug = params['game-slug'];
-          this.platform = getPlatformIdBySlug(platformSlug);
-          this.currentPlatformName = this.formatName(platformSlug);
-          return this.matchService.getMatchesByGameSlugAndPlatform(this.platform.id, gameSlug);
-        })
-      );
-    } catch (error) {
-      this.router.navigateByUrl('/platforms');
-    }
+    this.matches$ = this.route.params.pipe(
+      switchMap(params => {
+        const platformSlug = params['platform-slug'];
+        const gameSlug = params['game-slug'];
+        this.platform = getPlatformIdBySlug(platformSlug);
+        this.currentPlatformName = this.formatName(platformSlug);
+        return this.matchService.getMatchesByGameSlugAndPlatform(this.platform.id, gameSlug).pipe(
+          tap(matches => {
+            this.game$.subscribe(game => {
+              this.generateGameSchema(game, matches);
+            });
+          })
+        );
+      })
+    );
+  } catch (error) {
+    this.router.navigateByUrl('/platforms');
   }
+}
 
   private updateGameSEOMetadata(): void {
     const title = `${this.currentGameName} Matches for ${this.currentPlatformName} | Madnolia`;
