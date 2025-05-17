@@ -16,7 +16,7 @@ import { MatchModule } from './match/match.module';
     AtomsModule,
     PlatformsModule,
     DownloadModule,
-    MatchModule
+    MatchModule,
   ],
   exports: []
 })

@@ -7,27 +7,29 @@
       </button>
       
       <!-- Logo/Brand -->
-      <a class="navbar-brand d-none d-lg-block" routerLink="/">TuLogo</a>
+      <a class="navbar-brand d-none d-lg-block" routerLink="/">
+        <img src="public/madnolia-logo.svg" alt="" width="5%">
+      </a>
       
       <!-- Offcanvas para móviles -->
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menú</h5>
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">{{ 'HEADER.MENU' | translate }}</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" routerLink="/" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active">Home</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/platforms" routerLinkActive="active">{{ 'HEADER.PLATFORMS' | translate }}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/platforms" routerLinkActive="active">{{ 'PRESENTATION.TITLE' | translate }}</a>
+              <a class="nav-link" routerLink="/about" routerLinkActive="active">{{ 'HEADER.ABOUT' | translate }}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/download" routerLinkActive="active">Download</a>
+              <a class="nav-link" routerLink="/download" routerLinkActive="active">{{ 'HEADER.DOWNLOAD' | translate }}</a>
             </li>
           </ul>
         </div>

@@ -50,7 +50,7 @@ export class MatchPageComponent implements OnInit {
     this.metaService.updateTag({ name: 'description', content: description });
     this.metaService.updateTag({ property: 'og:title', content: title });
     this.metaService.updateTag({ property: 'og:description', content: description });
-    this.metaService.updateTag({ property: 'og:url', content: window.location.href });
+    // this.metaService.updateTag({ property: 'og:url', content: window.location.href });
     this.metaService.updateTag({ name: 'twitter:card', content: 'summary' });
   }
 }

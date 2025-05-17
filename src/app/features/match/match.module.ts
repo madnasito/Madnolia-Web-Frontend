@@ -3,6 +3,7 @@ import { AsyncPipe, CommonModule } from '@angular/common';
 import { MatchPageComponent } from './match-page/match-page.component';
 import { RouterModule } from '@angular/router';
 import { CoreModule } from '../../core/core.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -10,7 +11,7 @@ import { CoreModule } from '../../core/core.module';
   imports: [
     CommonModule,
     RouterModule,
-    
+    TranslateModule
   ],
   declarations: [MatchPageComponent],
 })

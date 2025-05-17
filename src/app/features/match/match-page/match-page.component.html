@@ -24,22 +24,22 @@
       <div class="row match-stats">
         <div class="col-md-6 player-stats">
           <div class="stat-card" >
-            <h3 class="stat-label">Players Invited</h3>
+            <h3 class="stat-label">{{ 'MATCH.INVITED'| translate  }}</h3>
             <p class="stat-value" itemprop="maximumAttendeeCapacity">{{match.inviteds.length}}</p>
           </div>
           <div class="stat-card">
-            <h3 class="stat-label">Players Joined</h3>
+            <h3 class="stat-label">{{ 'MATCH.JOINED'| translate  }}</h3>
             <p class="stat-value" itemprop="attendeeCount">{{match.inviteds.length}}</p>
           </div>
         </div>
         
         <div class="col-md-6 time-stats">
           <div class="stat-card">
-            <h3 class="stat-label">Match Date</h3>
+            <h3 class="stat-label">{{ 'MATCH.DATE'| translate  }}</h3>
             <p class="stat-value" itemprop="startDate">{{match.date | date:'fullDate'}}</p>
           </div>
           <div class="stat-card">
-            <h3 class="stat-label">Match Time</h3>
+            <h3 class="stat-label">{{ 'MATCH.TIME'| translate  }}</h3>
             <p class="stat-value">{{match.date | date:'shortTime'}}</p>
           </div>
         </div>
@@ -51,7 +51,7 @@
         </div>
         <div class="col-12 join-section">
           <a class="btn btn-primary join-button" routerLink="/download" itemprop="url">
-            Join Now
+            {{ 'UTILS.JOIN_NOW'| translate  }}
             <i class="bi bi-arrow-right"></i>
           </a>
         </div>

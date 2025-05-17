@@ -1,112 +1,188 @@
 {
-  "PRESENTATION":{
-      "TITLE": "Connect with gamers around the world",
-      "SUBTITLE": "Create matches for any retro or modern platform"
-  },
-  "HEADER": {
-    "PLATFORMS": "Platforms",
-    "MATCH": "Create Match!",
-    "NOTIFICATIONS": "Notifications",
-    "REGISTER": "Register",
-    "LOGIN": "Login",
-    "PROFILE": "Profile",
-    "LOGOUT": "Logout"
-  },
-
-  "HOME":{
-      "MATCH": "Created match",
-      "MATCHES": "Created matches"
-  },
-  "REGISTER":{
-      "TITLE": "Register",
-      "NAME": "Name",
-      "USERNAME": "Username",
-      "EMAIL": "Email",
-      "PASSWORD": "Password",
-      "PASSWORD2": "Repeat password",
-      "VALIDATIONS":{
-          "NAME": "The name is not valid",
-          "USERNAME": "The username is not valid",
-          "EMAIL": "The email is not correct",
-          "PASSWORD": "The password is too short",
-          "PASSWORD2":"The passwords are diffenrents"
-      },
-      "SELECT_PLATFORMS": "Select your game platforms",
-      "PHONE": "Mobile",
-      "SUBTITLE": "Do you have an account?",
-      "SUB_LOGIN": " Login here",
-      "NEXT": "Next",
-      "TOAST_SIGN_UP": "Great! Thanks for sign up"
-  },
-  "LOGIN":{
-      "BUTTON": "Login",
-      "ERRORS":{
-          "USER": "No founded user",
-          "PASSWORD": "No valid password"
-      }
-  },
-  "CREATE_MATCH":{
-      "TITLE": "Select the platform",
-      "SEARCH_GAME": "Search game",
-      "SEARCH_RESULTS": "Search's results",
-      "PLATFORMS_EMPTY": "You have not selected a platform",
-      "ADD_PLATFORMS": "Press here for to add a platform",
-      "SEARCHING": "Searching",
-      "SEARCH_USER": "Invite partners to your match",
-      "MATCH_NAME": "Match name",
-      "INVITEDS": "Inviteds",
-      "DATE": "Date",
-      "TIME": "Time",
-      "CLOCK_MESSAGE": "Press the clock",
-      "SUBMIT": "Submit",
-      "CREATE_MATCH": "Create Match!",
-      "MATCH_CREATED": "Created Match!",
-      "DATE_ERROR": "Create a correct date and time"
-  },
-  "GAME":{
-      "GAME": "Game",
-      "MATCH": "Match",
-      "DATE": "Date",
-      "PLATFORM": "Platform"
-  },
-  "NOTIFICATIONS":{
-      "INVITATIONS": "Invitations"
-  },
-  "PROFILE":{
-      "YOU": "You",
-      "MATCHES": "Matches",
-      "PLATFORMS": "Your platforms",
-      "MATCHES_PAGE":{
-          "TITLE": "Your matches",
-          "EMPTY": "You haven't created a match yet"
-      },
-      "USER_PAGE":{
-          "NAME": "Name",
-          "USERNAME": "Username",
-          "EMAIL": "Email",
-          "INVITATIONS":{
-              "TITLE": "Accept invitations from:",
-              "ALL": "Whatever, i want to play",
-              "PARTNERS": "Only my hommies",
-              "NOBODY": "Please, let me alone"
-          },
-
-          "ERRORS":{
-              "VERIFY": "Please verify your information",
-              "EMAIL": "There is another user using this EMAIL",
-              "USERNAME": "There is another user using this USERNAME",
-              "IMG_SIZE": "The image size cant' moore than 2mb",
-              "IMG_EXTENSION": "The extension is not valid, please use: 'JPG', 'PNG', 'JPEG'",
-              "IMG_UPDATING": "Error updating the image"
-          },
-          "UPLOADING_IMG": "Uploading image, wait a moment please",
-          "UPDATED": "Updated!",
-          "UPDATE": "Update"
-      },
-      "PLATFORMS_PAGE":{
-          "TITLE": "Your platforms",
-          "SUCCESS": "Updated platforms!"
-      }
-  }
+	"ABOUT": {
+		"BOTTOM_TITLE": "Ready to Transform Your Gaming Experience?",
+		"CARDS": {
+			"SUBTITLE_1": "From FPS to MOBAs, organize matches for all your favorite games in one place.",
+			"SUBTITLE_2": "Get alerts when matches start or when friends invite you to play.",
+			"SUBTITLE_3": "Connect with players on PC, consoles, and mobile devices seamlessly.",
+			"TITLE": "Why Choose Our Platform",
+			"TITLE_1": "Multi-Game Support",
+			"TITLE_2": "Smart Notifications",
+			"TITLE_3": "Cross-Platform"
+		},
+		"HOW_IT_WORKS": {
+			"STEP_1_SUBTITLE": "Set up your gaming preferences, favorite platforms, and availability.",
+			"STEP_1_TITLE": "Create Your Profile",
+			"STEP_2_SUBTITLE": "Create new matches or join existing ones.",
+			"STEP_2_TITLE": "Organize or Join",
+			"STEP_3_SUBTITLE": "Launch your game and enjoy seamless multiplayer experiences.",
+			"STEP_3_TITLE": "Play & Connect",
+			"TITLE": "How It Works"
+		},
+		"MISSION": "To eliminate the frustration of organizing multiplayer games by providing a powerful yet simple platform that connects gamers across all platforms, making matchmaking as easy as a single tap. ",
+		"OUR_MISSION": "Our Mission",
+		"SUBTITLE_1": "Connecting gamers worldwide to create, organize, and enjoy multiplayer matches seamlessly ",
+		"TITLE_1": "Revolutionizing Game Matchmaking"
+	},
+	"CREATE_MATCH": {
+		"ADD_PLATFORMS": "Press here for to add a platform",
+		"CLOCK_MESSAGE": "Press the clock",
+		"CREATE_MATCH": "Create Match!",
+		"DATE": "Date",
+		"DATE_ERROR": "Create a correct date and time",
+		"INVITEDS": "Inviteds",
+		"MATCH_CREATED": "Created Match!",
+		"MATCH_NAME": "Match name",
+		"PLATFORMS_EMPTY": "You have not selected a platform",
+		"SEARCH_GAME": "Search game",
+		"SEARCH_RESULTS": "Search's results",
+		"SEARCH_USER": "Invite partners to your match",
+		"SEARCHING": "Searching",
+		"SUBMIT": "Submit",
+		"TIME": "Time",
+		"TITLE": "Select the platform"
+	},
+	"DOWNLOAD": {
+		"ACTION": {
+			"LOBBY": "GameMatch app - Match Lobby screen",
+			"MATCH": "GameMatch app - Create Match screen",
+			"NOTIFICATIONS": "GameMatch app - Notification center",
+			"TITLE": "See It In Action"
+		},
+		"BOTTOM": {
+			"SUBTITLE": "Free to download - No hidden fees",
+			"TITLE": "Ready to Transform Your Gaming Experience?"
+		},
+		"CARDS": {
+			"SUBTITLE_1": "Connect with players across PC, console, and mobile",
+			"SUBTITLE_2": "Get alerts when matches start or friends invite you",
+			"SUBTITLE_3": "Create your gaming squad and play together regularly",
+			"TITLE": "Why Gamers Love Our App",
+			"TITLE_1": "Cross-Platform Matchmaking",
+			"TITLE_2": "Smart Notifications",
+			"TITLE_3": "Community Building"
+		},
+		"SUBTITLE": "Organize matches, connect with players, and never game alone again",
+		"TITLE": "Get the Ultimate Gaming Companion"
+	},
+	"GAME": {
+		"DATE": "Date",
+		"GAME": "Game",
+		"GAMES": "Games",
+		"MATCH": "Match",
+		"PLATFORM": "Platform"
+	},
+	"HEADER": {
+		"ABOUT": "About",
+		"DOWNLOAD": "Download",
+		"LOGIN": "Login",
+		"LOGOUT": "Logout",
+		"MATCH": "Create Match!",
+		"MENU": "Menu",
+		"NOTIFICATIONS": "Notifications",
+		"PLATFORMS": "Platforms",
+		"PROFILE": "Profile",
+		"REGISTER": "Register"
+	},
+	"HOME": {
+		"MATCH": "Created match",
+		"MATCHES": "Created matches"
+	},
+	"LOGIN": {
+		"BUTTON": "Login",
+		"ERRORS": {
+			"PASSWORD": "No valid password",
+			"USER": "No founded user"
+		}
+	},
+	"MATCH": {
+		"DATE": "Match Date",
+		"DOWNLOAD_APP": "Download App to Create Match ",
+		"INVITED": "Players Invited",
+		"JOIN_MATCH": "Join 1 active match",
+		"JOIN_MATCHES": "Join {{value}} active matches",
+		"JOIN_OR_CREATE_FOR": "Join existing matches or create your own for {{game}} on {{platform}}",
+		"JOINED": "Players Joined",
+		"TIME": "Time"
+	},
+	"NOTIFICATIONS": {
+		"INVITATIONS": "Invitations"
+	},
+	"PLATFORMS": {
+		"GAMES": "{{platform}} Games",
+		"NO_MATCHES": "No matches found for {{platform}}",
+		"NO_MATCHES_CREATE": "Be the first to create a match for {{platform}}",
+		"SELECT": "Select a platform"
+	},
+	"PRESENTATION": {
+		"SUBTITLE": "Schedule matches for any retro or modern platform",
+		"TITLE": "Connect with gamers around the world"
+	},
+	"PROFILE": {
+		"MATCHES": "Matches",
+		"MATCHES_PAGE": {
+			"EMPTY": "You haven't created a match yet",
+			"TITLE": "Your matches"
+		},
+		"PLATFORMS": "Your platforms",
+		"PLATFORMS_PAGE": {
+			"SUCCESS": "Updated platforms!",
+			"TITLE": "Your platforms"
+		},
+		"USER_PAGE": {
+			"EMAIL": "Email",
+			"ERRORS": {
+				"EMAIL": "There is another user using this EMAIL",
+				"IMG_EXTENSION": "The extension is not valid, please use: 'JPG', 'PNG', 'JPEG'",
+				"IMG_SIZE": "The image size cant' moore than 2mb",
+				"IMG_UPDATING": "Error updating the image",
+				"USERNAME": "There is another user using this USERNAME",
+				"VERIFY": "Please verify your information"
+			},
+			"INVITATIONS": {
+				"ALL": "Whatever, i want to play",
+				"NOBODY": "Please, let me alone",
+				"PARTNERS": "Only my hommies",
+				"TITLE": "Accept invitations from:"
+			},
+			"NAME": "Name",
+			"UPDATE": "Update",
+			"UPDATED": "Updated!",
+			"UPLOADING_IMG": "Uploading image, wait a moment please",
+			"USERNAME": "Username"
+		},
+		"YOU": "You"
+	},
+	"REGISTER": {
+		"EMAIL": "Email",
+		"NAME": "Name",
+		"NEXT": "Next",
+		"PASSWORD": "Password",
+		"PASSWORD2": "Repeat password",
+		"PHONE": "Mobile",
+		"SELECT_PLATFORMS": "Select your game platforms",
+		"SUB_LOGIN": " Login here",
+		"SUBTITLE": "Do you have an account?",
+		"TITLE": "Register",
+		"TOAST_SIGN_UP": "Great! Thanks for sign up",
+		"USERNAME": "Username",
+		"VALIDATIONS": {
+			"EMAIL": "The email is not correct",
+			"NAME": "The name is not valid",
+			"PASSWORD": "The password is too short",
+			"PASSWORD2": "The passwords are diffenrents",
+			"USERNAME": "The username is not valid"
+		}
+	},
+	"UTILS": {
+		"ANDROID_AVAILABLE": "Available on Android devices",
+		"DATE": "Date",
+		"DOWNLOAD_GOOGLE_PLAY": "Download Now on Google Play (Coming soon)",
+		"DOWNLOAD_NOW": "Download Now (Coming soon)",
+		"GAME_NAME": "Game name",
+		"GET_ON_GOOGLE_PLAY": "Get it on Google Play",
+		"JOIN_NOW": "Join Now",
+		"MATCH": "Match",
+		"PLATFORM": "Platform"
+	}
 }
-

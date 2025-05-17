@@ -1,112 +1,188 @@
 {
-    "PRESENTATION":{
-        "TITLE": "Conecta con gamers de todo el mundo",
-        "SUBTITLE": "Crea partidas para cualquier consola retro o moderna"
-    },
-    "HEADER": {
-      "PLATFORMS": "Plataformas",
-      "MATCH": "Crear partida",
-      "NOTIFICATIONS": "Notificaciones",
-      "REGISTER": "Registrarse",
-      "LOGIN": "Login",
-      "PROFILE": "Perfil",
-      "LOGOUT": "Salir"
-    },
-
-    "HOME":{
-        "MATCH": "Partida creada",
-        "MATCHES": "Partidas creadas"
-    },
-    "REGISTER":{
-        "TITLE": "Crear cuenta",
-        "NAME": "Nombre",
-        "USERNAME": "Nombre de usuario",
-        "EMAIL": "Correo",
-        "PASSWORD": "Contraseña",
-        "PASSWORD2": "Repita la Contraseña",
-        "VALIDATIONS":{
-            "NAME": "El nombre no es valido",
-            "USERNAME": "El nombre de usuario no es valido",
-            "EMAIL": "Ingrese una dirección de correo correcta",
-            "PASSWORD": "La contraseña es muy corta",
-            "PASSWORD2":"Las contraseñas son diferentes"
-        },
-        "SELECT_PLATFORMS": "Selecciona tus plataformas de juegos",
-        "PHONE": "Movil",
-        "SUBTITLE": "¿Ya tienes una cuenta?",
-        "SUB_LOGIN": " Inicia sesión",
-        "NEXT": "Siguiente",
-        "TOAST_SIGN_UP": "¡Perfecto! Registro exitoso"
-    },
-    "LOGIN":{
-        "BUTTON": "Iniciar Sesión",
-        "ERRORS":{
-            "USER": "No se ha encontrado al usuario",
-            "PASSWORD": "La contraseña es invalida"
-        }
-    },
-    "CREATE_MATCH":{
-        "TITLE": "Selecciona la plataforma",
-        "SEARCH_GAME": "Buscar juego",
-        "SEARCH_RESULTS": "Resultados de la busqueda",
-        "PLATFORMS_EMPTY": "No has seleccionado una plataforma",
-        "ADD_PLATFORMS": "Ingresa aquí para añadir plataformas",
-        "SEARCHING": "Buscando",
-        "SEARCH_USER": "Invitar compañeros a tu partida",
-        "MATCH_NAME": "Nombre de la partida",
-        "INVITEDS": "Invitados",
-        "DATE": "Fecha",
-        "TIME": "Hora",
-        "CLOCK_MESSAGE": "Presiona el reloj",
-        "SUBMIT": "Enviar",
-        "CREATE_MATCH": "Crear partida",
-        "MATCH_CREATED": "¡Partida creada!",
-        "DATE_ERROR": "Cree una fecha y hora correctas"
-    },
-    "GAME":{
-        "GAME": "Juego",
-        "MATCH": "Partida",
-        "DATE": "Fecha",
-        "PLATFORM": "Plataforma"
-    },
-    "NOTIFICATIONS":{
-        "INVITATIONS": "Invitaciones"
-    },
-    "PROFILE":{
-        "YOU": "Perfil",
-        "MATCHES": "Partidas",
-        "PLATFORMS": "Tus plataformas",
-        "MATCHES_PAGE":{
-            "TITLE": "Tus partidas",
-            "EMPTY": "Aun no has creado una partida"
-        },
-        "USER_PAGE":{
-            "NAME": "Nombre",
-            "USERNAME": "Nombre de usuario",
-            "EMAIL": "Correo",
-            "INVITATIONS":{
-                "TITLE": "Aceptar invitaciondes de:",
-                "ALL": "Lo que sea, quiero jugar",
-                "PARTNERS": "Solo colegas",
-                "NOBODY": "Ya, dejame en paz"
-            },
-
-            "ERRORS":{
-                "VERIFY": "Por favor verifica tú información",
-                "EMAIL": "Ya hay una cuenta registrada con este CORREO",
-                "USERNAME": "Ya hay otro usuario usando este NOMBRE DE USUARIO",
-                "IMG_SIZE": "La imagen no puede ser mayor de 2MB",
-                "IMG_EXTENSION": "La extensión no es valida, por favor usa: 'JPG', 'JPEG'. 'PNG'",
-                "IMG_UPDATING": "Error actualizando la imagen"
-            },
-            "UPLOADING_IMG": "Subiendo la imagen, espere un momento por favor",
-            "UPDATED": "Cuenta actualizada",
-            "UPDATE": "Actualizar"
-        },
-        "PLATFORMS_PAGE":{
-            "TITLE": "Tus plataformas",
-            "SUCCESS": "¡Plataformas actualizadas!"
-        }
-    }
+	"ABOUT": {
+		"BOTTOM_TITLE": "¿Listo para transformar tu experiencia de juego?",
+		"CARDS": {
+			"SUBTITLE_1": "Desde FPS hasta MOBAs, organiza partidas para todos tus juegos favoritos en un solo lugar.",
+			"SUBTITLE_2": "Recibe alertas cuando comiencen las partidas o cuando tus amigos te inviten a jugar.",
+			"SUBTITLE_3": "Conéctate con jugadores en PC, consolas y dispositivos móviles sin problemas.",
+			"TITLE": "¿Por qué elegir nuestra plataforma?",
+			"TITLE_1": "Soporte Multijuego",
+			"TITLE_2": "Notificaciones Inteligentes",
+			"TITLE_3": "Multiplataforma"
+		},
+		"HOW_IT_WORKS": {
+			"STEP_1_SUBTITLE": "Configura tus preferencias de juego, plataformas favoritas y disponibilidad.",
+			"STEP_1_TITLE": "Crea tu perfil",
+			"STEP_2_SUBTITLE": "Crea nuevas partidas o únete a las existentes.",
+			"STEP_2_TITLE": "Organiza o Unete",
+			"STEP_3_SUBTITLE": "Inicia tu juego y disfruta de experiencias multijugador.",
+			"STEP_3_TITLE": "Juega y conéctate",
+			"TITLE": "Como funciona"
+		},
+		"MISSION": "Para eliminar la frustración de organizar juegos multijugador al proporcionar una plataforma poderosa pero simple que conecta a los jugadores en todas las plataformas, haciendo que el organizar sea tan fácil como un solo toque.",
+		"OUR_MISSION": "Nuestra Mision",
+		"SUBTITLE_1": "Conectando a jugadores de todo el mundo para crear, organizar y disfrutar de partidas multijugador sin problemas",
+		"TITLE_1": "Revolucionando el emparejamiento de juegos"
+	},
+	"CREATE_MATCH": {
+		"ADD_PLATFORMS": "Ingresa aquí para añadir plataformas",
+		"CLOCK_MESSAGE": "Presiona el reloj",
+		"CREATE_MATCH": "Crear partida",
+		"DATE": "Fecha",
+		"DATE_ERROR": "Cree una fecha y hora correctas",
+		"INVITEDS": "Invitados",
+		"MATCH_CREATED": "¡Partida creada!",
+		"MATCH_NAME": "Nombre de la partida",
+		"PLATFORMS_EMPTY": "No has seleccionado una plataforma",
+		"SEARCH_GAME": "Buscar juego",
+		"SEARCH_RESULTS": "Resultados de la busqueda",
+		"SEARCH_USER": "Invitar compañeros a tu partida",
+		"SEARCHING": "Buscando",
+		"SUBMIT": "Enviar",
+		"TIME": "Hora",
+		"TITLE": "Selecciona la plataforma"
+	},
+	"DOWNLOAD": {
+		"ACTION": {
+			"LOBBY": "Aplicación GameMatch - Pantalla del lobby de partidas\n",
+			"MATCH": "Aplicación GameMatch - Pantalla de creación de partidas",
+			"NOTIFICATIONS": "Aplicación GameMatch - Centro de notificaciones",
+			"TITLE": "Ver en acción"
+		},
+		"BOTTOM": {
+			"SUBTITLE": "Descarga gratuita - Sin tarifas ocultas",
+			"TITLE": "¿Listo para transformar tu experiencia de juego?"
+		},
+		"CARDS": {
+			"SUBTITLE_1": "Conéctate con jugadores a través de PC, consola y dispositivos móviles",
+			"SUBTITLE_2": "Recibe alertas cuando comiencen las partidas o te inviten tus amigos",
+			"SUBTITLE_3": "Crea tu escuadrón de juego y jueguen juntos regularmente",
+			"TITLE": "Por qué a los jugadores les encanta nuestra aplicación",
+			"TITLE_1": "Emparejamiento multiplataforma",
+			"TITLE_2": "Notificaciones inteligentes",
+			"TITLE_3": "Construcción de la comunidad"
+		},
+		"SUBTITLE": "Organiza partidos, conéctate con los jugadores y nunca vuelvas a jugar solo",
+		"TITLE": "Consigue la mejor compañía al jugar"
+	},
+	"GAME": {
+		"DATE": "Fecha",
+		"GAME": "Juego",
+		"GAMES": "Juegos",
+		"MATCH": "Partida",
+		"PLATFORM": "Plataforma"
+	},
+	"HEADER": {
+		"ABOUT": "Acerca de",
+		"DOWNLOAD": "Descargar",
+		"LOGIN": "Login",
+		"LOGOUT": "Salir",
+		"MATCH": "Crear partida",
+		"MENU": "Menu",
+		"NOTIFICATIONS": "Notificaciones",
+		"PLATFORMS": "Plataformas",
+		"PROFILE": "Perfil",
+		"REGISTER": "Registrarse"
+	},
+	"HOME": {
+		"MATCH": "Partida creada",
+		"MATCHES": "Partidas creadas"
+	},
+	"LOGIN": {
+		"BUTTON": "Iniciar Sesión",
+		"ERRORS": {
+			"PASSWORD": "La contraseña es invalida",
+			"USER": "No se ha encontrado al usuario"
+		}
+	},
+	"MATCH": {
+		"DATE": "Fecha",
+		"DOWNLOAD_APP": "Descarga la app para crear tu partida",
+		"INVITED": "Jugadores Invitados",
+		"JOIN_MATCH": "Unete a 1 partida activa",
+		"JOIN_MATCHES": "Unete a {{value}} partidas activas",
+		"JOIN_OR_CREATE_FOR": "Unete a partidas o crea la tuya de {{game}} en {{platform}}",
+		"JOINED": "Jugadores Listos",
+		"TIME": "Empieza a las"
+	},
+	"NOTIFICATIONS": {
+		"INVITATIONS": "Invitaciones"
+	},
+	"PLATFORMS": {
+		"GAMES": "Juegos de {{platform}}",
+		"NO_MATCHES": "No hay partidas para {{platform}}",
+		"NO_MATCHES_CREATE": "Se el primero en crear una partida para {{platform}}",
+		"SELECT": "Selecciona una plataforma"
+	},
+	"PRESENTATION": {
+		"SUBTITLE": "Organiza partidas para cualquier consola retro o moderna",
+		"TITLE": "Conecta con gamers de todo el mundo"
+	},
+	"PROFILE": {
+		"MATCHES": "Partidas",
+		"MATCHES_PAGE": {
+			"EMPTY": "Aun no has creado una partida",
+			"TITLE": "Tus partidas"
+		},
+		"PLATFORMS": "Tus plataformas",
+		"PLATFORMS_PAGE": {
+			"SUCCESS": "¡Plataformas actualizadas!",
+			"TITLE": "Tus plataformas"
+		},
+		"USER_PAGE": {
+			"EMAIL": "Correo",
+			"ERRORS": {
+				"EMAIL": "Ya hay una cuenta registrada con este CORREO",
+				"IMG_EXTENSION": "La extensión no es valida, por favor usa: 'JPG', 'JPEG'. 'PNG'",
+				"IMG_SIZE": "La imagen no puede ser mayor de 2MB",
+				"IMG_UPDATING": "Error actualizando la imagen",
+				"USERNAME": "Ya hay otro usuario usando este NOMBRE DE USUARIO",
+				"VERIFY": "Por favor verifica tú información"
+			},
+			"INVITATIONS": {
+				"ALL": "Lo que sea, quiero jugar",
+				"NOBODY": "Ya, dejame en paz",
+				"PARTNERS": "Solo colegas",
+				"TITLE": "Aceptar invitaciondes de:"
+			},
+			"NAME": "Nombre",
+			"UPDATE": "Actualizar",
+			"UPDATED": "Cuenta actualizada",
+			"UPLOADING_IMG": "Subiendo la imagen, espere un momento por favor",
+			"USERNAME": "Nombre de usuario"
+		},
+		"YOU": "Perfil"
+	},
+	"REGISTER": {
+		"EMAIL": "Correo",
+		"NAME": "Nombre",
+		"NEXT": "Siguiente",
+		"PASSWORD": "Contraseña",
+		"PASSWORD2": "Repita la Contraseña",
+		"PHONE": "Movil",
+		"SELECT_PLATFORMS": "Selecciona tus plataformas de juegos",
+		"SUB_LOGIN": " Inicia sesión",
+		"SUBTITLE": "¿Ya tienes una cuenta?",
+		"TITLE": "Crear cuenta",
+		"TOAST_SIGN_UP": "¡Perfecto! Registro exitoso",
+		"USERNAME": "Nombre de usuario",
+		"VALIDATIONS": {
+			"EMAIL": "Ingrese una dirección de correo correcta",
+			"NAME": "El nombre no es valido",
+			"PASSWORD": "La contraseña es muy corta",
+			"PASSWORD2": "Las contraseñas son diferentes",
+			"USERNAME": "El nombre de usuario no es valido"
+		}
+	},
+	"UTILS": {
+		"ANDROID_AVAILABLE": "Disponible para dispotivos Android",
+		"DATE": "Fecha",
+		"DOWNLOAD_GOOGLE_PLAY": "Descargar en Google Play (Proximamente)",
+		"DOWNLOAD_NOW": "Descargar Ahora (Proximamente)",
+		"GAME_NAME": "Nombre del juego",
+		"GET_ON_GOOGLE_PLAY": "Obtener en Google Play",
+		"JOIN_NOW": "Unirse ahora",
+		"MATCH": "Partida",
+		"PLATFORM": "Plataforma"
+	}
 }
-

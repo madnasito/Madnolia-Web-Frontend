@@ -7,6 +7,7 @@ import { provideRouter, RouterModule, RouterOutlet } from '@angular/router';
 import { routes } from './platforms.routes';
 import { PlatformGameComponent } from './platform-game/platform-game.component';
 import { AboutModule } from '../about/about.module';
+import { TranslateDirective, TranslateModule, TranslatePipe } from '@ngx-translate/core';
 
 
 
@@ -16,7 +17,10 @@ import { AboutModule } from '../about/about.module';
     AtomsModule,
     RouterOutlet,
     RouterModule,
-    AboutModule
+    AboutModule,
+    TranslateModule,
+    TranslatePipe, 
+    TranslateDirective
   ],
   declarations: [
     PlatformsComponent,

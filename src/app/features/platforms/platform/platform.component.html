@@ -2,8 +2,10 @@
   <div class="container" *ngFor="let platform of platforms">
     <div class="row">
       <!-- Improved heading structure with schema markup -->
-      <h2 class="platform-title animate__animated animate__fadeIn">
-        {{platform.name}} Games
+      <h2 class="platform-title animate__animated animate__fadeIn"
+        >
+        {{ 'PLATFORMS.GAMES' | translate: {platform: platform.name} }}
+        
         <!-- <meta itemprop="name" content="{{platform.name}} Games on Madnolia"> -->
       </h2>
       
@@ -17,10 +19,10 @@
               <line x1="12" y1="17" x2="12.01" y2="17"></line>
             </svg>
           </div>
-          <h2 class="no-matches-title">No matches found for {{platform.name}}</h2>
-          <p class="no-matches-text">Be the first to create a match for {{platform.name}} games</p>
+          <h2 class="no-matches-title">{{ 'PLATFORMS.NO_MATCHES' | translate: {platform: platform.name} }}</h2>
+          <p class="no-matches-text">{{ 'PLATFORMS.NO_MATCHES_CREATE' | translate: {platform: platform.name} }}</p>
           <a routerLink="/download" class="no-matches-button animate__animated animate__fadeIn animate__delay-1s" >
-            Download App to Create Match
+            {{ 'MATCH.DOWNLOAD_APP' | translate }}
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
@@ -36,7 +38,8 @@
               <img class="card-img-top" [src]="match.background" [alt]="match.name + ' game cover'" itemprop="image">
               <div class="card-body">
                 <h3 class="card-title" itemprop="name">{{ match.name }}</h3>
-                <p class="card-text" itemprop="description">Join {{ match.count }} active matches</p>
+                <p class="card-text" *ngIf="match.count == 1" itemprop="description">{{ 'MATCH.JOIN_MATCH'| translate }}</p>
+                <p class="card-text" *ngIf="match.count > 1" itemprop="description">{{ 'MATCH.JOIN_MATCHES'| translate: {value: match.count} }}</p>
                 <meta itemprop="gamePlatform" content="{{platform.name}}">
                 <meta itemprop="position" content="{{i + 1}}">
               </div>

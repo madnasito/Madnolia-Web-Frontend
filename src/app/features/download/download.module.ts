@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DownloadComponent } from './download.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -9,7 +10,8 @@ import { DownloadComponent } from './download.component';
     DownloadComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    TranslateModule
   ]
 })
 export class DownloadModule { }
