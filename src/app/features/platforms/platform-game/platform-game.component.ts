@@ -86,7 +86,7 @@ export class PlatformGameComponent implements OnInit {
 
   private getGameImageUrl(): string {
     // Implement logic to get proper game image URL
-    return 'https://madnolia.app/assets/images/game-default-social.jpg';
+    return 'https://madnolia.app/public/images/game-default-social.jpg';
   }
 
   private generateGameSchema(game: Game, matches: MatchInfo[]): void {

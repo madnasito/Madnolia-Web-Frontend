@@ -35,6 +35,11 @@ app.get(
   }),
 );
 
+// In your server.ts (or equivalent)
+app.get('/public/i18n/*', (req, res) => {
+  res.sendFile(join('', req.path));
+});
+
 /**
  * Handle all other requests by rendering the Angular application.
  */

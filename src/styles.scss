@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import 'assets/style.css';
+@import 'public/style.css';
 @import '../node_modules/animate.css/animate.min.css';
 
 body {
@@ -9,22 +9,22 @@ body {
 
 @font-face {
     font-family: 'Cyberverse';
-    src: url("assets/fonts/Cyberverse.otf");
+    src: url("public/fonts/Cyberverse.otf");
 }
 
 @font-face {
     font-family: 'Timeburner';
-    src: url("assets/fonts/Timeburner.ttf");
+    src: url("public/fonts/Timeburner.ttf");
 }
 
 @font-face {
     font-family: 'Enceladus';
-    src: url("assets/fonts/Enceladus.otf");
+    src: url("public/fonts/Enceladus.otf");
 }
 
 @font-face {
     font-family: 'NugoSansLight';
-    src: url('assets/fonts/NugoSansLight.ttf');
+    src: url('public/fonts/NugoSansLight.ttf');
 }
 
 h1{
