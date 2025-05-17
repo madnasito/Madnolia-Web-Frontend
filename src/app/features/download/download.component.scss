@@ -204,3 +204,34 @@
     align-items: center;
   }
 }
+
+/* Animation timing and smoothing */
+.animate__animated {
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+}
+
+/* Screenshots container */
+.screenshots {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Feature cards hover effect */
+.feature-card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .animate__animated {
+    animation-delay: 0s !important;
+  }
+  
+  .hero-content, .hero-image {
+    text-align: center;
+  }
+}

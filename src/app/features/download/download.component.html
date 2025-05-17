@@ -3,19 +3,24 @@
   <section class="hero-section">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-md-6 hero-content">
-          <h1>{{ 'DOWNLOAD.TITLE' | translate }}</h1>
-          <p class="lead">{{ 'DOWNLOAD.SUBTITLE' | translate }}</p>
+        <div class="col-md-6 hero-content animate__animated animate__fadeInLeft">
+          <h1 class="animate__animated animate__fadeInDown">{{ 'DOWNLOAD.TITLE' | translate }}</h1>
+          <p class="lead animate__animated animate__fadeIn animate__delay-1s">
+            {{ 'DOWNLOAD.SUBTITLE' | translate }}
+          </p>
           
-          <div class="download-cta">
-            <a href="#" class="play-store-btn">
+          <div class="download-cta animate__animated animate__fadeInUp animate__delay-2s">
+            <a href="#" class="play-store-btn animate__animated animate__pulse animate__delay-3s">
               <img src="assets/google-play-badge.png" alt="{{ 'UTILS.GET_ON_GOOGLE_PLAY' | translate }}" width="200">
             </a>
-            <p class="small-text">{{ 'UTILS.ANDROID_AVAILABLE' | translate }}</p>
+            <p class="small-text animate__animated animate__fadeIn animate__delay-3s">
+              {{ 'UTILS.ANDROID_AVAILABLE' | translate }}
+            </p>
           </div>
         </div>
-        <div class="col-md-6 hero-image">
-          <img src="assets/app-preview.png" alt="GameMatch App Preview" class="img-fluid">
+        <div class="col-md-6 hero-image animate__animated animate__fadeInRight animate__delay-1s">
+          <img src="assets/app-preview.png" alt="GameMatch App Preview" 
+               class="img-fluid animate__animated animate__zoomIn animate__delay-2s">
         </div>
       </div>
     </div>
@@ -24,23 +29,34 @@
   <!-- Key Features -->
   <section class="features-section">
     <div class="container">
-      <h2 class="text-center">{{ 'DOWNLOAD.CARDS.TITLE' | translate }}</h2>
+      <h2 class="text-center animate__animated animate__fadeInUp">
+        {{ 'DOWNLOAD.CARDS.TITLE' | translate }}
+      </h2>
       
       <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">🎮</div>
+        <!-- Feature 1 -->
+        <div class="feature-card animate__animated animate__fadeInUp" [style.animation-delay]="'0.3s'">
+          <div class="feature-icon animate__animated animate__bounceIn" [style.animation-delay]="'0.5s'">
+            🎮
+          </div>
           <h3>{{ 'DOWNLOAD.CARDS.TITLE_1' | translate }}</h3>
-          <p>{{ 'DOWNLOAD.CARDS.SUBTITLE_2' | translate }}</p>
+          <p>{{ 'DOWNLOAD.CARDS.SUBTITLE_1' | translate }}</p>
         </div>
         
-        <div class="feature-card">
-          <div class="feature-icon">🔔</div>
+        <!-- Feature 2 -->
+        <div class="feature-card animate__animated animate__fadeInUp" [style.animation-delay]="'0.5s'">
+          <div class="feature-icon animate__animated animate__bounceIn" [style.animation-delay]="'0.7s'">
+            🔔
+          </div>
           <h3>{{ 'DOWNLOAD.CARDS.TITLE_2' | translate }}</h3>
           <p>{{ 'DOWNLOAD.CARDS.SUBTITLE_2' | translate }}</p>
         </div>
         
-        <div class="feature-card">
-          <div class="feature-icon">👥</div>
+        <!-- Feature 3 -->
+        <div class="feature-card animate__animated animate__fadeInUp" [style.animation-delay]="'0.7s'">
+          <div class="feature-icon animate__animated animate__bounceIn" [style.animation-delay]="'0.9s'">
+            👥
+          </div>
           <h3>{{ 'DOWNLOAD.CARDS.TITLE_3' | translate }}</h3>
           <p>{{ 'DOWNLOAD.CARDS.SUBTITLE_3' | translate }}</p>
         </div>
@@ -51,11 +67,16 @@
   <!-- App Screenshots -->
   <section class="screenshots-section">
     <div class="container">
-      <h2 class="text-center">{{ 'DOWNLOAD.ACTION.TITLE' | translate }}</h2>
+      <h2 class="text-center animate__animated animate__fadeIn">
+        {{ 'DOWNLOAD.ACTION.TITLE' | translate }}
+      </h2>
       <div class="screenshots">
-        <img src="assets/screen1.jpg" alt="{{ 'DOWNLOAD.ACTION.MATCH' | translate }}" class="screenshot">
-        <img src="assets/screen2.jpg" alt="{{ 'DOWNLOAD.ACTION.LOBBY' | translate }}" class="screenshot">
-        <img src="assets/screen3.jpg" alt="{{ 'DOWNLOAD.ACTION.NOTIFICATIONS' | translate }}r" class="screenshot">
+        <img src="assets/screen1.jpg" alt="{{ 'DOWNLOAD.ACTION.MATCH' | translate }}" 
+             class="screenshot animate__animated animate__zoomIn" [style.animation-delay]="'0.3s'">
+        <img src="assets/screen2.jpg" alt="{{ 'DOWNLOAD.ACTION.LOBBY' | translate }}" 
+             class="screenshot animate__animated animate__zoomIn" [style.animation-delay]="'0.6s'">
+        <img src="assets/screen3.jpg" alt="{{ 'DOWNLOAD.ACTION.NOTIFICATIONS' | translate }}" 
+             class="screenshot animate__animated animate__zoomIn" [style.animation-delay]="'0.9s'">
       </div>
     </div>
   </section>
@@ -63,11 +84,13 @@
   <!-- Final CTA -->
   <section class="final-cta">
     <div class="container text-center">
-      <h2>{{ 'DOWNLOAD.BOTTOM.TITLE' | translate }}</h2>
-      <a href="#" class="cta-button">
+      <h2 class="animate__animated animate__fadeIn">{{ 'DOWNLOAD.BOTTOM.TITLE' | translate }}</h2>
+      <a class="cta-button animate__animated animate__pulse animate__infinite">
         {{ 'UTILS.DOWNLOAD_GOOGLE_PLAY' | translate }}
       </a>
-      <p class="small-text">{{ 'DOWNLOAD.BOTTOM.SUBTITLE' | translate }}</p>
+      <p class="small-text animate__animated animate__fadeIn animate__delay-1s">
+        {{ 'DOWNLOAD.BOTTOM.SUBTITLE' | translate }}
+      </p>
     </div>
   </section>
 </div>

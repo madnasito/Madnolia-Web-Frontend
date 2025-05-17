@@ -3,14 +3,14 @@
   <section class="hero-section">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-lg-6 hero-content">
-          <h1>{{ 'ABOUT.TITLE_1' | translate }}</h1>
-          <p class="lead">
+        <div class="col-lg-6 hero-content animate__animated animate__fadeInLeft animate__delay-1s">
+          <h1 class="animate__animated animate__fadeInDown">{{ 'ABOUT.TITLE_1' | translate }}</h1>
+          <p class="lead animate__animated animate__fadeIn animate__delay-1s">
             {{ 'ABOUT.SUBTITLE_1' | translate }}
           </p>
         </div>
-        <div class="col-lg-6 hero-image">
-          <img src="assets/matchmaking-hero.png" alt="Game matchmaking app interface showing multiplayer organization features" class="img-fluid">
+        <div class="col-lg-6 hero-image animate__animated animate__fadeInRight animate__delay-1s">
+          <img src="assets/matchmaking-hero.png" alt="Game matchmaking app interface showing multiplayer organization features" class="img-fluid animate__animated animate__zoomIn animate__delay-2s">
         </div>
       </div>
     </div>
@@ -19,12 +19,12 @@
   <!-- Our Mission -->
   <section class="mission-section">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header animate__animated animate__fadeInUp" [style.animation-delay]="'0.3s'">
         <h2>{{ 'ABOUT.OUR_MISSION' | translate }}</h2>
-        <div class="divider"></div>
+        <div class="divider animate__animated animate__zoomIn"></div>
       </div>
       <div class="row">
-        <div class="col-lg-8 mx-auto text-center">
+        <div class="col-lg-8 mx-auto text-center animate__animated animate__fadeIn" [style.animation-delay]="'0.6s'">
           <p class="mission-statement">
             {{ 'ABOUT.MISSION' | translate }}
           </p>
@@ -36,27 +36,32 @@
   <!-- Features Grid -->
   <section class="features-section">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header animate__animated animate__fadeInUp">
         <h2>{{ 'ABOUT.CARDS.TITLE' | translate }}</h2>
-        <div class="divider"></div>
+        <div class="divider animate__animated animate__zoomIn"></div>
       </div>
       <div class="row">
-        <div class="col-md-4 feature-card">
-          <div class="feature-icon">
+        <!-- Feature Card 1 -->
+        <div class="col-md-4 feature-card animate__animated animate__fadeInUp" [style.animation-delay]="'0.3s'">
+          <div class="feature-icon animate__animated animate__bounceIn" [style.animation-delay]="'0.5s'">
             <i class="fas fa-crosshairs"></i>
           </div>
           <h3>{{ 'ABOUT.CARDS.TITLE_1' | translate }}</h3>
           <p>{{ 'ABOUT.CARDS.SUBTITLE_1' | translate }}</p>
         </div>
-        <div class="col-md-4 feature-card">
-          <div class="feature-icon">
+        
+        <!-- Feature Card 2 -->
+        <div class="col-md-4 feature-card animate__animated animate__fadeInUp" [style.animation-delay]="'0.5s'">
+          <div class="feature-icon animate__animated animate__bounceIn" [style.animation-delay]="'0.7s'">
             <i class="fas fa-bell"></i>
           </div>
           <h3>{{ 'ABOUT.CARDS.TITLE_2' | translate }}</h3>
           <p>{{ 'ABOUT.CARDS.SUBTITLE_2' | translate }}</p>
         </div>
-        <div class="col-md-4 feature-card">
-          <div class="feature-icon">
+        
+        <!-- Feature Card 3 -->
+        <div class="col-md-4 feature-card animate__animated animate__fadeInUp" [style.animation-delay]="'0.7s'">
+          <div class="feature-icon animate__animated animate__bounceIn" [style.animation-delay]="'0.9s'">
             <i class="fas fa-gamepad"></i>
           </div>
           <h3>{{ 'ABOUT.CARDS.TITLE_3' | translate }}</h3>
@@ -69,27 +74,32 @@
   <!-- How It Works -->
   <section class="how-it-works">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header animate__animated animate__fadeInUp">
         <h2>{{ 'ABOUT.HOW_IT_WORKS.TITLE' | translate }}</h2>
-        <div class="divider"></div>
+        <div class="divider animate__animated animate__zoomIn"></div>
       </div>
       <div class="steps">
-        <div class="step">
-          <div class="step-number">1</div>
+        <!-- Step 1 -->
+        <div class="step animate__animated animate__fadeInLeft" [style.animation-delay]="'0.3s'">
+          <div class="step-number animate__animated animate__bounceIn">1</div>
           <div class="step-content">
             <h3>{{ 'ABOUT.HOW_IT_WORKS.STEP_1_TITLE' | translate }}</h3>
             <p>{{ 'ABOUT.HOW_IT_WORKS.STEP_1_SUBTITLE' | translate }}</p>
           </div>
         </div>
-        <div class="step">
-          <div class="step-number">2</div>
+        
+        <!-- Step 2 -->
+        <div class="step animate__animated animate__fadeInLeft" [style.animation-delay]="'0.6s'">
+          <div class="step-number animate__animated animate__bounceIn">2</div>
           <div class="step-content">
             <h3>{{ 'ABOUT.HOW_IT_WORKS.STEP_2_TITLE' | translate }}</h3>
             <p>{{ 'ABOUT.HOW_IT_WORKS.STEP_2_SUBTITLE' | translate }}</p>
           </div>
         </div>
-        <div class="step">
-          <div class="step-number">3</div>
+        
+        <!-- Step 3 -->
+        <div class="step animate__animated animate__fadeInLeft" [style.animation-delay]="'0.9s'">
+          <div class="step-number animate__animated animate__bounceIn">3</div>
           <div class="step-content">
             <h3>{{ 'ABOUT.HOW_IT_WORKS.STEP_3_TITLE' | translate }}</h3>
             <p>{{ 'ABOUT.HOW_IT_WORKS.STEP_3_SUBTITLE' | translate }}</p>
@@ -99,12 +109,11 @@
     </div>
   </section>
 
-
   <!-- CTA Section -->
   <section class="cta-section">
     <div class="container text-center">
-      <h2>{{ 'ABOUT.BOTTOM_TITLE' | translate }}</h2>
-      <a href="/download" class="cta-button">{{ 'UTILS.DOWNLOAD_NOW' | translate }}</a>
+      <h2 class="animate__animated animate__fadeIn">{{ 'ABOUT.BOTTOM_TITLE' | translate }}</h2>
+      <a href="/download" class="cta-button animate__animated ">{{ 'UTILS.DOWNLOAD_NOW' | translate }}</a>
     </div>
   </section>
 </div>

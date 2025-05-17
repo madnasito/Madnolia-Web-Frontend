@@ -215,3 +215,16 @@ h2 {
     }
   }
 }
+
+/* Add these to your styles */
+.animate__animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+/* Optional: Reduce animation duration on mobile */
+@media (max-width: 768px) {
+  .animate__animated {
+    animation-duration: 0.8s;
+  }
+}
