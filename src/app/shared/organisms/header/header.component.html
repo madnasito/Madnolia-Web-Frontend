@@ -1,35 +1,46 @@
 <header>
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar bg-transparent navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <!-- Botón toggler solo visible en móviles -->
-      <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <!-- Brand logo - hidden on mobile -->
+      <a class="navbar-brand d-none d-lg-flex" routerLink="/">
+        <img src="public/madnolia-logo.svg" alt="Madnolia Logo" width="5%">
+      </a>
+      
+      <!-- Mobile brand logo - visible only on mobile -->
+      <a class="navbar-brand d-lg-none" routerLink="/">
+        <img src="public/madnolia-logo.svg" alt="Madnolia Logo" width="50px">
+      </a>
+      
+      <!-- Mobile toggle button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
       
-      <!-- Logo/Brand -->
-      <a class="navbar-brand d-none d-lg-block" routerLink="/">
-        <img src="public/madnolia-logo.svg" alt="" width="5%">
-      </a>
-      
-      <!-- Offcanvas para móviles -->
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <!-- Offcanvas menu -->
+      <div class="offcanvas offcanvas-end bg-transparent text-white" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">{{ 'HEADER.MENU' | translate }}</h5>
+          <!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">{{ 'HEADER.MENU' | translate }}</h5> -->
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <!-- <li class="nav-item">
-              <a class="nav-link" routerLink="/" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active">Home</a>
-            </li> -->
             <li class="nav-item">
-              <a class="nav-link" routerLink="/platforms" routerLinkActive="active">{{ 'HEADER.PLATFORMS' | translate }}</a>
+              <a class="nav-link" routerLink="/platforms" routerLinkActive="active active-mobile" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="bi bi-controller fs-4"></i>
+                {{ 'HEADER.PLATFORMS' | translate }}
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/about" routerLinkActive="active">{{ 'HEADER.ABOUT' | translate }}</a>
+              <a class="nav-link" routerLink="/about" routerLinkActive="active active-mobile" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="bi bi-info-circle fs-4"></i>
+                {{ 'HEADER.ABOUT' | translate }}
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/download" routerLinkActive="active">{{ 'HEADER.DOWNLOAD' | translate }}</a>
+              <a class="nav-link" routerLink="/download" routerLinkActive="active active-mobile" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i class="bi bi-download fs-4"></i>
+                {{ 'HEADER.DOWNLOAD' | translate }}
+              </a>
             </li>
           </ul>
         </div>
