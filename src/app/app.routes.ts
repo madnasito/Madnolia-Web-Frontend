@@ -98,6 +98,11 @@ export const routes: Routes = [
         }
       }
     },
+    {
+        path: '.well-known/assetlinks.json',
+        redirectTo: '/public/.well-known/assetlinks.json',
+        pathMatch: 'full'
+    },
     { path: '**', redirectTo: '' }
 ];
 
