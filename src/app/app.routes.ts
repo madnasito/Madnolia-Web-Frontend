@@ -6,6 +6,7 @@ import { PlatformsComponent } from "./features/platforms/platforms.component";
 import { PlatformComponent } from "./features/platforms/platform/platform.component";
 import { MatchPageComponent } from "./features/match/match-page/match-page.component";
 import { LandingComponent } from "./features/landing/landing.component";
+import { ChildSafetyComponent } from "./features/child-safety/child-safety.component";
 
 export const routes: Routes = [
     { 
@@ -95,6 +96,16 @@ export const routes: Routes = [
         seo: {
           title: 'About Madnolia',
           description: 'Learn about our gaming matchmaking platform'
+        }
+      }
+    },
+    { 
+      path: 'child-safety', 
+      component: ChildSafetyComponent,
+      data: {
+        seo: {
+          title: 'Child Safety',
+          description: ''
         }
       }
     },
