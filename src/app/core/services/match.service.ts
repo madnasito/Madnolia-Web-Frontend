@@ -29,10 +29,12 @@ export class MatchService {
     }
   }
 
-  getMatchesByPlatformParent(parent: number): Observable<PlatformWithMatches[]> {
+  getMatchesByPlatformParent(parent: number, skip: number = 0, limit: number = 15): Observable<PlatformWithMatches[]> {
     try {
       return this.http.get<PlatformWithMatches[]>(`${environment.apiUrl}/match/get-by`, {params: {
-        parent
+        parent,
+        skip,
+        limit
       }}
     );
     } catch (error) {
