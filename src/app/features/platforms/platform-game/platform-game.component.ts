@@ -7,6 +7,7 @@ import { MatchService } from '../../../core/services/match.service';
 import { MatchInfo } from '../../../core/interfaces/match/match-info.interface';
 import { Game } from '../../../core/interfaces/game/game.interface';
 import { GamesService } from '../../../core/services/games.service';
+import { resizeGameImage } from '../../../shared/utils/resize-imate.util';
 
 @Component({
   selector: 'app-platform-game',

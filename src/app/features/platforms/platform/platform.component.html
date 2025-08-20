@@ -35,7 +35,7 @@
         <div class="col-sm-12 col-md-4" *ngFor="let match of platform.matches; let i = index" itemprop="itemListElement" itemscope itemtype="https://schema.org/Game">
           <a [routerLink]="`/platform/${platform.slug}/${match.slug}`" *ngIf="platform.matches.length > 0" itemprop="url">
             <div class="card animate__animated animate__fadeIn animate__delay-500ms">
-              <img class="card-img-top" [src]="match.background" [alt]="match.name + ' game cover'" itemprop="image">
+              <img class="card-img-top" [src]="resizeImage(match.background)" [alt]="match.name + ' game cover'" itemprop="image">
               <div class="card-body">
                 <h3 class="card-title" itemprop="name">{{ match.name }}</h3>
                 <p class="card-text" *ngIf="match.count == 1" itemprop="description">{{ 'MATCH.JOIN_MATCH'| translate }}</p>

@@ -5,6 +5,7 @@ import { MatchService } from '../../../core/services/match.service';
 import { PlatformFather } from '../enums/platform-father.enum';
 import { PlatformWithMatches } from '../../../core/interfaces/match/platform-with-matches.interface';
 import { Observable, switchMap } from 'rxjs';
+import { resizeGameImage } from '../../../shared/utils/resize-imate.util';
 
 @Component({
   selector: 'app-platform',
@@ -53,6 +54,8 @@ export class PlatformComponent implements OnInit {
       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
       .join(' ');
   }
+
+  public resizeImage = (url: string)  => resizeGameImage(url);
 
   private setParentId(platformName: string): void {
     switch (platformName) {
