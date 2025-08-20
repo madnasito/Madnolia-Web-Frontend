@@ -1,7 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import 'public/style.css';
-@import '../node_modules/animate.css/animate.min.css';
+// Usar @use en lugar de @import
+@use 'public/style.css';
+@use '../node_modules/animate.css/animate.min.css';
+
+// Para archivos SCSS de Bootstrap, usa @use
+@use 'bootstrap/scss/bootstrap' as bootstrap;
 
 body {
     background: linear-gradient(to right, rgb(90, 0, 0), rgb(0, 0, 80), black)
@@ -55,3 +59,8 @@ a {
     margin-top: 3%;
     margin-bottom: 3%;
 }
+
+// Si necesitas acceder a variables de Bootstrap, usa:
+// .my-class {
+//   color: bootstrap.$primary;
+// }

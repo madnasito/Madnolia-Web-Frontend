@@ -6,6 +6,7 @@ import { DownloadModule } from './download/download.module';
 import { LandingModule } from './landing/landing.module';
 import { MatchModule } from './match/match.module';
 import { ChildSafetyComponent } from './child-safety/child-safety.component';
+import { AuthModule } from './auth/auth.module';
 
 
 
@@ -18,7 +19,8 @@ import { ChildSafetyComponent } from './child-safety/child-safety.component';
     PlatformsModule,
     DownloadModule,
     MatchModule,
-    ChildSafetyComponent
+    ChildSafetyComponent,
+    AuthModule
   ],
   exports: []
 })

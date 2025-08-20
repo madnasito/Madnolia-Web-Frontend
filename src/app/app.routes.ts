@@ -7,6 +7,7 @@ import { PlatformComponent } from "./features/platforms/platform/platform.compon
 import { MatchPageComponent } from "./features/match/match-page/match-page.component";
 import { LandingComponent } from "./features/landing/landing.component";
 import { ChildSafetyComponent } from "./features/child-safety/child-safety.component";
+import { authRoutes } from "./features/auth/auth.routes";
 
 export const routes: Routes = [
     { 
@@ -114,6 +115,7 @@ export const routes: Routes = [
         redirectTo: '/public/.well-known/assetlinks.json',
         pathMatch: 'full'
     },
+    ...authRoutes,
     { path: '**', redirectTo: '' }
 ];
 
