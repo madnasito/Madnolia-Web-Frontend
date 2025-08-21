@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.madnolia.app",
+      "sha256_cert_fingerprints": [
+        "54:1A:CB:C6:A3:95:DF:8B:D7:52:EF:3F:BF:9F:93:AE:0C:38:B9:C0:09:7A:0C:C4:51:F7:2A:48:3D:FE:CA:21"
+      ]
+    }
+  }
+]
