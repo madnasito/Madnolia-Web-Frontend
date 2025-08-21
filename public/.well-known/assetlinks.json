@@ -8,7 +8,8 @@
       "namespace": "android_app",
       "package_name": "com.madnolia.app",
       "sha256_cert_fingerprints": [
-        "62:16:0E:20:A1:CB:81:1C:13:B2:4B:31:5A:58:EA:02:9D:1D:50:4B:87:43:60:D8:FB:CC:84:B9:09:19:45:B8"
+        "62:16:0E:20:A1:CB:81:1C:13:B2:4B:31:5A:58:EA:02:9D:1D:50:4B:87:43:60:D8:FB:CC:84:B9:09:19:45:B8",
+        "54:1A:CB:C6:A3:95:DF:8B:D7:52:EF:3F:BF:9F:93:AE:0C:38:B9:C0:09:7A:0C:C4:51:F7:2A:48:3D:FE:CA:21"
       ]
     }
   }
