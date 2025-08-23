@@ -14,14 +14,21 @@ export const routes: Routes = [
       path: '', 
       component: LandingComponent,
       data: {
-        seo: {
-          title: 'Madnolia - Connect with Gamers Worldwide',
-          description: 'Schedule matches for any retro or modern gaming platform'
-        }
+        title: 'Madnolia - Connect with Gamers Worldwide',
+        metaTags: [
+          { name: 'description', content: 'Platform to schedule matches for any retro or modern console. Connect with the global gaming community.' },
+          { name: 'keywords', content: 'gaming, scheduled matches, gamers, retro consoles, gaming community' },
+          { property: 'og:title', content: 'Madnolia - Connect with Players' },
+          { property: 'og:description', content: 'Platform to schedule matches for any console' },
+          { property: 'og:url', content: 'https://madnolia.app' },
+          { property: 'og:type', content: 'website' },
+          { name: 'twitter:card', content: 'summary_large_image' }
+        ],
+        canonicalUrl: 'https://madnolia.app'
       }
     },
-    { 
-      path: 'match', 
+    {
+      path: 'match',
       children: [
         { path: '', redirectTo: '/', pathMatch: 'full' },
         { 
@@ -36,9 +43,9 @@ export const routes: Routes = [
         }
       ]
     },
-    { 
-      path: 'platforms', 
-      component: PlatformsComponent, 
+    {
+      path: 'platforms',
+      component: PlatformsComponent,
       data: {
         seo: {
           title: 'Gaming Platforms | Madnolia',
@@ -64,8 +71,8 @@ export const routes: Routes = [
         }
       ]
     },
-    { 
-      path: 'platform/:platform-slug/:game-slug', 
+    {
+      path: 'platform/:platform-slug/:game-slug',
       component: PlatformGameComponent,
       data: {
         seo: {
@@ -80,8 +87,8 @@ export const routes: Routes = [
         }
       }
     },
-    { 
-      path: 'download', 
+    {
+      path: 'download',
       component: DownloadComponent,
       data: {
         seo: {
@@ -90,8 +97,8 @@ export const routes: Routes = [
         }
       }
     },
-    { 
-      path: 'about', 
+    {
+      path: 'about',
       component: AboutComponent,
       data: {
         seo: {
@@ -100,8 +107,8 @@ export const routes: Routes = [
         }
       }
     },
-    { 
-      path: 'child-safety', 
+    {
+      path: 'child-safety',
       component: ChildSafetyComponent,
       data: {
         seo: {

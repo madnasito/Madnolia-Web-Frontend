@@ -1,10 +1,10 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Title, Meta } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, switchMap, tap } from 'rxjs';
 import { MatchService } from '../../../core/services/match.service';
 import { MatchWithGame } from '../../../core/interfaces/match/match-with-game.interface';
-import {getPlatformById, PlatformInfo } from '../../../core/utils/get-platform-id-by-slug'
+import { getPlatformById, PlatformInfo } from '../../../core/utils/get-platform-id-by-slug';
+import { SeoService } from '../../../core/services/seo.service';
 
 @Component({
   selector: 'app-match-page',
@@ -16,11 +16,10 @@ export class MatchPageComponent implements OnInit {
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
   private readonly matchService = inject(MatchService);
-  private readonly titleService = inject(Title);
-  private readonly metaService = inject(Meta);
+  private readonly seoService = inject(SeoService);
 
   matchInfo$!: Observable<MatchWithGame>;
-  currentPlatform!: PlatformInfo ;
+  currentPlatform!: PlatformInfo;
 
   ngOnInit() {
     try {
@@ -45,12 +44,13 @@ export class MatchPageComponent implements OnInit {
     const title = `${match.game.name} Match - ${match.title} | ${this.currentPlatform.name}`;
     const description = `Join this ${match.game.name} match on ${this.currentPlatform.name}. ${match.description || 'Compete with players worldwide.'}`;
 
-    this.titleService.setTitle(title);
-    
-    this.metaService.updateTag({ name: 'description', content: description });
-    this.metaService.updateTag({ property: 'og:title', content: title });
-    this.metaService.updateTag({ property: 'og:description', content: description });
-    // this.metaService.updateTag({ property: 'og:url', content: window.location.href });
-    this.metaService.updateTag({ name: 'twitter:card', content: 'summary' });
+    this.seoService.setTitle(title);
+    this.seoService.setMetaTags([
+      { name: 'description', content: description },
+      { property: 'og:title', content: title },
+      { property: 'og:description', content: description },
+      { property: 'og:url', content: window.location.href },
+      { name: 'twitter:card', content: 'summary' }
+    ]);
   }
 }

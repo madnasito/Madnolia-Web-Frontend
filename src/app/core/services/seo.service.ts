@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
@@ -27,7 +28,31 @@ export class SeoService {
     ).subscribe(data => {
       this.updateTitle(data['title']);
       this.updateMetaTags(data['metaTags']);
+      this.updateCanonicalUrl(data['canonicalUrl']);
     });
+  }
+
+  public setTitle(title: string): void {
+    this.titleService.setTitle(title);
+  }
+
+  public setMetaTags(metaTags: any[]): void {
+    metaTags.forEach(tag => {
+      this.metaService.updateTag(tag);
+    });
+  }
+
+  public setCanonicalUrl(url: string): void {
+    const canonicalLink = this.metaService.getTag('rel="canonical"');
+    if (url) {
+      if (canonicalLink) {
+        this.metaService.updateTag({ rel: 'canonical', href: url });
+      } else {
+        this.metaService.addTag({ rel: 'canonical', href: url });
+      }
+    } else if (canonicalLink) {
+      this.metaService.removeTag('rel="canonical"');
+    }
   }
 
   private updateTitle(title: string): void {
@@ -42,5 +67,9 @@ export class SeoService {
         this.metaService.updateTag(tag);
       });
     }
+  }
+
+  private updateCanonicalUrl(url: string): void {
+    this.setCanonicalUrl(url);
   }
 }

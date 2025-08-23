@@ -1,11 +1,11 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Title, Meta } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatchService } from '../../../core/services/match.service';
 import { PlatformFather } from '../enums/platform-father.enum';
 import { PlatformWithMatches } from '../../../core/interfaces/match/platform-with-matches.interface';
 import { Observable, switchMap } from 'rxjs';
 import { resizeGameImage } from '../../../shared/utils/resize-imate.util';
+import { SeoService } from '../../../core/services/seo.service';
 
 @Component({
   selector: 'app-platform',
@@ -17,8 +17,7 @@ export class PlatformComponent implements OnInit {
   private matchService = inject(MatchService);
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
-  private titleService = inject(Title);
-  private metaService = inject(Meta);
+  private seoService = inject(SeoService);
   
   platformWithMatches$!: Observable<PlatformWithMatches[]>;
   private parentId: number = 0;
@@ -40,13 +39,14 @@ export class PlatformComponent implements OnInit {
     const title = `${platformName} Games - Find Players & Matches | Madnolia`;
     const description = `Find and join ${platformName} gaming matches or create your own. Connect with players for ${platformName} games.`;
 
-    this.titleService.setTitle(title);
-    
-    this.metaService.updateTag({ name: 'description', content: description });
-    this.metaService.updateTag({ property: 'og:title', content: title });
-    this.metaService.updateTag({ property: 'og:description', content: description });
-    // this.metaService.updateTag({ property: 'og:url', content: window.location.href });
-    this.metaService.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
+    this.seoService.setTitle(title);
+    this.seoService.setMetaTags([
+      { name: 'description', content: description },
+      { property: 'og:title', content: title },
+      { property: 'og:description', content: description },
+      { property: 'og:url', content: window.location.href },
+      { name: 'twitter:card', content: 'summary_large_image' }
+    ]);
   }
 
   private formatPlatformName(platformName: string): string {
