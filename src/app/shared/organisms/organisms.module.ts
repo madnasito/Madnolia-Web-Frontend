@@ -14,6 +14,6 @@ import { NavbarComponent } from './navbar/navbar.component';
     TranslatePipe,
     TranslateDirective
   ],
-  exports: [ HeaderComponent, NavbarComponent]
+  exports: [NavbarComponent]
 })
 export class OrganismsModule { }
