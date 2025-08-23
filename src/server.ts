@@ -24,6 +24,27 @@ const commonEngine = new CommonEngine();
  * ```
  */
 
+import { routes } from './app/app.routes';
+
+app.get('/sitemap.xml', (req, res) => {
+  let xml = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+  routes.forEach(route => {
+    if (route.path !== '**' && route.path !== 'sitemap.xml' && route.path !== '') {
+      xml += `
+        <url>
+          <loc>https://madnolia.app/${route.path}</loc>
+          <lastmod>${new Date().toISOString()}</lastmod>
+          <changefreq>daily</changefreq>
+          <priority>0.8</priority>
+        </url>
+      `;
+    }
+  });
+  xml += '</urlset>';
+  res.header('Content-Type', 'application/xml');
+  res.send(xml);
+});
+
 /**
  * Serve static files from /browser
  */
