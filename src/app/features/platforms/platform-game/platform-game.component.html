@@ -11,12 +11,14 @@
   <img [src]="game.background" [alt]="game.name + ' cover image'" 
        class="animate__animated animate__fadeIn" itemprop="image">
   
-  <!-- Título con efecto de aparición -->
-  <h1 class="animate__animated animate__fadeInUp" itemprop="name">{{game.name}}</h1>
+  <br/>
+  <br/>
+  <h1 class="animate__animated animate__fadeInUp container" itemprop="name">{{game.name}}</h1>
+  <br/>
 
   <!-- Contenido de matches con animación escalonada -->
   @if(matches$ | async; as matches) {
-    <div class="animate__animated animate__fadeIn animate__slow">
+    <div class="animate__animated animate__fadeIn animate__slow container">
       <div class="table-container p-3 rounded-4">
         <p class="matches-description">{{ 'MATCH.JOIN_OR_CREATE_FOR'| translate: {game: game.name, platform: currentPlatformName} }} </p>
         
