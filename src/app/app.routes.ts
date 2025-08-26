@@ -8,6 +8,7 @@ import { MatchPageComponent } from "./features/match/match-page/match-page.compo
 import { LandingComponent } from "./features/landing/landing.component";
 import { ChildSafetyComponent } from "./features/child-safety/child-safety.component";
 import { authRoutes } from "./features/auth/auth.routes";
+import { matchResolver } from "./features/match/match-page/match.resolver";
 
 export const routes: Routes = [
     { 
@@ -34,11 +35,8 @@ export const routes: Routes = [
         { 
           path: ':id', 
           component: MatchPageComponent,
-          data: {
-            seo: {
-              title: 'Match Details | Madnolia',
-              description: 'Join this scheduled gaming match'
-            }
+          resolve: {
+            match: matchResolver
           }
         }
       ]
