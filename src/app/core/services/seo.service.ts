@@ -72,4 +72,18 @@ export class SeoService {
   private updateCanonicalUrl(url: string): void {
     this.setCanonicalUrl(url);
   }
+
+  public setSocialMediaTags(title: string, description: string, image: string): void {
+    const tags = [
+      { name: 'og:title', content: title },
+      { name: 'og:description', content: description },
+      { name: 'og:image', content: image },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:title', content: title },
+      { name: 'twitter:description', content: description },
+      { name: 'twitter:image', content: image },
+    ];
+    this.setTitle(title);
+    this.setMetaTags(tags);
+  }
 }

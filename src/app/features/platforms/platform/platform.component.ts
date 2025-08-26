@@ -20,7 +20,7 @@ export class PlatformComponent implements OnInit {
   private seoService = inject(SeoService);
   
   platformWithMatches$!: Observable<PlatformWithMatches[]>;
-  private parentId: number = 0;
+  private parentSlug: string = '';
   currentPlatformName!: string;
 
   ngOnInit() {
@@ -30,7 +30,7 @@ export class PlatformComponent implements OnInit {
         this.currentPlatformName = this.formatPlatformName(platformName);
         this.setParentId(platformName);
         this.setPlatformSEOMetadata(this.currentPlatformName);
-        return this.matchService.getMatchesByPlatformParent(this.parentId);
+        return this.matchService.getMatchesByPlatformParent(this.parentSlug);
       })
     );
   }
@@ -60,19 +60,19 @@ export class PlatformComponent implements OnInit {
   private setParentId(platformName: string): void {
     switch (platformName) {
       case PlatformFather.PlayStation:
-        this.parentId = 0;
+        this.parentSlug = 'playstation';
         break;
       case PlatformFather.Nintendo:
-        this.parentId = 1;
+        this.parentSlug = 'nintendo';
         break;
       case PlatformFather.PC:
-        this.parentId = 2;
+        this.parentSlug = 'pc';
         break;
       case PlatformFather.Xbox:
-        this.parentId = 3;
+        this.parentSlug = 'xbox';
         break;
       case PlatformFather.Mobile:
-        this.parentId = 4;
+        this.parentSlug = 'mobile';
         break;
       default:
         this.router.navigateByUrl('/platforms');

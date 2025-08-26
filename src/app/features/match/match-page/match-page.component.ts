@@ -43,14 +43,8 @@ export class MatchPageComponent implements OnInit {
   private updateMatchSEOMetadata(match: MatchWithGame): void {
     const title = `${match.game.name} Match - ${match.title} | ${this.currentPlatform.name}`;
     const description = `Join this ${match.game.name} match on ${this.currentPlatform.name}. ${match.description || 'Compete with players worldwide.'}`;
+    const image = match.game.background;
 
-    this.seoService.setTitle(title);
-    this.seoService.setMetaTags([
-      { name: 'description', content: description },
-      { property: 'og:title', content: title },
-      { property: 'og:description', content: description },
-      { property: 'og:url', content: window.location.href },
-      { name: 'twitter:card', content: 'summary' }
-    ]);
+    this.seoService.setSocialMediaTags(title, description, image);
   }
 }
