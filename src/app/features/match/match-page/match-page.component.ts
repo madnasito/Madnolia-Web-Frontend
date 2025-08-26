@@ -5,6 +5,7 @@ import { MatchService } from '../../../core/services/match.service';
 import { MatchWithGame } from '../../../core/interfaces/match/match-with-game.interface';
 import { getPlatformById, PlatformInfo } from '../../../core/utils/get-platform-id-by-slug';
 import { SeoService } from '../../../core/services/seo.service';
+import { resizeGameImage } from '../../../shared/utils/resize-imate.util';
 
 @Component({
   selector: 'app-match-page',
@@ -43,7 +44,7 @@ export class MatchPageComponent implements OnInit {
   private updateMatchSEOMetadata(match: MatchWithGame): void {
     const title = `${match.game.name} Match - ${match.title} | ${this.currentPlatform.name}`;
     const description = `Join this ${match.game.name} match on ${this.currentPlatform.name}. ${match.description || 'Compete with players worldwide.'}`;
-    const image = match.game.background;
+    const image = resizeGameImage( match.game.background);
 
     this.seoService.setSocialMediaTags(title, description, image);
   }
