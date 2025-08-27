@@ -1,13 +1,13 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { Title, Meta } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, switchMap, tap } from 'rxjs';
+import { Observable, switchMap, tap, forkJoin, of } from 'rxjs';
 import { getPlatformIdBySlug, PlatformInfo } from '../../../core/utils/get-platform-id-by-slug';
 import { MatchService } from '../../../core/services/match.service';
 import { MatchInfo } from '../../../core/interfaces/match/match-info.interface';
 import { Game } from '../../../core/interfaces/game/game.interface';
 import { GamesService } from '../../../core/services/games.service';
-import { resizeGameImage } from '../../../shared/utils/resize-imate.util';
 
 @Component({
   selector: 'app-platform-game',
@@ -22,6 +22,7 @@ export class PlatformGameComponent implements OnInit {
   private readonly gamesService = inject(GamesService);
   private readonly titleService = inject(Title);
   private readonly metaService = inject(Meta);
+  private readonly platformId = inject(PLATFORM_ID);
 
   matches$!: Observable<MatchInfo[]>;
   game$!: Observable<Game>;
@@ -31,41 +32,40 @@ export class PlatformGameComponent implements OnInit {
   imageUrl: string = '';
 
   ngOnInit() {
-  try {
-    this.game$ = this.route.params.pipe(
-      switchMap(params => {
-        const gameSlug = params['game-slug'];
-        return this.gamesService.getGameBySlug(gameSlug).pipe(
-          tap(game => {
-            this.currentGameName = this.formatName(game.name);
-            this.imageUrl = game.background || this.getGameImageUrl();
-            this.updateGameSEOMetadata();
-          })
-        );
-      })
-    );
+    try {
+      this.route.params.pipe(
+        switchMap(params => {
+          const platformSlug = params['platform-slug'];
+          const gameSlug = params['game-slug'];
+          
+          this.platform = getPlatformIdBySlug(platformSlug);
+          // Use the real name from the platform object for better capitalization and consistency
+          this.currentPlatformName = this.formatName(this.platform.name); 
 
-    this.matches$ = this.route.params.pipe(
-      switchMap(params => {
-        const platformSlug = params['platform-slug'];
-        const gameSlug = params['game-slug'];
-        this.platform = getPlatformIdBySlug(platformSlug);
-        this.currentPlatformName = this.formatName(platformSlug);
-        return this.matchService.getMatchesByGameSlugAndPlatform(this.platform.id, gameSlug).pipe(
-          tap(matches => {
-            this.game$.subscribe(game => {
-              this.generateGameSchema(game, matches);
-            });
-          })
-        );
-      })
-    );
-  } catch (error) {
-    this.router.navigateByUrl('/platforms');
+          const game$ = this.gamesService.getGameBySlug(gameSlug);
+          const matches$ = this.matchService.getMatchesByGameSlugAndPlatform(this.platform.id, gameSlug);
+
+          return forkJoin({ game: game$, matches: matches$ });
+        }),
+        tap(({ game, matches }) => {
+          this.currentGameName = this.formatName(game.name);
+          this.imageUrl = game.background || this.getGameImageUrl();
+          
+          this.game$ = of(game);
+          this.matches$ = of(matches);
+
+          this.updateGameSEOMetadata(game);
+          this.generateGameSchema(game, matches);
+        })
+      ).subscribe({
+        error: () => this.router.navigateByUrl('/platforms')
+      });
+    } catch (error) {
+      this.router.navigateByUrl('/platforms');
+    }
   }
-}
 
-  private updateGameSEOMetadata(): void {
+  private updateGameSEOMetadata(game: Game): void {
     const title = `${this.currentGameName} Matches for ${this.currentPlatformName} | Madnolia`;
     const description = `Find and join ${this.currentGameName} matches on ${this.currentPlatformName}. Schedule games, connect with players, and compete.`;
 
@@ -74,9 +74,12 @@ export class PlatformGameComponent implements OnInit {
     this.metaService.updateTag({ name: 'description', content: description });
     this.metaService.updateTag({ property: 'og:title', content: title });
     this.metaService.updateTag({ property: 'og:description', content: description });
-    this.metaService.updateTag({ property: 'og:image', content: this.getGameImageUrl() });
-    // this.metaService.updateTag({ property: 'og:url', content: window.location.href });
+    this.metaService.updateTag({ property: 'og:image', content: this.imageUrl });
     this.metaService.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
+
+    if (isPlatformBrowser(this.platformId)) {
+      this.metaService.updateTag({ property: 'og:url', content: window.location.href });
+    }
   }
 
   private formatName(slug: string): string {
@@ -86,31 +89,31 @@ export class PlatformGameComponent implements OnInit {
   }
 
   private getGameImageUrl(): string {
-    // Implement logic to get proper game image URL
     return 'https://madnolia.app/public/images/game-default-social.jpg';
   }
 
   private generateGameSchema(game: Game, matches: MatchInfo[]): void {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "VideoGame",
-    "name": game.name,
-    "description": `Play ${game.name} on ${this.currentPlatformName} with other players`,
-    "image": game.background,
-    "gamePlatform": this.currentPlatformName,
-    "playMode": "Multiplayer",
-    "gameLocation": matches.map(match => ({
-      "@type": "Event",
-      "name": match.title,
-      "startDate": match.date,
-      "url": `${window.location.origin}/match/${match._id}`
-    }))
-  };
+    if (isPlatformBrowser(this.platformId)) {
+      const schema = {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": game.name,
+        "description": `Play ${game.name} on ${this.currentPlatformName} with other players`,
+        "image": game.background,
+        "gamePlatform": this.currentPlatformName,
+        "playMode": "Multiplayer",
+        "gameLocation": matches.map(match => ({
+          "@type": "Event",
+          "name": match.title,
+          "startDate": match.date,
+          "url": `${window.location.origin}/match/${match._id}`
+        }))
+      };
 
-  const script = document.createElement('script');
-  script.type = 'application/ld+json';
-  script.text = JSON.stringify(schema);
-  document.head.appendChild(script);
-}
-
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(schema);
+      document.head.appendChild(script);
+    }
+  }
 }
