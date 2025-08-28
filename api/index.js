@@ -1,1 +1,1 @@
-export default import('../dist/madnolia-web-frontend/server/server.mjs').then(module => module.app());
+export default import('../dist/madnolia-web-frontend/server/server.mjs').then(module => module.app);
