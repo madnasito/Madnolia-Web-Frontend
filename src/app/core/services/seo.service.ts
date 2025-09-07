@@ -41,13 +41,13 @@ export class SeoService {
         const socialData: SocialTags = { title, description, image }
         this.setSocialMediaTags(socialData);
       }
-      const metaTagsPayload = data['metaTags'];
+      const metaTagsPayload = data['metaTags'] || [];
       metaTagsPayload.forEach((metaTag: any) => {
         const content = this.translate.instant(metaTag.content);
         metaTag.content = content;
       });
       this.updateTitle(data['title']);
-      this.updateMetaTags(data['metaTags']);
+      this.updateMetaTags(metaTagsPayload);
       this.updateCanonicalUrl(data['canonicalUrl']);
     });
   }
@@ -89,8 +89,6 @@ export class SeoService {
         this.metaService.updateTag(tag);
       });
     }
-    console.log(metaTags)
-    this.setMetaTags(metaTags);
   }
 
   private updateCanonicalUrl(url: string): void {
@@ -107,7 +105,7 @@ export class SeoService {
       { name: 'twitter:description', content: payload.description },
       { name: 'twitter:image', content: payload.image },
     ];
-    // this.updateMetaTags(tags);
-    this.setMetaTags(tags);
+    this.updateMetaTags(tags);
+    // this.setMetaTags(tags);
   }
 }
