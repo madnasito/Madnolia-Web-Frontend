@@ -54,7 +54,13 @@ app.get('**', (req, res, next) => {
       publicPath: browserDistFolder,
       providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
     })
-    .then((html) => res.send(html))
+    .then((html) => {
+      if (originalUrl.endsWith('/404')) {
+        res.status(404).send(html);
+      } else {
+        res.send(html);
+      }
+    })
     .catch((err) => next(err));
 });
 

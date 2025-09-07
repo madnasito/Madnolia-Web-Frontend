@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatchService } from '../../../core/services/match.service';
 import { PlatformFather } from '../enums/platform-father.enum';
@@ -6,6 +6,7 @@ import { PlatformWithMatches } from '../../../core/interfaces/match/platform-wit
 import { Observable, switchMap } from 'rxjs';
 import { resizeGameImage } from '../../../shared/utils/resize-imate.util';
 import { SeoService } from '../../../core/services/seo.service';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-platform',
@@ -18,6 +19,7 @@ export class PlatformComponent implements OnInit {
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
   private seoService = inject(SeoService);
+  private platformId = inject(PLATFORM_ID);
   
   platformWithMatches$!: Observable<PlatformWithMatches[]>;
   private parentSlug: string = '';
@@ -38,13 +40,14 @@ export class PlatformComponent implements OnInit {
   private setPlatformSEOMetadata(platformName: string): void {
     const title = `${platformName} Games - Find Players & Matches | Madnolia`;
     const description = `Find and join ${platformName} gaming matches or create your own. Connect with players for ${platformName} games.`;
+    const url = isPlatformBrowser(this.platformId) ? window.location.href : '';
 
     this.seoService.setTitle(title);
     this.seoService.setMetaTags([
       { name: 'description', content: description },
       { property: 'og:title', content: title },
       { property: 'og:description', content: description },
-      { property: 'og:url', content: window.location.href },
+      { property: 'og:url', content: url },
       { name: 'twitter:card', content: 'summary_large_image' }
     ]);
   }

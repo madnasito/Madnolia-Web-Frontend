@@ -1,5 +1,6 @@
 {
 	"ABOUT": {
+		"TITLE": "About Our Game Matchmaking Platform | Connect with Gamers Worldwide",
 		"BOTTOM_TITLE": "Ready to Transform Your Gaming Experience?",
 		"CARDS": {
 			"SUBTITLE_1": "From FPS to MOBAs, organize matches for all your favorite games in one place.",
@@ -43,6 +44,7 @@
 		"TITLE": "Select the platform"
 	},
 	"DOWNLOAD": {
+		"TITLE": "Download Madnolia App | The Ultimate Gaming Companion (Coming Soon)",
 		"ACTION": {
 			"LOBBY": "GameMatch app - Match Lobby screen",
 			"MATCH": "GameMatch app - Create Match screen",
@@ -63,7 +65,7 @@
 			"TITLE_3": "Community Building"
 		},
 		"SUBTITLE": "Organize matches, connect with players, and never game alone again",
-		"TITLE": "Get the Ultimate Gaming Companion"
+		"HEADER": "Get the Ultimate Gaming Companion"
 	},
 	"GAME": {
 		"DATE": "Date",
@@ -86,7 +88,11 @@
 	},
 	"HOME": {
 		"MATCH": "Created match",
-		"MATCHES": "Created matches"
+		"MATCHES": "Created matches",
+		"TITLE": "Madnolia - Connect with Gamers Worldwide",
+		"DESCRIPTION": "Join Madnolia to schedule matches, find players, and connect with the global gaming community across all platforms.",
+		"TAG_DESCRIPTION": "Platform to schedule matches for any retro or modern console. Connect with the global gaming community.",
+		"TAG_KEYWORDS": "gaming, scheduled matches, gamers, retro consoles, gaming community"
 	},
 	"LOGIN": {
 		"BUTTON": "Login",
@@ -109,6 +115,7 @@
 		"INVITATIONS": "Invitations"
 	},
 	"PLATFORMS": {
+		"TITLE": "Gaming Platforms | Madnolia",
 		"GAMES": "{{platform}} Games",
 		"NO_MATCHES": "No matches found for {{platform}}",
 		"NO_MATCHES_CREATE": "Be the first to create a match for {{platform}}",
@@ -184,5 +191,8 @@
 		"JOIN_NOW": "Join Now",
 		"MATCH": "Match",
 		"PLATFORM": "Platform"
+	},
+	"CHILD_SAFETY": {
+		"TITLE": "Child Safety"
 	}
 }

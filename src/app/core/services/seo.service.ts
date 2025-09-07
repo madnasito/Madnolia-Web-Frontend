@@ -1,13 +1,16 @@
 
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { filter, map, mergeMap } from 'rxjs/operators';
+import { SocialTags } from '../interfaces/seo/social-tags.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SeoService {
+  private translate = inject(TranslateService);
   constructor(
     private titleService: Title,
     private metaService: Meta,
@@ -26,6 +29,23 @@ export class SeoService {
       filter(route => route.outlet === 'primary'),
       mergeMap(route => route.data)
     ).subscribe(data => {
+      if(data['social']){
+        const payload: SocialTags = data['social'];
+        // let title: string;
+        // let description: string;
+        // this.translate.get(payload.title).subscribe((res: string) => title = res);
+        // this.translate.get(payload.description).subscribe((res: string) => description = res);
+        const title = this.translate.instant(payload.title);
+        const description = this.translate.instant(payload.description);
+        const image = payload.image;
+        const socialData: SocialTags = { title, description, image }
+        this.setSocialMediaTags(socialData);
+      }
+      const metaTagsPayload = data['metaTags'];
+      metaTagsPayload.forEach((metaTag: any) => {
+        const content = this.translate.instant(metaTag.content);
+        metaTag.content = content;
+      });
       this.updateTitle(data['title']);
       this.updateMetaTags(data['metaTags']);
       this.updateCanonicalUrl(data['canonicalUrl']);
@@ -33,6 +53,7 @@ export class SeoService {
   }
 
   public setTitle(title: string): void {
+
     this.titleService.setTitle(title);
   }
 
@@ -57,7 +78,8 @@ export class SeoService {
 
   private updateTitle(title: string): void {
     if (title) {
-      this.titleService.setTitle(title);
+      this.translate.get(title).subscribe((res: string) => this.titleService.setTitle(res));
+      // this.titleService.setTitle(title);
     }
   }
 
@@ -67,23 +89,25 @@ export class SeoService {
         this.metaService.updateTag(tag);
       });
     }
+    console.log(metaTags)
+    this.setMetaTags(metaTags);
   }
 
   private updateCanonicalUrl(url: string): void {
     this.setCanonicalUrl(url);
   }
 
-  public setSocialMediaTags(title: string, description: string, image: string): void {
+  public setSocialMediaTags(payload: SocialTags): void {
     const tags = [
-      { name: 'og:title', content: title },
-      { name: 'og:description', content: description },
-      { name: 'og:image', content: image },
+      { name: 'og:title', content: payload.title },
+      { name: 'og:description', content: payload.description },
+      { name: 'og:image', content: payload.image },
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: title },
-      { name: 'twitter:description', content: description },
-      { name: 'twitter:image', content: image },
+      { name: 'twitter:title', content: payload.title },
+      { name: 'twitter:description', content: payload.description },
+      { name: 'twitter:image', content: payload.image },
     ];
-    this.setTitle(title);
+    // this.updateMetaTags(tags);
     this.setMetaTags(tags);
   }
 }

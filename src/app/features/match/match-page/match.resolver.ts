@@ -7,6 +7,7 @@ import { SeoService } from '../../../core/services/seo.service';
 import { MatchWithGame } from '../../../core/interfaces/match/match-with-game.interface';
 import { getPlatformById } from '../../../core/utils/get-platform-id-by-slug';
 import { resizeGameImage } from '../../../shared/utils/resize-imate.util';
+import { SocialTags } from '../../../core/interfaces/seo/social-tags.interface';
 
 export const matchResolver: ResolveFn<MatchWithGame> = (route: ActivatedRouteSnapshot) => {
   const matchService = inject(MatchService);
@@ -26,7 +27,8 @@ export const matchResolver: ResolveFn<MatchWithGame> = (route: ActivatedRouteSna
         const title = `${match.game.name} Match - ${match.title} | ${platform.name}`;
         const description = `Join this ${match.game.name} match on ${platform.name}. ${match.description || 'Compete with players worldwide.'}`;
         const image = resizeGameImage(match.game.background);
-        seoService.setSocialMediaTags(title, description, image);
+        const socialTags: SocialTags = { title, description, image }
+        seoService.setSocialMediaTags(socialTags);
       }
     }),
     catchError(() => {

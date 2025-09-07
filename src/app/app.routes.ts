@@ -9,22 +9,23 @@ import { LandingComponent } from "./features/landing/landing.component";
 import { ChildSafetyComponent } from "./features/child-safety/child-safety.component";
 import { authRoutes } from "./features/auth/auth.routes";
 import { matchResolver } from "./features/match/match-page/match.resolver";
+import { NotFoundComponent } from "./features/not-found/not-found.component";
 
 export const routes: Routes = [
     { 
       path: '', 
       component: LandingComponent,
       data: {
-        title: 'Madnolia - Connect with Gamers Worldwide',
+        title: 'HOME.TITLE',
         metaTags: [
-          { name: 'description', content: 'Platform to schedule matches for any retro or modern console. Connect with the global gaming community.' },
-          { name: 'keywords', content: 'gaming, scheduled matches, gamers, retro consoles, gaming community' },
-          { property: 'og:title', content: 'Madnolia - Connect with Players' },
-          { property: 'og:description', content: 'Platform to schedule matches for any console' },
-          { property: 'og:url', content: 'https://madnolia.app' },
-          { property: 'og:type', content: 'website' },
-          { name: 'twitter:card', content: 'summary_large_image' }
+          { name: 'description', content: 'HOME.TAG_DESCRIPTION' },
+          { name: 'keywords', content: 'HOME.TAG_KEYWORDS' },
         ],
+        social: {
+          title: 'HOME.TITLE',
+          description: 'HOME.DESCRIPTION',
+          image: ''
+        },
         canonicalUrl: 'https://madnolia.app'
       }
     },
@@ -45,27 +46,15 @@ export const routes: Routes = [
       path: 'platforms',
       component: PlatformsComponent,
       data: {
-        seo: {
-          title: 'Gaming Platforms | Madnolia',
-          description: 'Browse all supported gaming platforms'
-        }
+        title: 'Gaming Platforms | Madnolia',
+        metaTags: [
+          { name: 'description', content: 'Browse all supported gaming platforms' },
+        ]
       },
       children: [
         { 
           path: ':platform-name', 
           component: PlatformComponent,
-          data: {
-            seo: {
-              title: (route: ActivatedRouteSnapshot) => {
-                const platform = route.paramMap.get('platform-name');
-                return `${formatPlatformName(platform)} Games | Madnolia`;
-              },
-              description: (route: ActivatedRouteSnapshot) => {
-                const platform = route.paramMap.get('platform-name');
-                return `Find players and schedule matches for ${formatPlatformName(platform)} games`;
-              }
-            }
-          }
         }
       ]
     },
@@ -89,30 +78,37 @@ export const routes: Routes = [
       path: 'download',
       component: DownloadComponent,
       data: {
-        seo: {
-          title: 'Download Madnolia App',
-          description: 'Get the Madnolia app to schedule matches on the go'
-        }
+        title: 'DOWNLOAD.TITLE',
+        metaTags: [
+          { name: 'description', content: 'Download GameMatch app to organize multiplayer matches, connect with players across platforms, and never game alone again. Available on Google Play.' },
+          { property: 'og:title', content: 'Download GameMatch - The Ultimate Gaming Companion' },
+          { property: 'og:description', content: 'Organize matches, connect with players, and never game alone again. Download now on Google Play.' },
+          // { property: 'og:image', content: 'https://madnolia.app/assets/social-preview.jpg' },
+          { property: 'og:url', content: 'https://madnolia.app/download' },
+          { name: 'twitter:card', content: 'summary_large_image' }
+        ]
       }
     },
     {
       path: 'about',
       component: AboutComponent,
       data: {
-        seo: {
-          title: 'About Madnolia',
-          description: 'Learn about our gaming matchmaking platform'
-        }
+        title: 'ABOUT.TITLE',
+        metaTags: [
+          { name: 'description', content: 'Learn about our game matchmaking platform that connects players across all devices. Organize multiplayer matches with ease and never play alone again.' },
+          { property: 'og:title', content: 'About Our Game Matchmaking Platform' },
+          { property: 'og:description', content: 'Connect with gamers worldwide and organize multiplayer matches seamlessly across all platforms.' },
+          // { property: 'og:image', content: 'https://yourdomain.com/assets/social-preview.jpg' },
+          { property: 'og:url', content: 'https://madnolia.app/about' },
+          { name: 'twitter:card', content: 'summary_large_image' }
+        ]
       }
     },
     {
       path: 'child-safety',
       component: ChildSafetyComponent,
       data: {
-        seo: {
-          title: 'Child Safety',
-          description: ''
-        }
+        title: 'CHILD_SAFETY.TITLE',
       }
     },
     {
@@ -121,7 +117,8 @@ export const routes: Routes = [
         pathMatch: 'full'
     },
     ...authRoutes,
-    { path: '**', redirectTo: '' }
+    { path: '404', component: NotFoundComponent },
+    { path: '**', redirectTo: '/404', pathMatch: 'full' }
 ];
 
 // Helper function to format platform names
