@@ -5,7 +5,7 @@ export interface MatchWithGame {
     _id:         string;
     game:        Game;
     platform:    number;
-    date:        number;
+    date:        Date;
     user:        string;
     inviteds:    string[];
     title:       string;

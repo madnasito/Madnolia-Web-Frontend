@@ -4,7 +4,7 @@ export interface MatchInfo {
     _id:         string;
     game:        string;
     platform:    number;
-    date:        number;
+    date:        Date;
     user:        string;
     inviteds:    string[];
     title:       string;
