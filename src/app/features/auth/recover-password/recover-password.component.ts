@@ -13,7 +13,8 @@ import { ToastService } from '../../../shared/services/toast-service';
 })
 export class RecoverPasswordComponent implements OnDestroy {
 
-  public updatePasswordForm: FormGroup;
+  private formBuilder = inject(FormBuilder);
+  // public updatePasswordForm: FormGroup;
   public isBrowser: boolean;
   public errorMessage: string = '';
   private isLoading: boolean = false;
@@ -22,17 +23,18 @@ export class RecoverPasswordComponent implements OnDestroy {
   @ViewChild('successTpl') successTpl!: TemplateRef<any>;
   @ViewChild('dangerTpl') dangerTpl!: TemplateRef<any>;
 
+  updatePasswordForm = this.formBuilder.group({
+    password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(64)]],
+    repeated_password: ['', [Validators.required]]
+    },{ validators: this.passwordMatchValidator }
+  );
+
   constructor(
-    private formBuilder: FormBuilder,
     private router: Router,
     @Inject(PLATFORM_ID) platformId: any
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
     
-    this.updatePasswordForm = this.formBuilder.group({
-      password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(64)]],
-      repeated_password: ['', [Validators.required]]
-    }, { validators: this.passwordMatchValidator });
 
     // Verificar token solo en el navegador
     if (this.isBrowser) {
@@ -67,7 +69,12 @@ export class RecoverPasswordComponent implements OnDestroy {
         return;
       }
 
-      this.authService.updatePassword(this.updatePasswordForm.value).subscribe({
+      const payload = {
+        password: this.updatePasswordForm.get('password')!.value as string,
+        repeated_password: this.updatePasswordForm.get('repeated_password')!.value as string
+      };
+
+      this.authService.updatePassword(payload).subscribe({
         next: (resp) => {
           this.isLoading = false;
           
@@ -77,7 +84,7 @@ export class RecoverPasswordComponent implements OnDestroy {
           
           setTimeout(() => {
             sessionStorage.removeItem('p-token');
-            this.router.navigate(['/auth/login']);
+            this.router.navigate(['/']);
           }, 3000);
         },
         error: (error) => {
