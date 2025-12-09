@@ -111,6 +111,7 @@
 		"INVITATIONS": "Invitaciones"
 	},
 	"PLATFORMS": {
+		"TITLE": "Plataformas | Madnolia",
 		"GAMES": "Juegos de {{platform}}",
 		"NO_MATCHES": "No hay partidas para {{platform}}",
 		"NO_MATCHES_CREATE": "Se el primero en crear una partida para {{platform}}",

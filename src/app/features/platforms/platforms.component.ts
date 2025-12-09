@@ -11,7 +11,6 @@ import { ActivatedRoute } from '@angular/router';
 export class PlatformsComponent implements OnInit {
   
   constructor(
-    private titleService: Title,
     private metaService: Meta,
     private route: ActivatedRoute
   ) {}
@@ -21,7 +20,7 @@ export class PlatformsComponent implements OnInit {
   }
 
   private setSEO(): void {
-    this.titleService.setTitle('Game Platforms | Madnolia - Connect with Gamers');
+    // this.titleService.setTitle('Game Platforms | Madnolia - Connect with Gamers');
     
     this.metaService.updateTag({ 
       name: 'description', 

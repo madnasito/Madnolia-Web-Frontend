@@ -46,7 +46,7 @@ export const routes: Routes = [
       path: 'platforms',
       component: PlatformsComponent,
       data: {
-        title: 'Gaming Platforms | Madnolia',
+        title: 'PLATFORMS.TITLE',
         metaTags: [
           { name: 'description', content: 'Browse all supported gaming platforms' },
         ]
