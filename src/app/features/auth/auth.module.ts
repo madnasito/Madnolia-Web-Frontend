@@ -7,6 +7,7 @@ import { RecoverPasswordComponent } from './recover-password/recover-password.co
 import { PasswordTokenHandlerComponent } from './password-token-handler/password-token-handler.component';
 import { ToastsContainer } from "../../shared/atoms/atom-toast-container";
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
     ReactiveFormsModule,
     RouterModule,
     ToastsContainer,
-    NgbTooltipModule
+    NgbTooltipModule,
+    TranslateModule
 ]
 })
 export class AuthModule { }

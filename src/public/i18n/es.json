@@ -1,5 +1,6 @@
 {
 	"ABOUT": {
+		"TITLE": "Acerca de nuestra plataforma de emparejamiento de juegos | Conéctate con jugadores de todo el mundo",
 		"BOTTOM_TITLE": "¿Listo para transformar tu experiencia de juego?",
 		"CARDS": {
 			"SUBTITLE_1": "Desde FPS hasta MOBAs, organiza partidas para todos tus juegos favoritos en un solo lugar.",
@@ -86,7 +87,8 @@
 	},
 	"HOME": {
 		"MATCH": "Partida creada",
-		"MATCHES": "Partidas creadas"
+		"MATCHES": "Partidas creadas",
+		"TITLE": "Madnolia - Conecta con gamers de todo el mundo"
 	},
 	"LOGIN": {
 		"BUTTON": "Iniciar Sesión",
@@ -118,62 +120,85 @@
 		"SUBTITLE": "Organiza partidas para cualquier consola retro o moderna",
 		"TITLE": "Conecta con gamers de todo el mundo"
 	},
-	"PROFILE": {
-		"MATCHES": "Partidas",
-		"MATCHES_PAGE": {
-			"EMPTY": "Aun no has creado una partida",
-			"TITLE": "Tus partidas"
-		},
-		"PLATFORMS": "Tus plataformas",
-		"PLATFORMS_PAGE": {
-			"SUCCESS": "¡Plataformas actualizadas!",
-			"TITLE": "Tus plataformas"
-		},
-		"USER_PAGE": {
-			"EMAIL": "Correo",
-			"ERRORS": {
-				"EMAIL": "Ya hay una cuenta registrada con este CORREO",
-				"IMG_EXTENSION": "La extensión no es valida, por favor usa: 'JPG', 'JPEG'. 'PNG'",
-				"IMG_SIZE": "La imagen no puede ser mayor de 2MB",
-				"IMG_UPDATING": "Error actualizando la imagen",
-				"USERNAME": "Ya hay otro usuario usando este NOMBRE DE USUARIO",
-				"VERIFY": "Por favor verifica tú información"
-			},
-			"INVITATIONS": {
-				"ALL": "Lo que sea, quiero jugar",
-				"NOBODY": "Ya, dejame en paz",
-				"PARTNERS": "Solo colegas",
-				"TITLE": "Aceptar invitaciondes de:"
-			},
-			"NAME": "Nombre",
-			"UPDATE": "Actualizar",
-			"UPDATED": "Cuenta actualizada",
-			"UPLOADING_IMG": "Subiendo la imagen, espere un momento por favor",
-			"USERNAME": "Nombre de usuario"
-		},
-		"YOU": "Perfil"
-	},
-	"REGISTER": {
-		"EMAIL": "Correo",
-		"NAME": "Nombre",
-		"NEXT": "Siguiente",
-		"PASSWORD": "Contraseña",
-		"PASSWORD2": "Repita la Contraseña",
-		"PHONE": "Movil",
-		"SELECT_PLATFORMS": "Selecciona tus plataformas de juegos",
-		"SUB_LOGIN": " Inicia sesión",
-		"SUBTITLE": "¿Ya tienes una cuenta?",
-		"TITLE": "Crear cuenta",
-		"TOAST_SIGN_UP": "¡Perfecto! Registro exitoso",
-		"USERNAME": "Nombre de usuario",
-		"VALIDATIONS": {
-			"EMAIL": "Ingrese una dirección de correo correcta",
-			"NAME": "El nombre no es valido",
-			"PASSWORD": "La contraseña es muy corta",
-			"PASSWORD2": "Las contraseñas son diferentes",
-			"USERNAME": "El nombre de usuario no es valido"
-		}
-	},
+	"FORM": {
+        "INPUT": {
+            "NAME": "Nombre",
+            "USERNAME": "Nombre de usuario",
+            "EMAIL": "Correo",
+            "PASSWORD": "Contraseña",
+            "PASSWORD2": "Repita la Contraseña",
+            "PLATFORMS": "Plataformas",
+            "REPLY": "Responder",
+            "MARK_AS_READ": "Marcar como leido",
+            "NEW_PASSWORD": "Nueva contraseña",
+            "USERNAME_EMAIL":"Nombre de Usuario o Correo"
+        },
+        "BUTTONS": {
+            "UPDATE_PASSWORD": "Actualizar contraseña"
+        },
+        "VALIDATIONS": {
+            "REQUIRED": "Este campo es requerido",
+            "REQUIRED_FIELD": "Campo requerido",
+            "INVALID_FORMAT": "Formato no válido",
+            "INVALID_INPUT": "Entrada no válida",
+            "TOO_SHORT": "Muy corto",
+            "TOO_LONG": "Muy largo",
+            "MIN_LENGTH": "Mínimo {{count}} caracteres",
+            "MAX_LENGTH": "Máximo {{count}} caracteres",
+            "MIN_MAX_LENGTH": "Entre {{min}} y {{max}} caracteres",
+            "ONLY_LETTERS": "Solo letras permitidas",
+            "ONLY_NUMBERS": "Solo números permitidos",
+            "LETTERS_AND_NUMBERS": "Solo letras y números permitidos",
+            "NO_SPECIAL_CHARS": "No se permiten caracteres especiales",
+            "INVALID_EMAIL": "Correo electrónico no válido",
+            "INVALID_EMAIL_FORMAT": "Formato de correo inválido",
+            "INVALID_URL": "URL no válida",
+            "INVALID_PHONE": "Número de teléfono no válido",
+            "INVALID_DATE": "Fecha no válida",
+            "INVALID_TIME": "Hora no válida",
+            "PASSWORDS_DONT_MATCH": "Las contraseñas no coinciden",
+            "PASSWORD_TOO_WEAK": "Contraseña muy débil",
+            "PASSWORD_MIN_LENGTH": "La contraseña debe tener al menos {count} caracteres",
+            "PASSWORD_REQUIREMENTS": "La contraseña debe incluir mayúsculas, minúsculas y números",
+            "USERNAME_INVALID": "Nombre de usuario no válido",
+            "USERNAME_TOO_SHORT": "Nombre de usuario muy corto",
+            "USERNAME_TOO_LONG": "Nombre de usuario muy largo",
+            "USERNAME_EXISTS": "Este nombre de usuario ya existe",
+            "EMAIL_EXISTS": "Este correo ya está registrado",
+            "INVALID_NAME": "Nombre no válido",
+            "NAME_TOO_LONG": "Nombre muy largo",
+            "INVALID_AGE": "Edad no válida",
+            "MIN_AGE": "Edad mínima: {age} años",
+            "MAX_AGE": "Edad máxima: {age} años",
+            "NUMERIC_ONLY": "Solo valores numéricos",
+            "POSITIVE_NUMBER": "Debe ser un número positivo",
+            "INVALID_RANGE": "Valor fuera del rango permitido",
+            "MIN_VALUE": "Valor mínimo: {value}",
+            "MAX_VALUE": "Valor máximo: {value}",
+            "WHITESPACE_NOT_ALLOWED": "No se permiten espacios en blanco",
+            "MUST_CONTAIN_UPPERCASE": "Debe contener al menos una mayúscula",
+            "MUST_CONTAIN_LOWERCASE": "Debe contener al menos una minúscula",
+            "MUST_CONTAIN_NUMBER": "Debe contener al menos un número",
+            "MUST_CONTAIN_SYMBOL": "Debe contener al menos un símbolo",
+            "FIELD_REQUIRED": "Campo obligatorio",
+            "PLEASE_FILL_FIELD": "Por favor completa este campo",
+            "CHECK_INPUT": "Revisa la información ingresada",
+            "INVALID_CHARACTERS": "Caracteres no válidos",
+            "TEXT_TOO_SHORT": "Texto muy corto",
+            "TEXT_TOO_LONG": "Texto muy largo",
+            "INVALID_SELECTION": "Selección no válida",
+            "REQUIRED_SELECTION": "Debes seleccionar una opción",
+            "INVALID_LENGTH": "Longitud no válida"
+        }
+    },
+	"RECOVER_PASSWORD": {
+        "TITLE": "Recupera tu contraseña",
+        "RECOVER_PASSWORD": "Recuperar contraseña",
+        "EMAIL_SENDED": "¡Correo enviado!",
+        "ERROR_GETTING_INFO": "Hubo un error al cargar la recuperacion de contraseña",
+        "HOME_PAGE_REDIRECTING": "Redirigiendo a la pagina principal...",
+        "PASSWORD_UPDATED": "Contraseña actualizada exitosamente"
+    },
 	"UTILS": {
 		"ANDROID_AVAILABLE": "Disponible para dispotivos Android",
 		"DATE": "Fecha",
