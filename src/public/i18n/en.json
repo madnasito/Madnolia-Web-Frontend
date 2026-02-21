@@ -115,7 +115,7 @@
 		"INVITATIONS": "Invitations"
 	},
 	"PLATFORMS": {
-		"TITLE": "Gaming Platforms | Madnolia",
+		"TITLE": "Gaming Platforms",
 		"GAMES": "{{platform}} Games",
 		"NO_MATCHES": "No matches found for {{platform}}",
 		"NO_MATCHES_CREATE": "Be the first to create a match for {{platform}}",

@@ -1,3 +1,4 @@
-<a [routerLink]="link" [ngClass]="size" routerLinkActive="active">
+<a [routerLink]="link" [ngClass]="size" routerLinkActive="active" [attr.aria-label]="label">
     <i [ngClass]="iconClass"></i>
+    <span class="visually-hidden">{{ label }}</span>
 </a>

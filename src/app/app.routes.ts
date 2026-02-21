@@ -38,6 +38,12 @@ export const routes: Routes = [
           component: MatchPageComponent,
           resolve: {
             match: matchResolver
+          },
+          data: {
+            canonicalUrl: (route: ActivatedRouteSnapshot) => {
+              const id = route.paramMap.get('id');
+              return `https://madnolia.app/match/${id}`;
+            }
           }
         }
       ]
@@ -49,12 +55,19 @@ export const routes: Routes = [
         title: 'PLATFORMS.TITLE',
         metaTags: [
           { name: 'description', content: 'Browse all supported gaming platforms' },
-        ]
+        ],
+        canonicalUrl: 'https://madnolia.app/platforms'
       },
       children: [
-        { 
+        {
           path: ':platform-name', 
           component: PlatformComponent,
+          data: {
+            canonicalUrl: (route: ActivatedRouteSnapshot) => {
+              const platform = route.paramMap.get('platform-name');
+              return `https://madnolia.app/platforms/${platform}`;
+            }
+          }
         }
       ]
     },
@@ -71,6 +84,11 @@ export const routes: Routes = [
             const game = route.paramMap.get('game-slug');
             return `Schedule matches and find players for ${formatGameName(game)}`;
           }
+        },
+        canonicalUrl: (route: ActivatedRouteSnapshot) => {
+          const platform = route.paramMap.get('platform-slug');
+          const game = route.paramMap.get('game-slug');
+          return `https://madnolia.app/platform/${platform}/${game}`;
         }
       }
     },
@@ -86,7 +104,8 @@ export const routes: Routes = [
           // { property: 'og:image', content: 'https://madnolia.app/assets/social-preview.jpg' },
           { property: 'og:url', content: 'https://madnolia.app/download' },
           { name: 'twitter:card', content: 'summary_large_image' }
-        ]
+        ],
+        canonicalUrl: 'https://madnolia.app/download'
       }
     },
     {
@@ -101,7 +120,8 @@ export const routes: Routes = [
           // { property: 'og:image', content: 'https://yourdomain.com/assets/social-preview.jpg' },
           { property: 'og:url', content: 'https://madnolia.app/about' },
           { name: 'twitter:card', content: 'summary_large_image' }
-        ]
+        ],
+        canonicalUrl: 'https://madnolia.app/about'
       }
     },
     {

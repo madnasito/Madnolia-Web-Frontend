@@ -10,6 +10,5 @@ export class AtomPlatformComponent {
   @Input() iconClass: string = '';
   @Input() size: string = '';
   @Input() link: string | any[] = '/';
-
-  
+  @Input() label: string = '';
 }
