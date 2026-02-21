@@ -29,18 +29,18 @@
           </div>
           <div class="stat-card">
             <h3 class="stat-label">{{ 'MATCH.JOINED'| translate  }}</h3>
-            <p class="stat-value" itemprop="attendeeCount">{{match.inviteds.length}}</p>
+            <p class="stat-value" itemprop="attendeeCount">{{match.joined.length}}</p>
           </div>
         </div>
         
         <div class="col-md-6 time-stats">
           <div class="stat-card">
             <h3 class="stat-label">{{ 'MATCH.DATE'| translate  }}</h3>
-            <p class="stat-value" itemprop="startDate">{{match.date | date:'fullDate'}}</p>
+            <p class="stat-value" itemprop="startDate">{{match.date | date:'fullDate': undefined : translate.currentLang}}</p>
           </div>
           <div class="stat-card">
             <h3 class="stat-label">{{ 'MATCH.TIME'| translate  }}</h3>
-            <p class="stat-value">{{match.date | date:'shortTime'}}</p>
+            <p class="stat-value">{{match.date | date:'shortTime' : undefined : translate.currentLang}}</p>
           </div>
         </div>
       </div>
@@ -63,6 +63,6 @@
     <div class="spinner-border text-primary" role="status">
       <span class="visually-hidden">Loading...</span>
     </div>
-    <p>Loading match details...</p>
+    <p>{{ 'MATCH.LOADING_MATCH_DETAILS'| translate  }}</p>
   </div>
 }

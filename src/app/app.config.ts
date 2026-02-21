@@ -5,8 +5,12 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay, withHttpTransferCacheOptions } from '@angular/platform-browser';
 import { HttpClient, provideHttpClient, withFetch, withInterceptorsFromDi, withJsonpSupport } from '@angular/common/http';
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
 import {provideTranslateService, TranslateLoader, TranslateService} from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+
+registerLocaleData(localeEs);
 
 export function HttpLoaderFactory(http: HttpClient) {
   // translateService = inject(TranslateService);

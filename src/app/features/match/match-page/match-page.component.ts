@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { MatchWithGame } from '../../../core/interfaces/match/match-with-game.interface';
@@ -13,6 +14,7 @@ import { getPlatformById, PlatformInfo } from '../../../core/utils/get-platform-
 })
 export class MatchPageComponent implements OnInit {
   private readonly route = inject(ActivatedRoute);
+  public readonly translate = inject(TranslateService);
 
   matchInfo$!: Observable<MatchWithGame>;
   currentPlatform!: PlatformInfo;

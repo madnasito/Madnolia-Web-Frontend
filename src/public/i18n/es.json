@@ -105,7 +105,8 @@
 		"JOIN_MATCHES": "Unete a {{value}} partidas activas",
 		"JOIN_OR_CREATE_FOR": "Unete a partidas o crea la tuya de {{game}} en {{platform}}",
 		"JOINED": "Jugadores Listos",
-		"TIME": "Empieza a las"
+		"TIME": "Empieza a las",
+		"LOADING_MATCH_DETAILS": "Cargando detalles de la partida..."
 	},
 	"NOTIFICATIONS": {
 		"INVITATIONS": "Invitaciones"
@@ -210,5 +211,10 @@
 		"JOIN_NOW": "Unirse ahora",
 		"MATCH": "Partida",
 		"PLATFORM": "Plataforma"
+	},
+	"SEO": {
+		"MATCH_PAGE_TITLE": "Partida de {{game}} - {{matchTitle}} | {{platform}}",
+		"MATCH_PAGE_DESCRIPTION": "Unete a esta partida de {{game}} en {{platform}}. {{description}}",
+		"MATCH_PAGE_DEFAULT_DESCRIPTION": "Compite con jugadores de todo el mundo."
 	}
 }

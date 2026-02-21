@@ -109,7 +109,8 @@
 		"JOIN_MATCHES": "Join {{value}} active matches",
 		"JOIN_OR_CREATE_FOR": "Join existing matches or create your own for {{game}} on {{platform}}",
 		"JOINED": "Players Joined",
-		"TIME": "Time"
+		"TIME": "Time",
+		"LOADING_MATCH_DETAILS": "Loading match details..."
 	},
 	"NOTIFICATIONS": {
 		"INVITATIONS": "Invitations"
@@ -217,5 +218,10 @@
 	},
 	"CHILD_SAFETY": {
 		"TITLE": "Child Safety"
+	},
+	"SEO": {
+		"MATCH_PAGE_TITLE": "{{game}} Match - {{matchTitle}} | {{platform}}",
+		"MATCH_PAGE_DESCRIPTION": "Join this {{game}} match on {{platform}}. {{description}}",
+		"MATCH_PAGE_DEFAULT_DESCRIPTION": "Compete with players worldwide."
 	}
 }
