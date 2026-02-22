@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /*.json$
+Disallow: /auth/
+Disallow: /404
 Sitemap: https://api.madnolia.app/sitemap.xml
