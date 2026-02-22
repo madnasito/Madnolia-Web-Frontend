@@ -1,7 +1,7 @@
 
 import { inject, Injectable, Renderer2, RendererFactory2 } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
-import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { filter, map, mergeMap } from 'rxjs/operators';
 import { SocialTags } from '../interfaces/seo/social-tags.interface';
@@ -38,28 +38,42 @@ export class SeoService {
         map(data => ({ data, snapshot: route.snapshot }))
       ))
     ).subscribe(({ data, snapshot }) => {
-      this.setJsonLd(null);
-      if(data['social']){
-        const payload: SocialTags = data['social'];
-        const title = this.translate.instant(payload.title);
-        const description = this.translate.instant(payload.description);
-        const image = payload.image;
-        const socialData: SocialTags = { title, description, image }
-        this.setSocialMediaTags(socialData);
-      }
-      const metaTagsPayload = data['metaTags'] || [];
-      metaTagsPayload.forEach((metaTag: any) => {
-        const content = this.translate.instant(metaTag.content);
-        metaTag.content = content;
-      });
-      
-      const title = typeof data['title'] === 'function' ? data['title'](snapshot) : data['title'];
-      const canonicalUrl = typeof data['canonicalUrl'] === 'function' ? data['canonicalUrl'](snapshot) : data['canonicalUrl'];
-
-      this.updateTitle(title);
-      this.updateMetaTags(metaTagsPayload);
-      this.updateCanonicalUrl(canonicalUrl);
+      this.applySeoData(data, snapshot);
     });
+
+    this.translate.onLangChange.subscribe(() => {
+      let route = this.activatedRoute;
+      while (route.firstChild) route = route.firstChild;
+      route.data.pipe(
+        map(data => ({ data, snapshot: route.snapshot }))
+      ).subscribe(({ data, snapshot }) => {
+        this.applySeoData(data, snapshot);
+      });
+    });
+  }
+
+  private applySeoData(data: any, snapshot: ActivatedRouteSnapshot): void {
+    this.setJsonLd(null);
+    if(data['social']){
+      const payload: SocialTags = data['social'];
+      const title = this.translate.instant(payload.title);
+      const description = this.translate.instant(payload.description);
+      const image = payload.image;
+      const socialData: SocialTags = { title, description, image }
+      this.setSocialMediaTags(socialData);
+    }
+    const metaTagsPayload = data['metaTags'] || [];
+    const metaTagsWithTranslations = metaTagsPayload.map((metaTag: any) => ({
+      ...metaTag,
+      content: this.translate.instant(metaTag.content)
+    }));
+    
+    const title = typeof data['title'] === 'function' ? data['title'](snapshot) : data['title'] || (data['seo']?.['title'] && typeof data['seo']['title'] === 'function' ? data['seo']['title'](snapshot) : data['seo']?.['title']);
+    const canonicalUrl = typeof data['canonicalUrl'] === 'function' ? data['canonicalUrl'](snapshot) : data['canonicalUrl'];
+
+    this.updateTitle(title);
+    this.updateMetaTags(metaTagsWithTranslations);
+    this.updateCanonicalUrl(canonicalUrl);
   }
 
   public setTitle(title: string): void {
@@ -118,6 +132,9 @@ export class SeoService {
       { name: 'twitter:image', content: payload.image },
     ];
     this.updateMetaTags(tags);
+    if (payload.title) {
+      this.setTitle(payload.title);
+    }
   }
 
   public setJsonLd(data: any): void {
