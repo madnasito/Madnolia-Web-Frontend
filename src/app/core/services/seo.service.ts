@@ -38,6 +38,7 @@ export class SeoService {
         map(data => ({ data, snapshot: route.snapshot }))
       ))
     ).subscribe(({ data, snapshot }) => {
+      this.setJsonLd(null);
       if(data['social']){
         const payload: SocialTags = data['social'];
         const title = this.translate.instant(payload.title);
@@ -117,5 +118,21 @@ export class SeoService {
       { name: 'twitter:image', content: payload.image },
     ];
     this.updateMetaTags(tags);
+  }
+
+  public setJsonLd(data: any): void {
+    let script = this.document.querySelector('script[type="application/ld+json"]');
+    if (data) {
+      if (script) {
+        this.renderer.setProperty(script, 'text', JSON.stringify(data));
+      } else {
+        script = this.renderer.createElement('script');
+        this.renderer.setAttribute(script, 'type', 'application/ld+json');
+        this.renderer.setProperty(script, 'text', JSON.stringify(data));
+        this.renderer.appendChild(this.document.head, script);
+      }
+    } else if (script) {
+      this.renderer.removeChild(this.document.head, script);
+    }
   }
 }

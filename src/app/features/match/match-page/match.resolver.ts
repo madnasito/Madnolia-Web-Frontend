@@ -39,6 +39,27 @@ export const matchResolver: ResolveFn<MatchWithGame> = (route: ActivatedRouteSna
         const image = resizeGameImage(match.game.background);
         const socialTags: SocialTags = { title, description, image }
         seoService.setSocialMediaTags(socialTags);
+
+        // JSON-LD Structured Data
+        const jsonLd = {
+          '@context': 'https://schema.org',
+          '@type': 'Event',
+          'name': title,
+          'startDate': match.date,
+          'description': description,
+          'eventAttendanceMode': 'https://schema.org/OnlineEventAttendanceMode',
+          'eventStatus': 'https://schema.org/EventScheduled',
+          'location': {
+            '@type': 'VirtualLocation',
+            'url': `https://madnolia.app/match/${matchId}`
+          },
+          'image': image,
+          'about': {
+            '@type': 'Game',
+            'name': match.game.name
+          }
+        };
+        seoService.setJsonLd(jsonLd);
       }
     }),
     catchError(() => {
