@@ -1,5 +1,5 @@
 export enum PlatformFather {
-    PC = 'PC',
+    PC = 'pc',
     Mobile = 'mobile',
     Nintendo = 'nintendo',
     PlayStation = 'playstation',

@@ -24,11 +24,11 @@ export class PlatformsComponent implements OnInit {
     
     this.metaService.updateTag({ 
       name: 'description', 
-      content: 'Browse gaming platforms including Nintendo, PlayStation and Xbox. Find players and schedule matches for your favorite games.' 
+      content: 'Browse gaming platforms including PC, Mobile, Nintendo, PlayStation and Xbox. Find players and schedule matches for your favorite games.' 
     });
     
     this.metaService.addTags([
-      { name: 'keywords', content: 'gaming platforms, Nintendo, PlayStation, Xbox, find players, schedule matches' },
+      { name: 'keywords', content: 'gaming platforms, PC, Mobile, Nintendo, PlayStation, Xbox, find players, schedule matches' },
       { property: 'og:title', content: 'Game Platforms | Madnolia' },
       { property: 'og:description', content: 'Connect with players across all major gaming platforms' },
       { property: 'og:image', content: 'https://madnolia.app/public/images/platforms-social.jpg' },

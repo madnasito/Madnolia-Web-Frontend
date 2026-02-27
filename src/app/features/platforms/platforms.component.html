@@ -3,8 +3,16 @@
     <h1 style="display: none;">{{ 'PLATFORMS.TITLE' | translate }}</h1>
     <h2>{{ 'PLATFORMS.SELECT' | translate }}</h2>
     <br><br>
-    <div class="row align-items-center">
-        <div class="col">
+    <div class="row align-items-center justify-content-center g-4">
+        <div class="col-6 col-md-4 col-lg-2">
+            <app-atom-platform 
+                iconClass="icon-pc" 
+                size="fs-xl" 
+                link="pc"
+                label="PC"
+            ></app-atom-platform>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
             <app-atom-platform 
                 iconClass="icon-nintendo" 
                 size="fs-xl" 
@@ -12,7 +20,7 @@
                 label="Nintendo"
             ></app-atom-platform>
         </div>
-        <div class="col">
+        <div class="col-6 col-md-4 col-lg-2">
             <app-atom-platform 
                 iconClass="icon-playstation" 
                 size="fs-xl" 
@@ -20,12 +28,20 @@
                 label="PlayStation"
             ></app-atom-platform>
         </div>
-        <div class="col">
+        <div class="col-6 col-md-4 col-lg-2">
             <app-atom-platform 
                 iconClass="icon-xbox" 
                 size="fs-xl" 
                 link="xbox"
                 label="Xbox"
+            ></app-atom-platform>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+            <app-atom-platform 
+                iconClass="icon-smartphone" 
+                size="fs-xl" 
+                link="mobile"
+                label="Mobile"
             ></app-atom-platform>
         </div>
     </div>
