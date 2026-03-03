@@ -208,8 +208,8 @@
 	"UTILS": {
 		"ANDROID_AVAILABLE": "Available on Android devices",
 		"DATE": "Date",
-		"DOWNLOAD_GOOGLE_PLAY": "Download Now on Google Play (Coming soon)",
-		"DOWNLOAD_NOW": "Download Now (Coming soon)",
+		"DOWNLOAD_GOOGLE_PLAY": "Download Now on Google Play",
+		"DOWNLOAD_NOW": "Download Now",
 		"GAME_NAME": "Game name",
 		"GET_ON_GOOGLE_PLAY": "Get it on Google Play",
 		"JOIN_NOW": "Join Now",

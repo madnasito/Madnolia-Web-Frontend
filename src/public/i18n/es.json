@@ -204,8 +204,8 @@
 	"UTILS": {
 		"ANDROID_AVAILABLE": "Disponible para dispotivos Android",
 		"DATE": "Fecha",
-		"DOWNLOAD_GOOGLE_PLAY": "Descargar en Google Play (Proximamente)",
-		"DOWNLOAD_NOW": "Descargar Ahora (Proximamente)",
+		"DOWNLOAD_GOOGLE_PLAY": "Descargar en Google Play",
+		"DOWNLOAD_NOW": "Descargar Ahora",
 		"GAME_NAME": "Nombre del juego",
 		"GET_ON_GOOGLE_PLAY": "Obtener en Google Play",
 		"JOIN_NOW": "Unirse ahora",
