@@ -3,13 +3,14 @@ import { RouterOutlet } from '@angular/router';
 import { FeaturesModule } from './features/features.module';
 import { SharedModule } from './shared/shared.module';
 import { SeoService } from './core/services/seo.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { isPlatformBrowser } from '@angular/common';
+import { ConsentBannerComponent } from './shared/components/consent-banner/consent-banner.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FeaturesModule, SharedModule],
+  imports: [RouterOutlet, FeaturesModule, SharedModule, ConsentBannerComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -39,7 +40,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     // Listen for language changes
-    this.translateService.onLangChange.subscribe((event) => {
+    this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
       if (isPlatformBrowser(this.platformId)) {
         this.updateHtmlLangAttribute(event.lang);
       }
