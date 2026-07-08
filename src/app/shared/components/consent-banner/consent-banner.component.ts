@@ -43,6 +43,9 @@ export class ConsentBannerComponent implements OnInit {
         setTimeout(() => {
           this.showBanner = true;
         }, 800);
+      } else {
+        // Initialize gtag with the saved consent from a previous session
+        this.updateConsent(consent as 'granted' | 'denied');
       }
     }
   }
