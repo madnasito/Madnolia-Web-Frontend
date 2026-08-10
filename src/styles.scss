@@ -1,47 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
-
-// Usar @use en lugar de @import
+/* Global Styles */
 @use 'public/style.css';
 @use '../node_modules/animate.css/animate.min.css';
-
-// Para archivos SCSS de Bootstrap, usa @use
 @use 'bootstrap/scss/bootstrap' as bootstrap;
 
 body {
-    background: linear-gradient(to right, rgb(90, 0, 0), rgb(0, 0, 80), black)
+    /* Premium dark mode with subtle Red & Blue glows (Madnolia brand colors) */
+    background-color: #05050a; /* Very dark base */
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(139, 0, 0, 0.15), transparent 50%),
+        radial-gradient(circle at 85% 30%, rgba(0, 0, 128, 0.2), transparent 50%);
+    background-attachment: fixed;
+    color: #f8fafc;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
 }
 
+/* Fallback fonts if needed, but primary is sans-serif */
 @font-face {
     font-family: 'Cyberverse';
     src: url("public/fonts/Cyberverse.otf");
 }
-
 @font-face {
     font-family: 'Timeburner';
     src: url("public/fonts/Timeburner.ttf");
 }
-
 @font-face {
     font-family: 'Enceladus';
     src: url("public/fonts/Enceladus.otf");
 }
-
 @font-face {
     font-family: 'NugoSansLight';
     src: url('public/fonts/NugoSansLight.ttf');
 }
 
-h1{
-    font-family: 'Cyberverse';
+h1, h2, h3, h4, h5, h6 {
+    /* Clean, modern heading font */
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-weight: 800;
 }
 
 h2, h3 {
-    font-family: 'NugoSansLight';
-    font-weight: bolder;
+    font-weight: 700;
 }
 
 .active {
-    transition: 1s;
+    transition: 0.3s;
 }
 
 a {
@@ -49,18 +56,53 @@ a {
     color: white;
 }
 
-.fs-xl{
-    font-size: 6em;
-}
-.main-center {
-    background: rgba(0, 0, 0, 0.507);
-    padding: 15px;
-    border-radius: 30px;
-    margin-top: 3%;
-    margin-bottom: 3%;
+.fs-xl {
+    font-size: 6rem;
 }
 
-// Si necesitas acceder a variables de Bootstrap, usa:
-// .my-class {
-//   color: bootstrap.$primary;
-// }
+.section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+/* Navigation offset for fixed-top navbar */
+main {
+    padding-top: 76px; /* Adjust based on navbar height */
+}
+
+/* Premium Button Styles */
+.btn-premium {
+    background: transparent;
+    color: white !important;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-premium::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px; /* thickness of the gradient border */
+    background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);
+    -webkit-mask: 
+       linear-gradient(#fff 0 0) content-box, 
+       linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.btn-premium:hover {
+    background: rgba(56, 189, 248, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(129, 140, 248, 0.4);
+}
+
+.btn-premium:hover::before {
+    background: linear-gradient(135deg, #c084fc, #38bdf8, #818cf8);
+}

@@ -1,0 +1,15 @@
+<section class="hero-section text-center text-white px-3">
+  <div class="container">
+    <div class="d-inline-flex align-items-center justify-content-center mb-4 animate__animated animate__fadeInDown">
+      <img src="public/madnolia-logo.svg" alt="Madnolia Logo" width="50px" class="me-3">
+      <span class="fs-2 fw-bold" style="letter-spacing: 1px;">Madnolia</span>
+    </div>
+    <h1 class="display-1 fw-bold mb-4">
+      {{ title }}
+      <app-atom-gradient-text *ngIf="highlightedText" tag="span" [text]="highlightedText" [gradientClass]="gradientClass"></app-atom-gradient-text>
+      {{ titleSuffix }}
+    </h1>
+    <p class="lead mb-5 fs-4">{{ subtitle }}</p>
+    <ng-content></ng-content>
+  </div>
+</section>

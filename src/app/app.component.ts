@@ -1,6 +1,6 @@
 import { Component, inject, Renderer2, OnInit, PLATFORM_ID, Inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FeaturesModule } from './features/features.module';
+import { PagesModule } from './pages/pages.module';
 import { SharedModule } from './shared/shared.module';
 import { SeoService } from './core/services/seo.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -10,7 +10,7 @@ import { ConsentBannerComponent } from './shared/components/consent-banner/conse
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FeaturesModule, SharedModule, ConsentBannerComponent],
+  imports: [RouterOutlet, PagesModule, SharedModule, ConsentBannerComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

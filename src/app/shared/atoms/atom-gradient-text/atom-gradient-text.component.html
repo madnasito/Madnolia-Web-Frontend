@@ -1,0 +1,6 @@
+<h1 *ngIf="tag === 'h1'" [ngClass]="gradientClass + ' ' + additionalClasses">{{ text }}<ng-content></ng-content></h1>
+<h2 *ngIf="tag === 'h2'" [ngClass]="gradientClass + ' ' + additionalClasses">{{ text }}<ng-content></ng-content></h2>
+<h3 *ngIf="tag === 'h3'" [ngClass]="gradientClass + ' ' + additionalClasses">{{ text }}<ng-content></ng-content></h3>
+<h4 *ngIf="tag === 'h4'" [ngClass]="gradientClass + ' ' + additionalClasses">{{ text }}<ng-content></ng-content></h4>
+<p *ngIf="tag === 'p'" [ngClass]="gradientClass + ' ' + additionalClasses">{{ text }}<ng-content></ng-content></p>
+<span *ngIf="tag === 'span'" [ngClass]="gradientClass + ' ' + additionalClasses">{{ text }}<ng-content></ng-content></span>

@@ -1,0 +1,58 @@
+<div class="container-fluid animate__animated animate__fadeIn platforms-page pt-5 p-0">
+  <div class="container section-padding text-white">
+    <header class="text-center mb-5 mt-5">
+      <app-atom-gradient-text tag="h1" text="Tu próxima partida empieza aquí." gradientClass="text-gradient-platforms" additionalClasses="display-3 fw-bold mb-4">
+      </app-atom-gradient-text>
+      <p class="lead fs-4">PC, emuladores o consola. Elige tu plataforma y encuentra tu próxima partida.</p>
+    </header>
+
+    <app-atom-glass-panel additionalClasses="text-center">
+      <div class="row align-items-center justify-content-center g-5 py-4">
+          <div class="col-6 col-md-4 col-lg-2">
+              <app-atom-platform 
+                  iconClass="icon-pc" 
+                  size="fs-xl" 
+                  link="pc"
+                  label="PC"
+              ></app-atom-platform>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2">
+              <app-atom-platform 
+                  iconClass="icon-nintendo" 
+                  size="fs-xl" 
+                  link="nintendo"
+                  label="Nintendo"
+              ></app-atom-platform>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2">
+              <app-atom-platform 
+                  iconClass="icon-playstation" 
+                  size="fs-xl" 
+                  link="playstation"
+                  label="PlayStation"
+              ></app-atom-platform>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2">
+              <app-atom-platform 
+                  iconClass="icon-xbox" 
+                  size="fs-xl" 
+                  link="xbox"
+                  label="Xbox"
+              ></app-atom-platform>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2">
+              <app-atom-platform 
+                  iconClass="icon-smartphone" 
+                  size="fs-xl" 
+                  link="mobile"
+                  label="Mobile"
+              ></app-atom-platform>
+          </div>
+      </div>
+    </app-atom-glass-panel>
+  </div>
+</div>
+
+<div id="games-section" class="pt-3">
+  <router-outlet />
+</div>

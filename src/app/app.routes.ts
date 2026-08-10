@@ -1,15 +1,18 @@
 import { ActivatedRouteSnapshot, Routes } from "@angular/router";
-import { AboutComponent } from "./features/about/about.component";
-import { DownloadComponent } from "./features/download/download.component";
-import { PlatformGameComponent } from "./features/platforms/platform-game/platform-game.component";
-import { PlatformsComponent } from "./features/platforms/platforms.component";
-import { PlatformComponent } from "./features/platforms/platform/platform.component";
-import { MatchPageComponent } from "./features/match/match-page/match-page.component";
-import { LandingComponent } from "./features/landing/landing.component";
-import { ChildSafetyComponent } from "./features/child-safety/child-safety.component";
-import { authRoutes } from "./features/auth/auth.routes";
-import { matchResolver } from "./features/match/match-page/match.resolver";
-import { NotFoundComponent } from "./features/not-found/not-found.component";
+import { AboutComponent } from "./pages/about/about.component";
+import { DownloadComponent } from "./pages/download/download.component";
+import { PlatformGameComponent } from "./pages/platforms/platform-game/platform-game.component";
+import { PlatformsComponent } from "./pages/platforms/platforms.component";
+import { PlatformComponent } from "./pages/platforms/platform/platform.component";
+import { MatchPageComponent } from "./pages/match/match-page/match-page.component";
+import { LandingComponent } from "./pages/landing/landing.component";
+import { ChildSafetyComponent } from "./pages/child-safety/child-safety.component";
+import { authRoutes } from "./pages/auth/auth.routes";
+import { matchResolver } from "./pages/match/match-page/match.resolver";
+import { NotFoundComponent } from "./pages/not-found/not-found.component";
+
+import { MatchesInfoComponent } from "./pages/matches-info/matches-info.component";
+import { LanPartyComponent } from "./pages/lan-party/lan-party.component";
 
 export const routes: Routes = [
     { 
@@ -47,6 +50,29 @@ export const routes: Routes = [
           }
         }
       ]
+    },
+    {
+      path: 'matches',
+      component: MatchesInfoComponent,
+      data: {
+        title: 'MATCHES.TITLE',
+        metaTags: [
+          { name: 'description', content: 'Encuentra comunidades y partidas activas de tus juegos favoritos. Olvídate de buscar en foros o Discord.' },
+          { name: 'keywords', content: 'matchmaking, comunidades, juegos, buscar partidas, multijugador' },
+        ],
+        canonicalUrl: 'https://madnolia.app/matches'
+      }
+    },
+    {
+      path: 'lan-party',
+      component: LanPartyComponent,
+      data: {
+        title: 'LAN_PARTY.TITLE',
+        metaTags: [
+          { name: 'description', content: 'Juega en LAN virtual (VLAN) sin configuraciones complejas ni programas como Hamachi o ZeroTier.' },
+        ],
+        canonicalUrl: 'https://madnolia.app/lan-party'
+      }
     },
     {
       path: 'platforms',

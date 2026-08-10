@@ -1,0 +1,39 @@
+/* Professional Silver/Cyan (Sleek, harmonious, premium) */
+.text-gradient {
+  background: linear-gradient(90deg, #ffffff 0%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Red / Pink focused */
+.text-gradient-lan {
+  background: linear-gradient(90deg, #ff4b2b, #ff7eb3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Blue / Cyan focused */
+.text-gradient-platforms {
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Vibrant Red to Light Blue */
+.text-gradient-download {
+  background: linear-gradient(90deg, #f87171, #0ea5e9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Cyan to Purple/Blue */
+.text-gradient-matches {
+  background: linear-gradient(90deg, #0dcaf0, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}

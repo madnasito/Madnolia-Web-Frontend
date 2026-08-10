@@ -1,0 +1,38 @@
+<div class="container-fluid animate__animated animate__fadeIn animate__duration-1s p-0 download-page">
+  <div class="container section-padding text-white text-center">
+    
+    <header class="mb-5">
+      <app-atom-gradient-text tag="h1" text="El punto de " gradientClass="text-gradient-download" additionalClasses="display-2 fw-bold mb-4">
+        <span class="text-gradient-download">encuentro</span>
+      </app-atom-gradient-text>
+      <p class="lead fs-4 mb-5">Lleva la comunidad en tu bolsillo o instala el centro de control en tu PC.</p>
+    </header>
+
+    <div class="row justify-content-center g-5 mb-5">
+      <!-- Desktop Download -->
+      <div class="col-md-5">
+        <app-atom-glass-panel additionalClasses="h-100 d-flex flex-column justify-content-center align-items-center p-5">
+          <app-atom-feature-icon [icon]="faDesktop" sizeClass="display-4" additionalClasses="mb-4"></app-atom-feature-icon>
+          <h3 class="mb-3">Versión de Escritorio</h3>
+          <p class="mb-4">Para los que hostean. Crea partidas LAN, usa el videochat y organiza el escuadrón desde la mejor pantalla.</p>
+          <app-molecule-download-btn type="button" text="Descargar para Windows" buttonClass="btn-primary w-100 mb-3"></app-molecule-download-btn>
+          <div class="d-flex gap-2">
+            <a href="#" class="btn btn-outline-light btn-sm rounded-pill">Mac</a>
+            <a href="#" class="btn btn-outline-light btn-sm rounded-pill">Linux</a>
+          </div>
+        </app-atom-glass-panel>
+      </div>
+      
+      <!-- Mobile Download -->
+      <div class="col-md-5">
+        <app-atom-glass-panel additionalClasses="h-100 d-flex flex-column justify-content-center align-items-center p-5">
+          <app-atom-feature-icon [icon]="faMobileScreen" sizeClass="display-4" additionalClasses="mb-4"></app-atom-feature-icon>
+          <h3 class="mb-3">Versión Móvil</h3>
+          <p class="mb-4">Mantente conectado. Busca partidas mientras vas en el bus y únete al chat de voz desde cualquier lugar.</p>
+          <app-molecule-download-btn type="store" url="https://play.google.com/store/apps/details?id=com.madnolia.app" imageSrc="assets/google-play-badge.png"></app-molecule-download-btn>
+        </app-atom-glass-panel>
+      </div>
+    </div>
+    
+  </div>
+</div>

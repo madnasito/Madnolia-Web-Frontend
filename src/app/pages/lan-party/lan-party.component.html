@@ -1,0 +1,75 @@
+<div class="container-fluid animate__animated animate__fadeIn animate__duration-1s p-0 lan-page">
+  <div class="container section-padding text-white">
+    
+    <header class="text-center mb-5">
+      <app-atom-gradient-text tag="h1" text="VLAN sin la " gradientClass="text-gradient-lan" additionalClasses="display-3 fw-bold mb-4">
+        <span class="text-gradient-lan">pesadilla de sistemas</span>
+      </app-atom-gradient-text>
+      <p class="lead fs-4">Revive la época dorada de jugar en red local (LAN) sin tocar la configuración de tu router.</p>
+    </header>
+
+    <!-- Sección de Demostración y Video -->
+    <app-atom-glass-panel additionalClasses="mb-5">
+      <app-organism-split-info title="Jugar en red no debería requerir un máster en informática" gradientClass="text-gradient-lan" [reverseLayout]="false">
+        <div left-content>
+          <p class="fs-5 mb-3">Tú solo quieres abrir tu Age of Empires o tu emulador favorito. No quieres estar peleando con IPv4, máscaras de subred o firewalls de Windows.</p>
+          <p class="fs-5 mb-4">Madnolia crea un puente VPN invisible. Entras a la sala y el juego detecta mágicamente a tus amigos en la misma red local. Cero estrés. Solo jugar.</p>
+          <div class="d-flex align-items-center gap-3">
+            <app-atom-feature-icon [icon]="faNetworkWired" colorClass="text-success" sizeClass="fs-2"></app-atom-feature-icon>
+            <span class="fs-5 fw-bold text-success">Automatización Total por Detrás de Escena</span>
+          </div>
+        </div>
+        <div right-content>
+          <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-lg border border-secondary">
+            <!-- Placeholder de Video / Gameplay Demo -->
+            <div class="bg-dark d-flex flex-column align-items-center justify-content-center text-secondary">
+              <app-atom-feature-icon [icon]="faPlayCircle" colorClass="text-secondary opacity-50" sizeClass="" additionalClasses="display-1 mb-3"></app-atom-feature-icon>
+              <h4>[Espacio para Video Demo de VLAN en Acción]</h4>
+            </div>
+          </div>
+        </div>
+      </app-organism-split-info>
+    </app-atom-glass-panel>
+
+    <!-- Guía de 3 pasos (GIF/Visual) -->
+    <app-organism-feature-grid class="mt-5 pt-5 text-white d-block" title="Tan fácil como presionar un botón">
+      <div class="col-md-4">
+        <app-molecule-step-card 
+          stepNumber="1" 
+          [icon]="faDesktop" 
+          title="Selecciona la Plataforma" 
+          description="PC, Emulador, lo que quieras jugar hoy.">
+        </app-molecule-step-card>
+      </div>
+      <div class="col-md-4">
+        <app-molecule-step-card 
+          stepNumber="2" 
+          [icon]="faGamepad" 
+          title="Elige tu Juego" 
+          description="Busca el título en nuestro catálogo.">
+        </app-molecule-step-card>
+      </div>
+      <div class="col-md-4">
+        <app-molecule-step-card 
+          stepNumber="3" 
+          stepColorClass="bg-success"
+          iconColorClass="text-success"
+          [icon]="faToggleOn" 
+          title="Enciende el Switch LAN" 
+          description="Un solo clic al crear la sala y nosotros hacemos el resto.">
+        </app-molecule-step-card>
+      </div>
+
+      <!-- Placeholder GIF -->
+      <div class="col-12 mt-5">
+        <div class="mx-auto bg-dark border border-secondary rounded-4 shadow-lg p-5 text-center ratio ratio-21x9" style="max-width: 800px;">
+          <div class="d-flex flex-column align-items-center justify-content-center">
+            <app-atom-feature-icon [icon]="faImage" colorClass="text-secondary opacity-50" sizeClass="" additionalClasses="display-1 mb-3"></app-atom-feature-icon>
+            <h4 class="text-secondary">[Espacio para GIF del botón LAN encendiéndose]</h4>
+          </div>
+        </div>
+      </div>
+    </app-organism-feature-grid>
+
+  </div>
+</div>

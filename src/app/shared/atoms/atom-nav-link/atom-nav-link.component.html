@@ -1,0 +1,9 @@
+<a class="nav-link d-flex align-items-center gap-2" 
+   [routerLink]="link" 
+   routerLinkActive="active active-mobile" 
+   [routerLinkActiveOptions]="{ exact: exact }"
+   data-bs-dismiss="offcanvas" 
+   [attr.aria-label]="ariaLabel">
+  <fa-icon [icon]="icon" class="fs-4"></fa-icon>
+  {{ label }}
+</a>

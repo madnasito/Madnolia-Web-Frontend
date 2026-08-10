@@ -1,0 +1,41 @@
+<div class="container-fluid animate__animated animate__fadeIn animate__duration-1s p-0 matches-page">
+  <div class="container section-padding text-white">
+    
+    <header class="text-center mb-5">
+      <app-atom-gradient-text tag="h1" text="Comunidades vivas. " gradientClass="text-gradient" additionalClasses="display-3 fw-bold mb-4">
+        <span class="text-gradient">No foros fantasma.</span>
+      </app-atom-gradient-text>
+      <p class="lead fs-4">El lugar definitivo para organizar partidas y conectar con jugadores activos de tus títulos favoritos.</p>
+    </header>
+
+    <app-atom-glass-panel additionalClasses="mb-5">
+      <app-organism-split-info title="Tú pones las reglas, la comunidad pone los jugadores" [reverseLayout]="false">
+        <div left-content>
+          <p class="fs-5 mb-3">Es simple: si quieres jugar un clásico de consola en emulador o el último shooter de PC, no deberías tener que crear un post y rezar para que alguien responda en 3 días.</p>
+          <p class="fs-5 mb-4">Selecciona tu juego, mira quién está activo y únete al lobby al instante. El matchmaking directo está aquí.</p>
+          <ul class="list-unstyled fs-5">
+            <li class="mb-3"><app-atom-feature-icon [icon]="faUsers" colorClass="text-info" sizeClass="fs-5 me-2"></app-atom-feature-icon> Sistema de búsqueda inteligente por juego y plataforma.</li>
+            <li class="mb-3"><app-atom-feature-icon [icon]="faComments" colorClass="text-info" sizeClass="fs-5 me-2"></app-atom-feature-icon> Chat de texto en vivo para cada partida.</li>
+            <li class="mb-3"><app-atom-feature-icon [icon]="faVideo" colorClass="text-info" sizeClass="fs-5 me-2"></app-atom-feature-icon> Videollamada y chat de voz integral, cero lag.</li>
+          </ul>
+        </div>
+        <div right-content>
+          <!-- Graphic Placeholder -->
+          <div class="bg-dark border border-secondary rounded-4 shadow-lg p-5 d-flex flex-column align-items-center justify-content-center text-secondary ratio ratio-1x1">
+            <div class="d-flex flex-column align-items-center justify-content-center">
+              <app-atom-feature-icon [icon]="faGlobe" colorClass="text-secondary opacity-50" sizeClass="" additionalClasses="display-1 mb-3"></app-atom-feature-icon>
+              <h4>[Espacio para Imagen / GIF del Matchmaking / Chat]</h4>
+            </div>
+          </div>
+        </div>
+      </app-organism-split-info>
+    </app-atom-glass-panel>
+
+    <section class="text-center mt-5">
+      <h2 class="display-5 fw-bold mb-4">Explora el Catálogo</h2>
+      <p class="fs-5 mb-4">Miles de juegos te esperan. Encuentra el tuyo.</p>
+      <a routerLink="/platforms" class="btn btn-primary btn-lg px-5 py-3 rounded-pill fw-bold shadow-lg">Ver Plataformas Disponibles</a>
+    </section>
+
+  </div>
+</div>

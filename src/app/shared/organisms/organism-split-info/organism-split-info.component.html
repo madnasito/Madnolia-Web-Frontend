@@ -1,0 +1,12 @@
+<section class="row align-items-center justify-content-center g-5 mb-5" [ngClass]="{'flex-row-reverse': reverseLayout}">
+  <div class="col-lg-6 d-flex flex-column align-items-center text-center">
+    <div *ngIf="icon" class="d-inline-flex align-items-center justify-content-center rounded-circle bg-white bg-opacity-10 mb-4" style="width: 80px; height: 80px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); backdrop-filter: blur(10px);">
+      <app-atom-feature-icon [icon]="icon" [colorClass]="iconColorClass" sizeClass="" additionalClasses="fs-1"></app-atom-feature-icon>
+    </div>
+    <app-atom-gradient-text *ngIf="title" tag="h2" [text]="title" [gradientClass]="gradientClass" additionalClasses="h1 fw-bold mb-4"></app-atom-gradient-text>
+    <ng-content select="[left-content]"></ng-content>
+  </div>
+  <div class="col-lg-6 text-center">
+    <ng-content select="[right-content]"></ng-content>
+  </div>
+</section>

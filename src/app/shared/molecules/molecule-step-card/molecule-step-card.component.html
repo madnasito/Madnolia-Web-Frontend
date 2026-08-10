@@ -1,0 +1,14 @@
+<div class="modern-step-card h-100 p-4 p-xl-5 text-start position-relative overflow-hidden rounded-4">
+  <div class="step-glow"></div>
+  <div class="content-wrapper position-relative" style="z-index: 2;">
+    <div class="d-flex align-items-center mb-4">
+      <app-atom-step-circle [number]="stepNumber" [colorClass]="stepColorClass" class="me-3 shadow-sm"></app-atom-step-circle>
+      <h3 class="h4 mb-0 fw-bold text-white">{{ title }}</h3>
+    </div>
+    <p class="fs-5 text-secondary lh-base mb-0">{{ description }}</p>
+  </div>
+  
+  <div class="watermark-icon position-absolute">
+    <app-atom-feature-icon *ngIf="icon" [icon]="icon" [colorClass]="iconColorClass" sizeClass="display-1"></app-atom-feature-icon>
+  </div>
+</div>

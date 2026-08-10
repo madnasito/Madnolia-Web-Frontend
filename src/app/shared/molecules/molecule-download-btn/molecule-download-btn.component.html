@@ -1,0 +1,6 @@
+<a *ngIf="type === 'store'" [href]="url" target="_blank" class="play-store-btn animate__animated animate__pulse animate__infinite">
+  <img [src]="imageSrc" [alt]="altText" [width]="imgWidth">
+</a>
+<a *ngIf="type === 'button'" [href]="url" class="btn btn-lg px-5 py-3 rounded-pill fw-bold shadow-lg" [ngClass]="buttonClass">
+  {{ text }}
+</a>

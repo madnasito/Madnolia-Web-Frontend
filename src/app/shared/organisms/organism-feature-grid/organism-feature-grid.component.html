@@ -1,0 +1,9 @@
+<section class="container-fluid px-4 px-xl-5">
+  <div class="text-center mb-5">
+    <app-atom-gradient-text *ngIf="title" tag="h2" [text]="title" [gradientClass]="gradientClass" additionalClasses="display-5 fw-bold mb-3"></app-atom-gradient-text>
+    <p *ngIf="subtitle" class="fs-5 text-white">{{ subtitle }}</p>
+  </div>
+  <div class="row g-4 justify-content-center">
+    <ng-content></ng-content>
+  </div>
+</section>
