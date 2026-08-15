@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { MatchWithGame } from '../../../core/interfaces/match/match-with-game.interface';
 import { getPlatformById, PlatformInfo } from '../../../core/utils/get-platform-id-by-slug';
+import { faUsers, faCalendarAlt, faClock, faGamepad, faNetworkWired, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-match-page',
@@ -18,6 +19,13 @@ export class MatchPageComponent implements OnInit {
 
   matchInfo$!: Observable<MatchWithGame>;
   currentPlatform!: PlatformInfo;
+
+  faUsers = faUsers;
+  faCalendarAlt = faCalendarAlt;
+  faClock = faClock;
+  faGamepad = faGamepad;
+  faNetworkWired = faNetworkWired;
+  faInfoCircle = faInfoCircle;
 
   ngOnInit() {
     this.matchInfo$ = this.route.data.pipe(

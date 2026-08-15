@@ -2,19 +2,20 @@ import { MatchStatus } from "../../enums/match-status.enum";
 import { Game } from "../game/game.interface";
 
 export interface MatchWithGame {
-    _id:         string;
-    game:        Game;
-    platform:    number;
-    date:        Date;
-    user:        string;
-    inviteds:    string[];
-    title:       string;
+    _id: string;
+    game: Game;
+    platform: number;
+    date: Date;
+    user: string;
+    inviteds: string[];
+    title: string;
     description: string;
-    duration:    number;
-    joined:      string[];
-    private:     boolean;
-    tournament:  boolean;
-    status:      MatchStatus;
+    duration: number;
+    joined: string[];
+    private: boolean;
+    tournament: boolean;
+    status: MatchStatus;
+    lanEnabled: boolean;
 }
 
 // Converts JSON strings to/from your types
