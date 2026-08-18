@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faNetworkWired, faPlayCircle, faDesktop, faGamepad, faToggleOn, faImage } from '@fortawesome/free-solid-svg-icons';
+import { faNetworkWired, faPlayCircle, faDesktop, faGamepad, faToggleOn, faImage, faCheckCircle, faWifi, faShareAlt, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-lan-party',
@@ -14,4 +14,8 @@ export class LanPartyComponent {
   faGamepad = faGamepad;
   faToggleOn = faToggleOn;
   faImage = faImage;
+  faCheckCircle = faCheckCircle;
+  faWifi = faWifi;
+  faShareAlt = faShareAlt;
+  faArrowRight = faArrowRight;
 }

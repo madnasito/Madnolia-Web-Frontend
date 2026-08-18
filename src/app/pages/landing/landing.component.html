@@ -2,7 +2,7 @@
 
   <!-- Hero Section -->
   <app-organism-hero-section title="Tu juego, " highlightedText="tu partida, " titleSuffix="tus reglas."
-    subtitle="El ecosistema donde tú tienes el control. Juega con quien quieras, usa chat integrado y crea redes LAN privadas sin configuraciones absurdas.">
+    subtitle="Planifica tus partidas en segundos. Reúne a tu equipo, coordina horarios y lánzate a jugar en red local.">
     <a routerLink="/download" class="btn btn-premium btn-lg px-5 py-3 rounded-pill fw-bold shadow-lg">Descargar
       Madnolia</a>
   </app-organism-hero-section>
@@ -32,21 +32,18 @@
   <!-- La Solución (The Guide) -->
   <div class="section-padding text-white">
     <div class="container-fluid px-4 px-xl-5">
-      <app-organism-split-info title="Todo tu ecosistema gamer en un solo lugar" [icon]="faGamepad"
+      <app-organism-split-info title="Encuentra tu próxima partida o crea la tuya al instante" [icon]="faGamepad"
         iconColorClass="text-primary" [reverseLayout]="false">
         <div left-content>
           <p class="fs-4 lh-base text-secondary">
-            Tú eliges el juego, nosotros ponemos la infraestructura. Encuentra tu próxima partida, comunícate con un
+            Tú eliges el juego, yo pongo la infraestructura. Encuentra tu próxima partida, comunícate con un
             chat de voz de baja latencia y juega con la comunidad entera sin salir de una sola plataforma.
           </p>
         </div>
         <div right-content>
-          <!-- Graphic Placeholder -->
-          <div
-            class="bg-dark border border-secondary rounded-4 shadow-lg p-5 d-flex flex-column align-items-center justify-content-center text-secondary ratio ratio-4x3">
-            <div class="d-flex flex-column align-items-center justify-content-center">
-              <h4 class="text-secondary opacity-75">[Espacio para Imagen / GIF del Lobby de Juego]</h4>
-            </div>
+          <!-- Graphic -->
+          <div class="border border-secondary border-opacity-25 rounded-4 shadow-lg overflow-hidden">
+            <img src="public/media/home_en.png" alt="Ecosistema Madnolia" class="w-100 h-auto d-block">
           </div>
         </div>
       </app-organism-split-info>
@@ -88,7 +85,7 @@
         <div left-content>
           <p class="fs-4 lh-base text-secondary">
             Crear una red virtual privada (VLAN) nunca fue tan fácil. Simplemente activa el interruptor de red LAN en tu
-            sala y nosotros conectamos a todos los participantes mágicamente. Cero puertos por abrir, cero
+            sala y conecta a todos los participantes mágicamente. Cero puertos por abrir, cero
             configuraciones complejas.
           </p>
           <div class="mt-4">
@@ -99,14 +96,9 @@
           </div>
         </div>
         <div right-content>
-          <!-- Graphic Placeholder -->
-          <div
-            class="border border-white border-opacity-10 rounded-4 shadow-lg p-5 d-flex flex-column align-items-center justify-content-center text-white ratio ratio-4x3"
-            style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px);">
-            <div class="d-flex flex-column align-items-center justify-content-center opacity-50">
-              <h4 class="text-center fw-light" style="letter-spacing: 1px;">[Espacio para Imagen / GIF activando el
-                Toggle de LAN]</h4>
-            </div>
+          <!-- Graphic -->
+          <div class="border border-secondary border-opacity-25 rounded-4 shadow-lg overflow-hidden">
+            <video src="public/media/home_lan_switch_en.mp4" class="w-100 h-auto d-block" autoplay muted loop></video>
           </div>
         </div>
       </app-organism-split-info>

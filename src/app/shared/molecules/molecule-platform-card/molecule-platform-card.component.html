@@ -1,0 +1,12 @@
+<div class="platform-card rounded-4 position-relative overflow-hidden w-100 h-100">
+  <!-- Imagen de Fondo (Se acercará en hover) -->
+  <div class="platform-image-wrapper">
+    <img [src]="imagePath" [alt]="title" class="platform-image">
+  </div>
+  
+  <!-- Máscara Oscura y Texto (Aparecerá en hover) -->
+  <div class="platform-overlay d-flex flex-column justify-content-end p-4 text-center">
+    <h4 class="fw-bold fs-5 text-white mb-1 platform-title">{{ title }}</h4>
+    <p class="text-info small mb-0 platform-subtitle" *ngIf="subtitle">{{ subtitle }}</p>
+  </div>
+</div>

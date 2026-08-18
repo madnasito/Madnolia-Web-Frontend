@@ -1,0 +1,69 @@
+.platform-card {
+  aspect-ratio: 1 / 1;
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  border: 1px solid rgba(34, 211, 238, 0.15);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.platform-image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2.5rem; /* Espacio alrededor de la imagen */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.platform-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: scale(1);
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.4));
+}
+
+.platform-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.4) 50%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.platform-title {
+  transform: translateY(15px);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.platform-subtitle {
+  transform: translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-delay: 0.05s;
+}
+
+.platform-card:hover {
+  border-color: rgba(34, 211, 238, 0.5);
+  box-shadow: 0 10px 25px -5px rgba(34, 211, 238, 0.2), 0 8px 10px -6px rgba(34, 211, 238, 0.1);
+}
+
+.platform-card:hover .platform-image {
+  transform: scale(1.15);
+}
+
+.platform-card:hover .platform-overlay {
+  opacity: 1;
+}
+
+.platform-card:hover .platform-title,
+.platform-card:hover .platform-subtitle {
+  transform: translateY(0);
+}

@@ -6,12 +6,13 @@
   display: inline-block;
 }
 
-/* Cyan / Indigo focused (LAN Party Theme) */
+/* Warm White/Lavender (High Contrast against Blue) */
 .text-gradient-lan {
-  background: linear-gradient(90deg, #22d3ee, #8b5cf6);
+  background: linear-gradient(90deg, #ffffff 0%, #d8b4fe 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
+  filter: drop-shadow(0 0 15px rgba(216, 180, 254, 0.25));
 }
 
 /* Blue / Cyan focused */
