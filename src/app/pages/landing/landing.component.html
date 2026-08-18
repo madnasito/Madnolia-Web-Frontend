@@ -62,17 +62,11 @@
           </p>
         </div>
         <div right-content>
-          <!-- Graphic Placeholder -->
-          <div
-            class="border border-opacity-50 rounded-4 shadow-lgflex-column align-items-center justify-content-center">
-            <div class="d-flex flex-column align-items-center justify-content-center">
-              <div class="d-flex flex-column align-items-center justify-content-center">
-                <video #timezoneVideo src="public/media/timezone.mp4" style="border-radius: 1rem;" autoplay loop muted
-                  playsinline width="100%"></video>
-              </div>
-            </div>
+          <!-- Graphic -->
+          <div class="border border-secondary border-opacity-25 rounded-4 shadow-lg overflow-hidden">
+            <video #timezoneVideo src="public/media/timezone.mp4" class="w-100 h-auto d-block" muted [muted]="true" autoplay loop playsinline></video>
           </div>
-        </div>`
+        </div>
       </app-organism-split-info>
     </div>
   </div>
