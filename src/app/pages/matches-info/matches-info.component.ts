@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faUsers, faComments, faVideo, faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faComments, faBolt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-matches-info',
@@ -8,8 +8,7 @@ import { faUsers, faComments, faVideo, faGlobe } from '@fortawesome/free-solid-s
   styleUrl: './matches-info.component.scss'
 })
 export class MatchesInfoComponent {
-  faUsers = faUsers;
+  faSearch = faSearch;
   faComments = faComments;
-  faVideo = faVideo;
-  faGlobe = faGlobe;
+  faBolt = faBolt;
 }

@@ -1,40 +1,76 @@
 <div class="container-fluid animate__animated animate__fadeIn animate__duration-1s p-0 matches-page">
   <div class="container section-padding text-white">
-    
+
     <header class="text-center mb-5">
-      <app-atom-gradient-text tag="h1" text="Comunidades vivas. " gradientClass="text-gradient" additionalClasses="display-3 fw-bold mb-4">
+      <app-atom-gradient-text tag="h1" text="Comunidades vivas. " gradientClass="text-gradient"
+        additionalClasses="display-3 fw-bold mb-4">
         <span class="text-gradient">No foros fantasma.</span>
       </app-atom-gradient-text>
-      <p class="lead fs-4">El lugar definitivo para organizar partidas y conectar con jugadores activos de tus títulos favoritos.</p>
+      <p class="lead fs-4">El lugar definitivo para organizar partidas y conectar con jugadores activos de tus títulos
+        favoritos.</p>
     </header>
 
-    <app-atom-glass-panel additionalClasses="mb-5">
-      <app-organism-split-info title="Tú pones las reglas, la comunidad pone los jugadores" [reverseLayout]="false">
+    <!-- Sección 1: Búsqueda -->
+    <div class="mb-5 pb-5">
+      <app-organism-split-info title="Encuentra exactamente lo que buscas" [icon]="faSearch" iconColorClass="text-info"
+        [reverseLayout]="false">
         <div left-content>
-          <p class="fs-5 mb-3">Es simple: si quieres jugar un clásico de consola en emulador o el último shooter de PC, no deberías tener que crear un post y rezar para que alguien responda en 3 días.</p>
-          <p class="fs-5 mb-4">Selecciona tu juego, mira quién está activo y únete al lobby al instante. El matchmaking directo está aquí.</p>
-          <ul class="list-unstyled fs-5">
-            <li class="mb-3"><app-atom-feature-icon [icon]="faUsers" colorClass="text-info" sizeClass="fs-5 me-2"></app-atom-feature-icon> Sistema de búsqueda inteligente por juego y plataforma.</li>
-            <li class="mb-3"><app-atom-feature-icon [icon]="faComments" colorClass="text-info" sizeClass="fs-5 me-2"></app-atom-feature-icon> Chat de texto en vivo para cada partida.</li>
-            <li class="mb-3"><app-atom-feature-icon [icon]="faVideo" colorClass="text-info" sizeClass="fs-5 me-2"></app-atom-feature-icon> Videollamada y chat de voz integral, cero lag.</li>
-          </ul>
+          <p class="fs-4 lh-base text-secondary mb-4">
+            Selecciona tu plataforma favorita y Madnolia te mostrará al instante las partidas listas para unirse. Cero
+            filtros complejos, solo los juegos que amas.
+          </p>
         </div>
         <div right-content>
-          <!-- Graphic Placeholder -->
-          <div class="bg-dark border border-secondary rounded-4 shadow-lg p-5 d-flex flex-column align-items-center justify-content-center text-secondary ratio ratio-1x1">
-            <div class="d-flex flex-column align-items-center justify-content-center">
-              <app-atom-feature-icon [icon]="faGlobe" colorClass="text-secondary opacity-50" sizeClass="" additionalClasses="display-1 mb-3"></app-atom-feature-icon>
-              <h4>[Espacio para Imagen / GIF del Matchmaking / Chat]</h4>
-            </div>
+
+          <div class="border border-secondary border-opacity-25 rounded-4 shadow-lg overflow-hidden bg-dark">
+            <!-- <video src="public/media/matchmaking_search.mp4" class="w-100 h-auto d-block opacity-75" muted [muted]="true" autoplay loop playsinline></video> -->
           </div>
         </div>
       </app-organism-split-info>
-    </app-atom-glass-panel>
+    </div>
 
-    <section class="text-center mt-5">
+    <!-- Sección 2: Chat -->
+    <div class="mb-5 pb-5">
+      <app-organism-split-info title="Comunicación integrada, cero lag" [icon]="faComments"
+        iconColorClass="text-primary" [reverseLayout]="true">
+        <div left-content>
+          <p class="fs-4 lh-base text-secondary mb-4">
+            Cada partida tiene su propia sala de chat de texto, voz y videollamada integrado. Coordina tácticas,
+            comparte pantalla y comunícate con tu equipo sin tener que usar aplicaciones de terceros pesadas.
+          </p>
+        </div>
+        <div right-content>
+          <img src="public/media/gaming_community.svg" alt="">
+        </div>
+      </app-organism-split-info>
+    </div>
+
+    <!-- Sección 3: Conexión inmediata -->
+    <div class="mb-5 pb-5">
+      <app-organism-split-info title="Directo a la acción" [icon]="faBolt" iconColorClass="text-warning"
+        [reverseLayout]="false">
+        <div left-content>
+          <p class="fs-4 lh-base text-secondary mb-4">
+            Selecciona tu juego, mira quién está activo y únete al lobby instantáneamente. Si es una red LAN privada,
+            Madnolia sincroniza la conexión mágicamente sin configurar puertos.
+          </p>
+        </div>
+        <div right-content>
+          <div class="border border-secondary border-opacity-25 rounded-4 shadow-lg overflow-hidden bg-dark">
+            <video src="public/media/matchmaking_join.mp4" class="w-100 h-auto d-block opacity-75" muted [muted]="true"
+              autoplay loop playsinline></video>
+          </div>
+        </div>
+      </app-organism-split-info>
+    </div>
+
+    <section class="text-center mt-5 mb-5 pb-5">
       <h2 class="display-5 fw-bold mb-4">Explora el Catálogo</h2>
-      <p class="fs-5 mb-4">Miles de juegos te esperan. Encuentra el tuyo.</p>
-      <a routerLink="/platforms" class="btn btn-primary btn-lg px-5 py-3 rounded-pill fw-bold shadow-lg">Ver Plataformas Disponibles</a>
+      <p class="fs-4 text-secondary mb-5">Miles de juegos te esperan. Encuentra el tuyo.</p>
+      <a routerLink="/platforms" class="btn btn-premium btn-lg px-5 py-3 rounded-pill fs-4 fw-bold shadow-lg"
+        style="letter-spacing: 0.5px;">
+        Ver Plataformas Disponibles
+      </a>
     </section>
 
   </div>
