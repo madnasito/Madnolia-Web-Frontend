@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MatchService } from '../../../core/services/match.service';
 import { PlatformFather } from '../enums/platform-father.enum';
 import { PlatformWithMatches } from '../../../core/interfaces/match/platform-with-matches.interface';
-import { Observable, switchMap } from 'rxjs';
+import { Observable, switchMap, tap } from 'rxjs';
 import { resizeGameImage } from '../../../shared/utils/resize-imate.util';
 import { SeoService } from '../../../core/services/seo.service';
 import { isPlatformBrowser } from '@angular/common';
@@ -32,7 +32,19 @@ export class PlatformComponent implements OnInit {
         this.currentPlatformName = this.formatPlatformName(platformName);
         this.setParentId(platformName);
         this.setPlatformSEOMetadata(this.currentPlatformName);
-        return this.matchService.getMatchesByPlatformParent(this.parentSlug);
+        return this.matchService.getMatchesByPlatformParent(this.parentSlug).pipe(
+          tap(() => {
+            if (isPlatformBrowser(this.platformId)) {
+              setTimeout(() => {
+                const element = document.getElementById('games-section');
+                if (element) {
+                  const y = element.getBoundingClientRect().top + window.scrollY - 100;
+                  window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+              }, 0);
+            }
+          })
+        );
       })
     );
   }
