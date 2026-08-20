@@ -45,7 +45,7 @@
       <div class="text-center mb-5 pb-4">
         <h2 class="display-5 fw-bolder mb-3"
           style="background: linear-gradient(90deg, #ffffff, #a5b4fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-          La magia, explicada sin tecnicismos</h2>
+          Partidas LAN en linea sin tecnicismos</h2>
         <p class="fs-5 text-secondary">Tres pasos simples. Cero configuración de red.</p>
       </div>
 
@@ -66,11 +66,12 @@
         <div class="col-lg-7">
           <div class="rounded-4 overflow-hidden border border-info border-opacity-25 shadow-lg position-relative"
             style="background: rgba(34,211,238,0.02);">
-            <div class="ratio ratio-16x9 d-flex flex-column align-items-center justify-content-center text-center p-4">
-              <app-atom-feature-icon [icon]="faToggleOn" colorClass=""
-                additionalClasses="text-info display-1 mb-3 opacity-75"></app-atom-feature-icon>
-              <h4 class="text-info opacity-75">[GIF: Haciendo clic en el Toggle de LAN]</h4>
-            </div>
+
+            <video autoplay loop muted playsinline class="w-100 h-auto d-block border-0"
+              style="min-height: 350px; background: transparent;">
+              <source src="public/media/lan_toggle_en.mp4" type="video/mp4">
+            </video>
+
           </div>
         </div>
       </div>
@@ -92,13 +93,11 @@
           </p>
         </div>
         <div class="col-lg-7">
-          <div class="rounded-4 overflow-hidden border border-info border-opacity-25 shadow-lg position-relative"
+          <div
+            class="rounded-4 overflow-hidden border border-info border-opacity-25 shadow-lg position-relative d-flex flex-column align-items-center justify-content-center"
             style="background: rgba(34,211,238,0.02);">
-            <div class="ratio ratio-16x9 d-flex flex-column align-items-center justify-content-center text-center p-4">
-              <app-atom-feature-icon [icon]="faWifi" colorClass=""
-                additionalClasses="text-info display-1 mb-3 opacity-75"></app-atom-feature-icon>
-              <h4 class="text-info opacity-75">[GIF: Conectando participantes a la red]</h4>
-            </div>
+            <iframe src="public/media/networking.svg" frameborder="0" allowtransparency="true"
+              class="w-100 h-auto d-block border-0" style="min-height: 350px; background: transparent;"></iframe>
           </div>
         </div>
       </div>
