@@ -48,3 +48,9 @@
   font-weight: bold;
   color: white;
 }
+
+@media (min-width: 992px) {
+  .responsive-media {
+    min-height: 350px;
+  }
+}

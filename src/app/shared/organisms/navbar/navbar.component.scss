@@ -1,6 +1,6 @@
 .active-mobile {
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(255, 0, 51), crimson, rgb(255, 0, 51), rgba(0, 0, 0, 0));
-    border-radius: 30px;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(255, 0, 51), crimson, rgb(255, 0, 51), rgba(0, 0, 0, 0));
+  border-radius: 30px;
 }
 
 /* Hide active-mobile on desktop */
@@ -9,18 +9,28 @@
     background: none;
     border-radius: 0;
   }
+
   i {
     display: none;
   }
 }
 
-.active{
-    position: relative;
+.active {
+  position: relative;
 }
 
 
 a {
-    padding: 10px;
-    padding-left: 20px;
+  padding: 10px;
+  padding-left: 20px;
 }
 
+@media (max-width: 991.98px) {
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+  }
+
+
+}
+
+/* Efecto de cristal (transparente oscurecido) para el navbar y menú en móviles */
