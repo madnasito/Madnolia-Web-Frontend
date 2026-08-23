@@ -1,6 +1,5 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
 import { faNetworkWired, faPlayCircle, faDesktop, faGamepad, faToggleOn, faImage, faCheckCircle, faWifi, faShareAlt, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import Hls from 'hls.js';
 
 @Component({
   selector: 'app-lan-party',
@@ -10,7 +9,7 @@ import Hls from 'hls.js';
 })
 export class LanPartyComponent implements AfterViewInit, OnDestroy {
   @ViewChild('lanGamesVideo') lanGamesVideo!: ElementRef<HTMLVideoElement>;
-  private hls: Hls | null = null;
+  private hls: any = null; // Usar any porque lo importaremos dinámicamente
 
   faNetworkWired = faNetworkWired;
   faPlayCircle = faPlayCircle;
@@ -23,18 +22,23 @@ export class LanPartyComponent implements AfterViewInit, OnDestroy {
   faShareAlt = faShareAlt;
   faArrowRight = faArrowRight;
 
-  ngAfterViewInit() {
+  async ngAfterViewInit() {
     if (this.lanGamesVideo) {
       const video = this.lanGamesVideo.nativeElement;
       const videoSrc = 'public/media/lan_games_hls/master.m3u8';
 
-      if (Hls.isSupported()) {
-        this.hls = new Hls();
-        this.hls.loadSource(videoSrc);
-        this.hls.attachMedia(video);
-      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        // Native support for Safari
+      // Primero chequear soporte nativo (Safari)
+      if (video.canPlayType('application/vnd.apple.mpegurl')) {
         video.src = videoSrc;
+      } else {
+        // Importación dinámica de hls.js para no saturar el bundle principal
+        const Hls = (await import('hls.js')).default;
+        
+        if (Hls.isSupported()) {
+          this.hls = new Hls();
+          this.hls.loadSource(videoSrc);
+          this.hls.attachMedia(video);
+        }
       }
     }
   }
