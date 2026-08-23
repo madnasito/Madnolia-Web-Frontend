@@ -27,15 +27,11 @@
       <div
         class="mx-auto rounded-4 overflow-hidden border border-secondary border-opacity-25 shadow-lg position-relative"
         style="max-width: 1000px;">
-        <div class="ratio ratio-21x9 bg-dark">
-          <div class="d-flex flex-column align-items-center justify-content-center text-center p-5 position-relative"
-            style="background: linear-gradient(to bottom, rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.8)); backdrop-filter: blur(10px);">
-            <app-atom-feature-icon [icon]="faPlayCircle" colorClass=""
-              additionalClasses="text-info display-1 mb-4 opacity-75"></app-atom-feature-icon>
-            <h3 class="fw-bold text-white mb-2">[Video: Compilación de Gameplays LAN]</h3>
-            <p class="text-white-50 mb-0">Minecraft, Age of Empires, Emuladores clásicos funcionando a la perfección.
-            </p>
-          </div>
+        <div class="">
+          <video autoplay loop muted playsinline class="w-100 h-auto d-block border-0 responsive-media"
+            style="background: transparent;">
+            <source src="public/media/lan_games.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </div>
