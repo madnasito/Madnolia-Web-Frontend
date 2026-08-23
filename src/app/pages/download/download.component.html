@@ -1,38 +1,142 @@
 <div class="container-fluid animate__animated animate__fadeIn animate__duration-1s p-0 download-page">
-  <div class="container section-padding text-white text-center">
-    
-    <header class="mb-5">
-      <app-atom-gradient-text tag="h1" text="El punto de " gradientClass="text-gradient-download" additionalClasses="display-2 fw-bold mb-4">
-        <span class="text-gradient-download">encuentro</span>
-      </app-atom-gradient-text>
-      <p class="lead fs-4 mb-5">Lleva la comunidad en tu bolsillo o instala el centro de control en tu PC.</p>
+  <div class="container text-white text-center position-relative" style="z-index: 1;">
+
+    <!-- Hero Section -->
+    <header class="mb-5 pt-5 pb-3">
+      <h1 class="display-2 fw-bolder mb-3">
+        Descarga <br class="d-md-none">
+        <span class="text-gradient-download">Madnolia</span>
+      </h1>
+      <p class="lead fs-4 text-secondary mx-auto" style="max-width: 700px;">
+        Lleva la comunidad en tu bolsillo o instala el centro de control en tu PC. Empieza tu experiencia LAN en
+        segundos.
+      </p>
     </header>
 
-    <div class="row justify-content-center g-5 mb-5">
-      <!-- Desktop Download -->
-      <div class="col-md-5">
-        <app-atom-glass-panel additionalClasses="h-100 d-flex flex-column justify-content-center align-items-center p-5">
-          <app-atom-feature-icon [icon]="faDesktop" sizeClass="display-4" additionalClasses="mb-4"></app-atom-feature-icon>
-          <h3 class="mb-3">Versión de Escritorio</h3>
-          <p class="mb-4">Para los que hostean. Crea partidas LAN, usa el videochat y organiza el escuadrón desde la mejor pantalla.</p>
-          <app-molecule-download-btn type="button" text="Descargar para Windows" buttonClass="btn-primary w-100 mb-3"></app-molecule-download-btn>
-          <div class="d-flex gap-2">
-            <a href="#" class="btn btn-outline-light btn-sm rounded-pill">Mac</a>
-            <a href="#" class="btn btn-outline-light btn-sm rounded-pill">Linux</a>
+    <!-- Download Cards -->
+    <div class="row justify-content-center g-4 mb-5 pb-5">
+
+      <!-- Desktop Download (Primary) -->
+      <div class="col-lg-5 col-md-6">
+        <div
+          class="download-card card-primary h-100 d-flex flex-column justify-content-between p-5 animate__animated animate__fadeInUp">
+          <div>
+            <app-atom-feature-icon [icon]="faDesktop" sizeClass="display-4"
+              additionalClasses="mb-4 text-info opacity-75"></app-atom-feature-icon>
+            <h3 class="fw-bold mb-3 text-white">Versión de Escritorio</h3>
+            <p class="text-secondary mb-4 fs-5">
+              Para los que hostean. Crea partidas LAN directas, usa el videochat y organiza tu escuadrón con máximo
+              rendimiento.
+            </p>
           </div>
-        </app-atom-glass-panel>
+          <div class="mt-4">
+            @if (detectedOS === 'linux') {
+            <app-molecule-download-btn type="button" text="Descargar para Linux (.deb)"
+              buttonClass="btn-premium w-100 py-3 fs-5 mb-4 shadow-lg rounded-pill"></app-molecule-download-btn>
+            <div class="d-flex justify-content-center gap-3">
+              <a href="#" class="btn btn-sm btn-outline-secondary rounded-pill px-3">Descargar para Windows</a>
+            </div>
+            } @else {
+            <app-molecule-download-btn type="button" text="Descargar para Windows"
+              buttonClass="btn-premium w-100 py-3 fs-5 mb-4 shadow-lg rounded-pill"></app-molecule-download-btn>
+            <div class="d-flex justify-content-center gap-3">
+              <a href="#" class="btn btn-sm btn-outline-secondary rounded-pill px-3">Descargar para Linux (.deb)</a>
+            </div>
+            }
+          </div>
+        </div>
       </div>
-      
-      <!-- Mobile Download -->
-      <div class="col-md-5">
-        <app-atom-glass-panel additionalClasses="h-100 d-flex flex-column justify-content-center align-items-center p-5">
-          <app-atom-feature-icon [icon]="faMobileScreen" sizeClass="display-4" additionalClasses="mb-4"></app-atom-feature-icon>
-          <h3 class="mb-3">Versión Móvil</h3>
-          <p class="mb-4">Mantente conectado. Busca partidas mientras vas en el bus y únete al chat de voz desde cualquier lugar.</p>
-          <app-molecule-download-btn type="store" url="https://play.google.com/store/apps/details?id=com.madnolia.app" imageSrc="assets/google-play-badge.png"></app-molecule-download-btn>
-        </app-atom-glass-panel>
+
+      <!-- Mobile Download (Secondary) -->
+      <div class="col-lg-5 col-md-6">
+        <div
+          class="download-card h-100 d-flex flex-column justify-content-between p-5 animate__animated animate__fadeInUp"
+          style="animation-delay: 0.2s;">
+          <div>
+            <app-atom-feature-icon [icon]="faMobileScreen" sizeClass="display-4"
+              additionalClasses="mb-4 text-info opacity-75"></app-atom-feature-icon>
+            <h3 class="fw-bold mb-3 text-white">Versión Móvil</h3>
+            <p class="text-secondary mb-4 fs-5">
+              Mantente conectado 24/7. Busca partidas mientras vas en el bus y únete al chat desde cualquier lugar.
+            </p>
+          </div>
+          <div class="mt-4">
+            <a href="#" class="d-inline-block transition-transform" style="transition: transform 0.2s;"
+              onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+              <img src="public/media/google-play-badge.png" alt="Get it on Google Play" height="60"
+                style="object-fit: contain;">
+            </a>
+            <p class="mt-3 text-secondary small">Disponible también en iOS próximamente.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Features Section -->
+    <div class="py-5 my-5 border-top border-secondary border-opacity-25">
+      <div class="mb-5">
+        <h2 class="display-5 fw-bolder mb-3 text-white">¿Por qué Madnolia?</h2>
+        <p class="fs-5 text-secondary">Tecnología de punta diseñada específicamente para gamers.</p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <!-- Feature 1 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-box text-center animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+            <div
+              class="rounded-circle bg-info bg-opacity-10 text-info d-inline-flex align-items-center justify-content-center mb-4"
+              style="width: 80px; height: 80px;">
+              <app-atom-feature-icon [icon]="faWifi" sizeClass="fs-1"></app-atom-feature-icon>
+            </div>
+            <h4 class="fw-bold text-white mb-3">Conexión P2P Segura</h4>
+            <p class="text-secondary mb-0">Túneles WireGuard® encriptados de extremo a extremo. Cero lag, máxima
+              privacidad y estabilidad perfecta.</p>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-box text-center animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+            <div
+              class="rounded-circle bg-primary bg-opacity-10 text-primary d-inline-flex align-items-center justify-content-center mb-4"
+              style="width: 80px; height: 80px;">
+              <app-atom-feature-icon [icon]="faGamepad" sizeClass="fs-1"></app-atom-feature-icon>
+            </div>
+            <h4 class="fw-bold text-white mb-3">Compatibilidad Total</h4>
+            <p class="text-secondary mb-0">Funciona con cualquier juego clásico o emulador que tenga soporte para red
+              local (LAN). Cero configuración de router.</p>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-box text-center animate__animated animate__fadeInUp" style="animation-delay: 0.5s;">
+            <div
+              class="rounded-circle bg-purple bg-opacity-10 d-inline-flex align-items-center justify-content-center mb-4"
+              style="width: 80px; height: 80px; color: #c084fc; background-color: rgba(192, 132, 252, 0.1);">
+              <app-atom-feature-icon [icon]="faHeadset" sizeClass="fs-1"></app-atom-feature-icon>
+            </div>
+            <h4 class="fw-bold text-white mb-3">Voz Integrada</h4>
+            <p class="text-secondary mb-0">Chat de voz espacial nativo sin consumir recursos extra. Habla con tu equipo
+              desde PC o tu celular.</p>
+          </div>
+        </div>
       </div>
     </div>
-    
+
+    <!-- CTA Banner -->
+    <div class="py-5 mb-5">
+      <div class="cta-banner animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
+        <h2 class="display-4 fw-bolder text-white mb-4">La comunidad te espera</h2>
+        <p class="fs-4 text-white opacity-75 mb-5 mx-auto" style="max-width: 600px;">Miles de jugadores ya están creando
+          partidas y reviviendo clásicos. Únete ahora.</p>
+        <button class="btn btn-light btn-lg px-5 py-3 fs-5 rounded-pill shadow-lg text-dark fw-bold"
+          onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+          Comenzar la Descarga
+        </button>
+      </div>
+    </div>
+
   </div>
 </div>

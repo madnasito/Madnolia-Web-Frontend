@@ -1,237 +1,125 @@
-/* Download Page Styles */
 .download-page {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   color: #ffffff;
-  background: linear-gradient(to right, rgb(90, 0, 0), rgb(0, 0, 80), black);
+  /* El fondo se hereda de styles.scss (rojo y azul en modo oscuro) */
   min-height: 100vh;
-  padding-top: 2rem;
+  padding-top: 12rem;
+  padding-bottom: 5rem;
 }
 
-/* Hero Section */
-.hero-section {
-  padding: 4rem 0;
-  
-  .hero-content {
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 1.5rem;
-      line-height: 1.3;
-      background: linear-gradient(to right, #ff6b6b, #4dabff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    
-    .lead {
-      font-size: 1.25rem;
-      margin-bottom: 2.5rem;
-      color: rgba(255, 255, 255, 0.9);
-    }
-  }
-  
-  .download-cta {
-    margin-top: 2rem;
-    
-    .play-store-btn {
-      display: inline-block;
-      transition: transform 0.3s ease;
-      
-      &:hover {
-        transform: scale(1.05);
-      }
-    }
-    
-    .small-text {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.7);
-      margin-top: 0.5rem;
-    }
-  }
-  
-  .hero-image {
-    img {
-      border-radius: 20px;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-      transform: perspective(1000px) rotateY(-10deg);
-      transition: transform 0.5s ease;
-      
-      &:hover {
-        transform: perspective(1000px) rotateY(-5deg);
-      }
-    }
-  }
+/* Gradient Text specifically for this page if needed */
+.text-gradient-download {
+  background: linear-gradient(135deg, #22d3ee, #a5b4fc, #c084fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  text-shadow: 0 0 30px rgba(34, 211, 238, 0.3);
 }
 
-/* Features Section */
-.features-section {
-  padding: 4rem 0;
-  background: rgba(255, 255, 255, 0.05);
+/* Download Cards Styling */
+.download-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
   
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 3rem;
-    color: white;
-    text-align: center;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, rgba(34,211,238,0), rgba(34,211,238,0.5), rgba(34,211,238,0));
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
   
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1000px;
-    margin: 0 auto;
+  &:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(34, 211, 238, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(34, 211, 238, 0.1);
+    
+    &::before {
+      opacity: 1;
+    }
   }
-  
-  .feature-card {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(10px);
-    border-radius: 12px;
-    padding: 2rem;
-    text-align: center;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+
+  &.card-primary {
+    border: 1px solid rgba(165, 180, 252, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 0 20px rgba(165, 180, 252, 0.05);
+    
+    &::before {
+      background: linear-gradient(90deg, #22d3ee, #a5b4fc);
+      opacity: 0.8;
+    }
     
     &:hover {
-      transform: translateY(-5px);
-      background: rgba(255, 255, 255, 0.12);
-    }
-    
-    .feature-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
-    }
-    
-    h3 {
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-      color: white;
-    }
-    
-    p {
-      color: rgba(255, 255, 255, 0.8);
-      line-height: 1.6;
+      border-color: rgba(165, 180, 252, 0.5);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(165, 180, 252, 0.2);
     }
   }
 }
 
-/* Screenshots Section */
-.screenshots-section {
-  padding: 4rem 0;
+/* Feature Cards */
+.feature-box {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2rem;
+  height: 100%;
+  transition: all 0.3s ease;
   
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 3rem;
-    color: white;
-    text-align: center;
-  }
-  
-  .screenshots {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin: 0 auto;
-    
-    .screenshot {
-      width: 100%;
-      max-width: 300px;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-      transition: transform 0.3s ease;
-      
-      &:hover {
-        transform: scale(1.03);
-      }
-    }
+  &:hover {
+    background: rgba(255, 255, 255, 0.04);
+    transform: translateY(-5px);
+    border-color: rgba(34, 211, 238, 0.2);
   }
 }
 
-/* Final CTA */
-.final-cta {
-  padding: 4rem 0;
-  background: linear-gradient(to right, rgba(200, 0, 0, 0.7), rgba(0, 0, 200, 0.7));
-  
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: white;
-  }
-  
-  .cta-button {
-    display: inline-block;
-    background: white;
-    color: #5a0000;
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    font-weight: 700;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    
-    &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-    }
-  }
-  
-  .small-text {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
-    margin-top: 1rem;
-  }
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .hero-section {
-    text-align: center;
-    padding: 3rem 0;
-    
-    .hero-image {
-      margin-top: 2rem;
-    }
-  }
-  
-  .features-grid {
-    grid-template-columns: 1fr !important;
-  }
-  
-  .screenshots {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-/* Animation timing and smoothing */
+/* Animations */
 .animate__animated {
   animation-duration: 0.8s;
   animation-fill-mode: both;
 }
 
-/* Screenshots container */
-.screenshots {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-/* Feature cards hover effect */
-.feature-card:hover {
-  transform: translateY(-5px);
-  transition: transform 0.3s ease;
-}
-
-/* Mobile optimizations */
-@media (max-width: 768px) {
-  .animate__animated {
-    animation-delay: 0s !important;
-  }
+/* CTA Section */
+.cta-banner {
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.1), rgba(165, 180, 252, 0.1));
+  border: 1px solid rgba(165, 180, 252, 0.2);
+  border-radius: 24px;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
   
-  .hero-content, .hero-image {
-    text-align: center;
+  &::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 50%);
+    animation: rotate 20s linear infinite;
+    pointer-events: none;
+  }
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .download-page {
+    padding-top: 5rem;
+  }
+  .display-2 {
+    font-size: 3rem;
   }
 }
