@@ -8,6 +8,7 @@ import { MatchService } from '../../../core/services/match.service';
 import { MatchInfo } from '../../../core/interfaces/match/match-info.interface';
 import { Game } from '../../../core/interfaces/game/game.interface';
 import { GamesService } from '../../../core/services/games.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-platform-game',
@@ -23,6 +24,7 @@ export class PlatformGameComponent implements OnInit {
   private readonly titleService = inject(Title);
   private readonly metaService = inject(Meta);
   private readonly platformId = inject(PLATFORM_ID);
+  private translateService = inject(TranslateService);
 
   matches$!: Observable<MatchInfo[]>;
   game$!: Observable<Game>;
@@ -66,20 +68,20 @@ export class PlatformGameComponent implements OnInit {
   }
 
   private updateGameSEOMetadata(game: Game): void {
-    const title = `${this.currentGameName} Matches for ${this.currentPlatformName} | Madnolia`;
-    const description = `Find and join ${this.currentGameName} matches on ${this.currentPlatformName}. Schedule games, connect with players, and compete.`;
+    this.translateService.get('SEO.PLATFORM_GAME.TITLE', { game: this.currentGameName, platform: this.currentPlatformName }).subscribe(title => {
+      this.titleService.setTitle(title);
+      this.translateService.get('SEO.PLATFORM_GAME.DESC', { game: this.currentGameName, platform: this.currentPlatformName }).subscribe(description => {
+        this.metaService.updateTag({ name: 'description', content: description });
+        this.metaService.updateTag({ property: 'og:title', content: title });
+        this.metaService.updateTag({ property: 'og:description', content: description });
+        this.metaService.updateTag({ property: 'og:image', content: this.imageUrl });
+        this.metaService.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
 
-    this.titleService.setTitle(title);
-    
-    this.metaService.updateTag({ name: 'description', content: description });
-    this.metaService.updateTag({ property: 'og:title', content: title });
-    this.metaService.updateTag({ property: 'og:description', content: description });
-    this.metaService.updateTag({ property: 'og:image', content: this.imageUrl });
-    this.metaService.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
-
-    if (isPlatformBrowser(this.platformId)) {
-      this.metaService.updateTag({ property: 'og:url', content: window.location.href });
-    }
+        if (isPlatformBrowser(this.platformId)) {
+          this.metaService.updateTag({ property: 'og:url', content: window.location.href });
+        }
+      });
+    });
   }
 
   private formatName(slug: string): string {

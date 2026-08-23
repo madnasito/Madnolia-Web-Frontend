@@ -1,30 +1,29 @@
 <div class="container-fluid animate__animated animate__fadeIn animate__duration-1s p-0">
 
   <!-- Hero Section -->
-  <app-organism-hero-section title="Tu juego, " highlightedText="tu partida, " titleSuffix="tus reglas."
-    subtitle="Planifica tus partidas en segundos. Reúne a tu equipo, coordina horarios y lánzate a jugar en red local.">
-    <a routerLink="/download" class="btn btn-premium btn-lg px-5 py-3 rounded-pill fw-bold shadow-lg">Descargar
-      Madnolia</a>
+  <app-organism-hero-section [title]="'LANDING.HERO.TITLE_1' | translate" [highlightedText]="'LANDING.HERO.HIGHLIGHT' | translate" [titleSuffix]="'LANDING.HERO.TITLE_2' | translate"
+    [subtitle]="'LANDING.HERO.SUBTITLE' | translate">
+    <a routerLink="/download" class="btn btn-premium btn-lg px-5 py-3 rounded-pill fw-bold shadow-lg">{{ 'LANDING.HERO.BTN' | translate }}</a>
   </app-organism-hero-section>
 
   <!-- El Problema (The Villain) -->
   <app-organism-feature-grid class="section-padding text-white d-block"
-    title="Menos tiempo buscando. Más tiempo jugando.">
+    [title]="'LANDING.VILLAIN.TITLE' | translate">
     <div class="col-md-4">
-      <app-molecule-feature-card [icon]="faSearch" iconColorClass="text-danger" title="Buscabas en 5 foros distintos"
-        description="Ahora encuentras tu partida en un solo clic. Deja de mendigar un +1 en Discord. Busca tu juego y entra directo al lobby.">
+      <app-molecule-feature-card [icon]="faSearch" iconColorClass="text-danger" [title]="'LANDING.VILLAIN.CARD1.TITLE' | translate"
+        [description]="'LANDING.VILLAIN.CARD1.DESC' | translate">
       </app-molecule-feature-card>
     </div>
     <div class="col-md-4">
       <app-molecule-feature-card [icon]="faTools" iconColorClass="text-warning"
-        title="Usabas un programa de red distinto para cada juego"
-        description="Ahora juegas en LAN como si estuvieran en la misma red. Olvídate de probar apps de terceros o abrir puertos; el sistema conecta a tu equipo por detrás de escena.">
+        [title]="'LANDING.VILLAIN.CARD2.TITLE' | translate"
+        [description]="'LANDING.VILLAIN.CARD2.DESC' | translate">
       </app-molecule-feature-card>
     </div>
     <div class="col-md-4">
       <app-molecule-feature-card [icon]="faMicrophoneSlash" iconColorClass="text-info"
-        title="Tenías 3 apps consumiendo RAM"
-        description="Ahora todo tu centro de control está en una sola app. Voz, video y matchmaking integrados sin sacrificar los FPS de tu juego.">
+        [title]="'LANDING.VILLAIN.CARD3.TITLE' | translate"
+        [description]="'LANDING.VILLAIN.CARD3.DESC' | translate">
       </app-molecule-feature-card>
     </div>
   </app-organism-feature-grid>
@@ -32,12 +31,11 @@
   <!-- La Solución (The Guide) -->
   <div class="section-padding text-white">
     <div class="container-fluid px-4 px-xl-5">
-      <app-organism-split-info title="Encuentra tu próxima partida o crea la tuya al instante" [icon]="faGamepad"
+      <app-organism-split-info [title]="'LANDING.SOLUTION.TITLE' | translate" [icon]="faGamepad"
         iconColorClass="text-primary" [reverseLayout]="false">
         <div left-content>
           <p class="fs-4 lh-base text-secondary">
-            Tú eliges el juego, yo pongo la infraestructura. Encuentra tu próxima partida, comunícate con un
-            chat de voz de baja latencia y juega con la comunidad entera sin salir de una sola plataforma.
+            {{ 'LANDING.SOLUTION.DESC' | translate }}
           </p>
         </div>
         <div right-content>
@@ -53,12 +51,10 @@
   <!-- Zonas Horarias (The Villain / Solution) -->
   <div class="section-padding text-white pt-0">
     <div class="container-fluid px-4 px-xl-5">
-      <app-organism-split-info title="¿A qué hora dijiste que era la partida?" [icon]="faClock"
+      <app-organism-split-info [title]="'LANDING.TIMEZONE.TITLE' | translate" [icon]="faClock"
         iconColorClass="text-info" [reverseLayout]="true">
         <div left-content>
-          <p class="fs-4 lh-base text-secondary">
-            Nunca más vuelvas a calcular la hora. Madnolia sincroniza y convierte <strong>automáticamente</strong> las
-            invitaciones internacionales a tu zona local. Cero matemáticas, cero confusiones.
+          <p class="fs-4 lh-base text-secondary" [innerHTML]="'LANDING.TIMEZONE.DESC' | translate">
           </p>
         </div>
         <div right-content>
@@ -74,18 +70,16 @@
   <!-- VLAN (The Magic) -->
   <div class="section-padding text-white pt-0">
     <div class="container-fluid px-4 px-xl-5">
-      <app-organism-split-info title="Tu propia red LAN con un solo clic" [icon]="faNetworkWired"
+      <app-organism-split-info [title]="'LANDING.VLAN.TITLE' | translate" [icon]="faNetworkWired"
         iconColorClass="text-white opacity-75" [reverseLayout]="false">
         <div left-content>
           <p class="fs-4 lh-base text-secondary">
-            Crear una red virtual privada (VLAN) nunca fue tan fácil. Simplemente activa el interruptor de red LAN en tu
-            sala y conecta a todos los participantes mágicamente. Cero puertos por abrir, cero
-            configuraciones complejas.
+            {{ 'LANDING.VLAN.DESC' | translate }}
           </p>
           <div class="mt-4">
             <a routerLink="/lan-party" class="btn btn-outline-light rounded-pill px-5 py-2 fw-bold shadow-sm"
               style="letter-spacing: 0.5px;">
-              Conoce más sobre cómo funciona
+              {{ 'LANDING.VLAN.BTN' | translate }}
             </a>
           </div>
         </div>
@@ -100,30 +94,29 @@
   </div>
 
   <!-- El Plan -->
-  <app-organism-feature-grid class="section-padding text-white d-block" title="El camino hacia la acción">
+  <app-organism-feature-grid class="section-padding text-white d-block" [title]="'LANDING.PLAN.TITLE' | translate">
     <div class="col-md-4">
       <app-molecule-step-card stepNumber="1" stepColorClass="bg-primary" [icon]="faDownload"
-        iconColorClass="text-primary" title="Descarga y Configura"
-        description="Descarga la app, crea tu cuenta y selecciona las plataformas en las que juegas."></app-molecule-step-card>
+        iconColorClass="text-primary" [title]="'LANDING.PLAN.CARD1.TITLE' | translate"
+        [description]="'LANDING.PLAN.CARD1.DESC' | translate"></app-molecule-step-card>
     </div>
     <div class="col-md-4">
       <app-molecule-step-card stepNumber="2" stepColorClass="bg-primary" [icon]="faCalendarPlus"
-        iconColorClass="text-primary" title="Agenda tu partida"
-        description="Crea una sala, elige el juego, define la fecha e invita a tus amigos o a la comunidad."></app-molecule-step-card>
+        iconColorClass="text-primary" [title]="'LANDING.PLAN.CARD2.TITLE' | translate"
+        [description]="'LANDING.PLAN.CARD2.DESC' | translate"></app-molecule-step-card>
     </div>
     <div class="col-md-4">
       <app-molecule-step-card stepNumber="3" stepColorClass="bg-primary" [icon]="faHeadset"
-        iconColorClass="text-primary" title="Únete y Juega"
-        description="Recibe una notificación cuando sea la hora, únete al lobby y comunícate al instante."></app-molecule-step-card>
+        iconColorClass="text-primary" [title]="'LANDING.PLAN.CARD3.TITLE' | translate"
+        [description]="'LANDING.PLAN.CARD3.DESC' | translate"></app-molecule-step-card>
     </div>
   </app-organism-feature-grid>
 
   <!-- Call to Action -->
   <section class="section-padding text-center text-white">
     <div class="container-fluid px-4 px-xl-5">
-      <h2 class="display-4 fw-bold mb-4">La comunidad te está esperando</h2>
-      <a routerLink="/download" class="btn btn-premium btn-lg px-5 py-3 rounded-pill fw-bold shadow-lg">Comenzar
-        Ahora</a>
+      <h2 class="display-4 fw-bold mb-4">{{ 'LANDING.CTA.TITLE' | translate }}</h2>
+      <a routerLink="/download" class="btn btn-premium btn-lg px-5 py-3 rounded-pill fw-bold shadow-lg">{{ 'LANDING.CTA.BTN' | translate }}</a>
     </div>
   </section>
 

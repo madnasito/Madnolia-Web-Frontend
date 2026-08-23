@@ -44,28 +44,43 @@
 		"TITLE": "Select the platform"
 	},
 	"DOWNLOAD": {
-		"TITLE": "Download Madnolia App | The Ultimate Gaming Companion (Coming Soon)",
-		"ACTION": {
-			"LOBBY": "GameMatch app - Match Lobby screen",
-			"MATCH": "GameMatch app - Create Match screen",
-			"NOTIFICATIONS": "GameMatch app - Notification center",
-			"TITLE": "See It In Action"
+		"HERO": {
+			"TITLE_1": "Download",
+			"TITLE_2": "Madnolia",
+			"DESC": "Take the community in your pocket or install the command center on your PC. Start your LAN experience in seconds."
 		},
-		"BOTTOM": {
-			"SUBTITLE": "Free to download - No hidden fees",
-			"TITLE": "Ready to Transform Your Gaming Experience?"
+		"DESKTOP": {
+			"TITLE": "Desktop Version",
+			"DESC": "For those who host. Create direct LAN matches, use video chat, and organize your squad with maximum performance.",
+			"BTN_LINUX": "Download for Linux (.deb)",
+			"BTN_WINDOWS": "Download for Windows"
 		},
-		"CARDS": {
-			"SUBTITLE_1": "Connect with players across PC, console, and mobile",
-			"SUBTITLE_2": "Get alerts when matches start or friends invite you",
-			"SUBTITLE_3": "Create your gaming squad and play together regularly",
-			"TITLE": "Why Gamers Love Our App",
-			"TITLE_1": "Cross-Platform Matchmaking",
-			"TITLE_2": "Smart Notifications",
-			"TITLE_3": "Community Building"
+		"MOBILE": {
+			"TITLE": "Mobile Version",
+			"DESC": "Stay connected 24/7. Find matches while on the bus and join the voice chat from anywhere.",
+			"IOS_SOON": "Available on iOS soon."
 		},
-		"SUBTITLE": "Organize matches, connect with players, and never game alone again",
-		"HEADER": "Get the Ultimate Gaming Companion"
+		"FEATURES": {
+			"TITLE": "Why Madnolia?",
+			"DESC": "Cutting-edge technology designed specifically for gamers.",
+			"CARD1": {
+				"TITLE": "Secure P2P Connection",
+				"DESC": "End-to-end encrypted WireGuard® tunnels. Zero lag, maximum privacy, and perfect stability."
+			},
+			"CARD2": {
+				"TITLE": "Total Compatibility",
+				"DESC": "Works with any classic game or emulator that supports Local Area Network (LAN). Zero router configuration."
+			},
+			"CARD3": {
+				"TITLE": "Integrated Voice",
+				"DESC": "Native spatial voice chat without consuming extra resources. Talk to your team from PC or your phone."
+			}
+		},
+		"CTA": {
+			"TITLE": "The community is waiting for you",
+			"DESC": "Thousands of players are already creating matches and reliving classics. Join now.",
+			"BTN": "Start Download"
+		}
 	},
 	"GAME": {
 		"DATE": "Date",
@@ -120,7 +135,9 @@
 		"GAMES": "{{platform}} Games",
 		"NO_MATCHES": "No matches found for {{platform}}",
 		"NO_MATCHES_CREATE": "Be the first to create a match for {{platform}}",
-		"SELECT": "Select a platform"
+		"SELECT": "Select a platform",
+		"HERO_TITLE": "Your next match starts here.",
+		"HERO_DESC": "PC, emulators, or consoles. Choose your platform and find your next match."
 	},
 	"PRESENTATION": {
 		"SUBTITLE": "Schedule matches for any retro or modern platform",
@@ -137,7 +154,7 @@
 			"REPLY": "Reply",
 			"MARK_AS_READ": "Mark as read",
 			"NEW_PASSWORD": "New password",
-			"USERNAME_EMAIL":"Username or Email"
+			"USERNAME_EMAIL": "Username or Email"
 		},
 		"BUTTONS": {
 			"UPDATE_PASSWORD": "Update password"
@@ -220,8 +237,159 @@
 		"TITLE": "Child Safety"
 	},
 	"SEO": {
-		"MATCH_PAGE_TITLE": "{{game}} Match - {{matchTitle}} | {{platform}}",
-		"MATCH_PAGE_DESCRIPTION": "Join this {{game}} match on {{platform}}. {{description}}",
-		"MATCH_PAGE_DEFAULT_DESCRIPTION": "Compete with players worldwide."
+		"PLATFORM": {
+			"TITLE": "{{platform}} Games - Find Players & Matches | Madnolia",
+			"DESC": "Find and join {{platform}} gaming matches or create your own. Connect with players for {{platform}} games."
+		},
+		"PLATFORM_GAME": {
+			"TITLE": "{{game}} Matches for {{platform}} | Madnolia",
+			"DESC": "Find and join {{game}} matches on {{platform}}. Schedule games, connect with players, and compete."
+		}
+	},
+	"LANDING": {
+		"HERO": {
+			"TITLE_1": "Your game, ",
+			"HIGHLIGHT": "your match, ",
+			"TITLE_2": "your rules.",
+			"SUBTITLE": "Plan your matches in seconds. Gather your team, coordinate schedules, and jump into local network play.",
+			"BTN": "Download Madnolia"
+		},
+		"VILLAIN": {
+			"TITLE": "Less time searching. More time playing.",
+			"CARD1": {
+				"TITLE": "You used to search in 5 different forums",
+				"DESC": "Now you find your match in a single click. Stop begging for a +1 on Discord. Search your game and enter the lobby directly."
+			},
+			"CARD2": {
+				"TITLE": "You used a different network program for each game",
+				"DESC": "Now you play on LAN as if you were on the same network. Forget trying third-party apps or opening ports; the system connects your team behind the scenes."
+			},
+			"CARD3": {
+				"TITLE": "You had 3 apps consuming RAM",
+				"DESC": "Now your entire command center is in a single app. Voice, video, and matchmaking integrated without sacrificing your game's FPS."
+			}
+		},
+		"SOLUTION": {
+			"TITLE": "Find your next match or create your own instantly",
+			"DESC": "You choose the game, I provide the infrastructure. Find your next match, communicate with low-latency voice chat, and play with the entire community without leaving a single platform."
+		},
+		"TIMEZONE": {
+			"TITLE": "What time did you say the match was?",
+			"DESC": "Never calculate the time again. Madnolia automatically synchronizes and converts international invitations to your local time zone. Zero math, zero confusion."
+		},
+		"VLAN": {
+			"TITLE": "Your own LAN network with a single click",
+			"DESC": "Creating a virtual private network (VLAN) has never been easier. Simply flip the LAN switch in your room and magically connect all participants. Zero ports to open, zero complex configurations.",
+			"BTN": "Learn more about how it works"
+		},
+		"PLAN": {
+			"TITLE": "The path to action",
+			"CARD1": {
+				"TITLE": "Download and Configure",
+				"DESC": "Download the app, create your account, and select the platforms you play on."
+			},
+			"CARD2": {
+				"TITLE": "Schedule your match",
+				"DESC": "Create a room, choose the game, set the date, and invite your friends or the community."
+			},
+			"CARD3": {
+				"TITLE": "Join and Play",
+				"DESC": "Receive a notification when it's time, join the lobby, and communicate instantly."
+			}
+		},
+		"CTA": {
+			"TITLE": "The community is waiting for you",
+			"BTN": "Start Now"
+		}
+	},
+	"LAN_PARTY": {
+		"HERO": {
+			"TITLE_1": "The perfect LAN experience. ",
+			"TITLE_2": "Wherever you are.",
+			"DESC": "It doesn't matter if your friends are in the same city or across the world. Madnolia creates a direct tunnel so your game thinks everyone is connected to the same physical switch in the room."
+		},
+		"STEPS": {
+			"TITLE": "Online LAN matches without technicalities",
+			"DESC": "Three simple steps. Zero network configuration.",
+			"STEP1": {
+				"TITLE": "Turn on the Switch",
+				"DESC": "When creating your game room, simply toggle the \"Enable LAN\" button. Madnolia provisions a private network tunnel instantly."
+			},
+			"STEP2": {
+				"TITLE": "Direct Connection",
+				"DESC": "Your friends join the room and Madnolia establishes a direct IP. We use the WireGuard® protocol, the most modern technology for P2P connections, ensuring ultra-fast data transfer, perfect stability, and zero lag."
+			},
+			"STEP3": {
+				"TITLE": "Copy, paste, and play",
+				"DESC": "You will be assigned a simulated local IP. Press \"Start LAN\", copy the IP, and share it with your friends."
+			}
+		},
+		"CTA": {
+			"TITLE": "Don't let distance ruin the match.",
+			"DESC": "Create your own local network in seconds and focus just on playing.",
+			"BTN": "Download Madnolia"
+		},
+		"HEADER": {
+			"TITLE": "Team up instantly in any LAN game.",
+			"DESC": "Relive the golden age of Local Area Network (LAN) gaming without touching your router configuration."
+		},
+		"COMPATIBILITY": {
+			"TITLE": "Compatible with your favorite classics",
+			"DESC": "Our infrastructure works at the OS level. If your game or emulator has a \"Local Network\" (LAN) mode, it will work.",
+			"ITEMS": {
+				"PCSX2": "PS2 Emulator",
+				"PC": "Classic PC",
+				"PC_DESC": "Age of Empires, Halo CE",
+				"PPSSPP": "PSP Emulator",
+				"LAN_APP": "Any LAN App",
+				"LAN_APP_DESC": "Direct IPv4 IP",
+				"SWITCH": "Ryujinx / Yuzu",
+				"SWITCH_DESC": "Switch Local Wireless"
+			}
+		}
+	},
+	"NAVBAR": {
+		"MATCHES": "Matches",
+		"LAN_PARTY": "LAN Party",
+		"PLATFORMS": "Platforms",
+		"DOWNLOAD": "Download"
+	},
+	"PLATFORM_GAME": {
+		"NO_MATCHES_TITLE": "No matches available yet",
+		"NO_MATCHES_DESC": "Be the first to create a match for {{game}} on {{platform}}!",
+		"DOWNLOAD_BTN": "Download App to Create Match"
+	},
+	"MATCHES_INFO": {
+		"HERO": {
+			"TITLE_1": "Live communities. ",
+			"TITLE_2": "No ghost forums.",
+			"DESC": "The ultimate place to organize matches and connect with active players of your favorite titles."
+		},
+		"SEARCH": {
+			"TITLE": "Find exactly what you're looking for",
+			"DESC": "Select your favorite platform and Madnolia will instantly show you matches ready to join. Zero complex filters, just the games you love."
+		},
+		"CHAT": {
+			"TITLE": "Integrated communication, zero lag",
+			"DESC": "Every match has its own integrated text, voice, and video chat room. Coordinate tactics, share your screen, and communicate with your team without using heavy third-party apps."
+		},
+		"CONNECTION": {
+			"TITLE": "Straight to the action",
+			"DESC": "Select your game, see who's active, and join the lobby instantly. If it's a private LAN network, Madnolia magically synchronizes the connection without configuring ports."
+		},
+		"CTA": {
+			"TITLE": "Explore the Catalog",
+			"DESC": "Thousands of games are waiting for you. Find yours.",
+			"BTN": "View Available Platforms"
+		}
+	},
+	"PAGE_TITLES": {
+		"HOME": "Home | Madnolia",
+		"MATCHES": "Matches | Madnolia",
+		"LAN_PARTY": "LAN Party | Madnolia",
+		"PLATFORMS": "Platforms | Madnolia",
+		"DOWNLOAD": "Download | Madnolia",
+		"ABOUT": "About | Madnolia",
+		"CHILD_SAFETY": "Child Safety | Madnolia"
 	}
 }

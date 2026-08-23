@@ -4,12 +4,11 @@
     <!-- Hero Section -->
     <header class="mb-5 pt-5 pb-3">
       <h1 class="display-2 fw-bolder mb-3">
-        Descarga <br class="d-md-none">
-        <span class="text-gradient-download">Madnolia</span>
+        {{ 'DOWNLOAD.HERO.TITLE_1' | translate }} <br class="d-md-none">
+        <span class="text-gradient-download">{{ 'DOWNLOAD.HERO.TITLE_2' | translate }}</span>
       </h1>
       <p class="lead fs-4 text-secondary mx-auto" style="max-width: 700px;">
-        Lleva la comunidad en tu bolsillo o instala el centro de control en tu PC. Empieza tu experiencia LAN en
-        segundos.
+        {{ 'DOWNLOAD.HERO.DESC' | translate }}
       </p>
     </header>
 
@@ -23,24 +22,23 @@
           <div>
             <app-atom-feature-icon [icon]="faDesktop" sizeClass="display-4"
               additionalClasses="mb-4 text-info opacity-75"></app-atom-feature-icon>
-            <h3 class="fw-bold mb-3 text-white">Versión de Escritorio</h3>
+            <h3 class="fw-bold mb-3 text-white">{{ 'DOWNLOAD.DESKTOP.TITLE' | translate }}</h3>
             <p class="text-secondary mb-4 fs-5">
-              Para los que hostean. Crea partidas LAN directas, usa el videochat y organiza tu escuadrón con máximo
-              rendimiento.
+              {{ 'DOWNLOAD.DESKTOP.DESC' | translate }}
             </p>
           </div>
           <div class="mt-4">
             @if (detectedOS === 'linux') {
-            <app-molecule-download-btn type="button" text="Descargar para Linux (.deb)"
+            <app-molecule-download-btn type="button" [text]="'DOWNLOAD.DESKTOP.BTN_LINUX' | translate"
               buttonClass="btn-premium w-100 py-3 fs-5 mb-4 shadow-lg rounded-pill"></app-molecule-download-btn>
             <div class="d-flex justify-content-center gap-3">
-              <a href="#" class="btn btn-sm btn-outline-secondary rounded-pill px-3">Descargar para Windows</a>
+              <a href="#" class="btn btn-sm btn-outline-secondary rounded-pill px-3">{{ 'DOWNLOAD.DESKTOP.BTN_WINDOWS' | translate }}</a>
             </div>
             } @else {
-            <app-molecule-download-btn type="button" text="Descargar para Windows"
+            <app-molecule-download-btn type="button" [text]="'DOWNLOAD.DESKTOP.BTN_WINDOWS' | translate"
               buttonClass="btn-premium w-100 py-3 fs-5 mb-4 shadow-lg rounded-pill"></app-molecule-download-btn>
             <div class="d-flex justify-content-center gap-3">
-              <a href="#" class="btn btn-sm btn-outline-secondary rounded-pill px-3">Descargar para Linux (.deb)</a>
+              <a href="#" class="btn btn-sm btn-outline-secondary rounded-pill px-3">{{ 'DOWNLOAD.DESKTOP.BTN_LINUX' | translate }}</a>
             </div>
             }
           </div>
@@ -55,9 +53,9 @@
           <div>
             <app-atom-feature-icon [icon]="faMobileScreen" sizeClass="display-4"
               additionalClasses="mb-4 text-info opacity-75"></app-atom-feature-icon>
-            <h3 class="fw-bold mb-3 text-white">Versión Móvil</h3>
+            <h3 class="fw-bold mb-3 text-white">{{ 'DOWNLOAD.MOBILE.TITLE' | translate }}</h3>
             <p class="text-secondary mb-4 fs-5">
-              Mantente conectado 24/7. Busca partidas mientras vas en el bus y únete al chat desde cualquier lugar.
+              {{ 'DOWNLOAD.MOBILE.DESC' | translate }}
             </p>
           </div>
           <div class="mt-4">
@@ -66,7 +64,7 @@
               <img src="public/media/google-play-badge.png" alt="Get it on Google Play" height="60"
                 style="object-fit: contain;">
             </a>
-            <p class="mt-3 text-secondary small">Disponible también en iOS próximamente.</p>
+            <p class="mt-3 text-secondary small">{{ 'DOWNLOAD.MOBILE.IOS_SOON' | translate }}</p>
           </div>
         </div>
       </div>
@@ -76,8 +74,8 @@
     <!-- Features Section -->
     <div class="py-5 my-5 border-top border-secondary border-opacity-25">
       <div class="mb-5">
-        <h2 class="display-5 fw-bolder mb-3 text-white">¿Por qué Madnolia?</h2>
-        <p class="fs-5 text-secondary">Tecnología de punta diseñada específicamente para gamers.</p>
+        <h2 class="display-5 fw-bolder mb-3 text-white">{{ 'DOWNLOAD.FEATURES.TITLE' | translate }}</h2>
+        <p class="fs-5 text-secondary">{{ 'DOWNLOAD.FEATURES.DESC' | translate }}</p>
       </div>
 
       <div class="row g-4 justify-content-center">
@@ -89,9 +87,8 @@
               style="width: 80px; height: 80px;">
               <app-atom-feature-icon [icon]="faWifi" sizeClass="fs-1"></app-atom-feature-icon>
             </div>
-            <h4 class="fw-bold text-white mb-3">Conexión P2P Segura</h4>
-            <p class="text-secondary mb-0">Túneles WireGuard® encriptados de extremo a extremo. Cero lag, máxima
-              privacidad y estabilidad perfecta.</p>
+            <h4 class="fw-bold text-white mb-3">{{ 'DOWNLOAD.FEATURES.CARD1.TITLE' | translate }}</h4>
+            <p class="text-secondary mb-0">{{ 'DOWNLOAD.FEATURES.CARD1.DESC' | translate }}</p>
           </div>
         </div>
 
@@ -103,9 +100,8 @@
               style="width: 80px; height: 80px;">
               <app-atom-feature-icon [icon]="faGamepad" sizeClass="fs-1"></app-atom-feature-icon>
             </div>
-            <h4 class="fw-bold text-white mb-3">Compatibilidad Total</h4>
-            <p class="text-secondary mb-0">Funciona con cualquier juego clásico o emulador que tenga soporte para red
-              local (LAN). Cero configuración de router.</p>
+            <h4 class="fw-bold text-white mb-3">{{ 'DOWNLOAD.FEATURES.CARD2.TITLE' | translate }}</h4>
+            <p class="text-secondary mb-0">{{ 'DOWNLOAD.FEATURES.CARD2.DESC' | translate }}</p>
           </div>
         </div>
 
@@ -117,9 +113,8 @@
               style="width: 80px; height: 80px; color: #c084fc; background-color: rgba(192, 132, 252, 0.1);">
               <app-atom-feature-icon [icon]="faHeadset" sizeClass="fs-1"></app-atom-feature-icon>
             </div>
-            <h4 class="fw-bold text-white mb-3">Voz Integrada</h4>
-            <p class="text-secondary mb-0">Chat de voz espacial nativo sin consumir recursos extra. Habla con tu equipo
-              desde PC o tu celular.</p>
+            <h4 class="fw-bold text-white mb-3">{{ 'DOWNLOAD.FEATURES.CARD3.TITLE' | translate }}</h4>
+            <p class="text-secondary mb-0">{{ 'DOWNLOAD.FEATURES.CARD3.DESC' | translate }}</p>
           </div>
         </div>
       </div>
@@ -128,12 +123,12 @@
     <!-- CTA Banner -->
     <div class="py-5 mb-5">
       <div class="cta-banner animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
-        <h2 class="display-4 fw-bolder text-white mb-4">La comunidad te espera</h2>
-        <p class="fs-4 text-white opacity-75 mb-5 mx-auto" style="max-width: 600px;">Miles de jugadores ya están creando
-          partidas y reviviendo clásicos. Únete ahora.</p>
+        <h2 class="display-4 fw-bolder text-white mb-4">{{ 'DOWNLOAD.CTA.TITLE' | translate }}</h2>
+        <p class="fs-4 text-white opacity-75 mb-5 mx-auto" style="max-width: 600px;">
+          {{ 'DOWNLOAD.CTA.DESC' | translate }}</p>
         <button class="btn btn-light btn-lg px-5 py-3 fs-5 rounded-pill shadow-lg text-dark fw-bold"
           onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-          Comenzar la Descarga
+          {{ 'DOWNLOAD.CTA.BTN' | translate }}
         </button>
       </div>
     </div>

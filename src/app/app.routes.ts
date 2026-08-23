@@ -19,7 +19,7 @@ export const routes: Routes = [
       path: '', 
       component: LandingComponent,
       data: {
-        title: 'HOME.TITLE',
+        title: 'PAGE_TITLES.HOME',
         metaTags: [
           { name: 'description', content: 'HOME.TAG_DESCRIPTION' },
           { name: 'keywords', content: 'HOME.TAG_KEYWORDS' },
@@ -55,7 +55,7 @@ export const routes: Routes = [
       path: 'matches',
       component: MatchesInfoComponent,
       data: {
-        title: 'MATCHES.TITLE',
+        title: 'PAGE_TITLES.MATCHES',
         metaTags: [
           { name: 'description', content: 'Encuentra comunidades y partidas activas de tus juegos favoritos. Olvídate de buscar en foros o Discord.' },
           { name: 'keywords', content: 'matchmaking, comunidades, juegos, buscar partidas, multijugador' },
@@ -67,7 +67,7 @@ export const routes: Routes = [
       path: 'lan-party',
       component: LanPartyComponent,
       data: {
-        title: 'LAN_PARTY.TITLE',
+        title: 'PAGE_TITLES.LAN_PARTY',
         metaTags: [
           { name: 'description', content: 'Juega en LAN virtual (VLAN) sin configuraciones complejas ni programas como Hamachi o ZeroTier.' },
         ],
@@ -78,7 +78,7 @@ export const routes: Routes = [
       path: 'platforms',
       component: PlatformsComponent,
       data: {
-        title: 'PLATFORMS.TITLE',
+        title: 'PAGE_TITLES.PLATFORMS',
         metaTags: [
           { name: 'description', content: 'Browse all supported gaming platforms' },
         ],
@@ -101,16 +101,6 @@ export const routes: Routes = [
       path: 'platform/:platform-slug/:game-slug',
       component: PlatformGameComponent,
       data: {
-        seo: {
-          title: (route: ActivatedRouteSnapshot) => {
-            const game = route.paramMap.get('game-slug');
-            return `${formatGameName(game)} Matches | Madnolia`;
-          },
-          description: (route: ActivatedRouteSnapshot) => {
-            const game = route.paramMap.get('game-slug');
-            return `Schedule matches and find players for ${formatGameName(game)}`;
-          }
-        },
         canonicalUrl: (route: ActivatedRouteSnapshot) => {
           const platform = route.paramMap.get('platform-slug');
           const game = route.paramMap.get('game-slug');
@@ -122,7 +112,7 @@ export const routes: Routes = [
       path: 'download',
       component: DownloadComponent,
       data: {
-        title: 'DOWNLOAD.TITLE',
+        title: 'PAGE_TITLES.DOWNLOAD',
         metaTags: [
           { name: 'description', content: 'Download GameMatch app to organize multiplayer matches, connect with players across platforms, and never game alone again. Available on Google Play.' },
           { property: 'og:title', content: 'Download GameMatch - The Ultimate Gaming Companion' },
@@ -138,7 +128,7 @@ export const routes: Routes = [
       path: 'about',
       component: AboutComponent,
       data: {
-        title: 'ABOUT.TITLE',
+        title: 'PAGE_TITLES.ABOUT',
         metaTags: [
           { name: 'description', content: 'Learn about our game matchmaking platform that connects players across all devices. Organize multiplayer matches with ease and never play alone again.' },
           { property: 'og:title', content: 'About Our Game Matchmaking Platform' },
@@ -154,7 +144,7 @@ export const routes: Routes = [
       path: 'child-safety',
       component: ChildSafetyComponent,
       data: {
-        title: 'CHILD_SAFETY.TITLE',
+        title: 'PAGE_TITLES.CHILD_SAFETY',
       }
     },
     {

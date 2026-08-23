@@ -2,22 +2,20 @@
   <div class="container section-padding text-white">
 
     <header class="text-center mb-5">
-      <app-atom-gradient-text tag="h1" text="Comunidades vivas. " gradientClass="text-gradient"
+      <app-atom-gradient-text tag="h1" [text]="'MATCHES_INFO.HERO.TITLE_1' | translate" gradientClass="text-gradient"
         additionalClasses="display-3 fw-bold mb-4">
-        <span class="text-gradient">No foros fantasma.</span>
+        <span class="text-gradient">{{ 'MATCHES_INFO.HERO.TITLE_2' | translate }}</span>
       </app-atom-gradient-text>
-      <p class="lead fs-4">El lugar definitivo para organizar partidas y conectar con jugadores activos de tus títulos
-        favoritos.</p>
+      <p class="lead fs-4">{{ 'MATCHES_INFO.HERO.DESC' | translate }}</p>
     </header>
 
     <!-- Sección 1: Búsqueda -->
     <div class="mb-5 pb-5">
-      <app-organism-split-info title="Encuentra exactamente lo que buscas" [icon]="faSearch" iconColorClass="text-info"
+      <app-organism-split-info [title]="'MATCHES_INFO.SEARCH.TITLE' | translate" [icon]="faSearch" iconColorClass="text-info"
         [reverseLayout]="false">
         <div left-content>
           <p class="fs-4 lh-base text-secondary mb-4">
-            Selecciona tu plataforma favorita y Madnolia te mostrará al instante las partidas listas para unirse. Cero
-            filtros complejos, solo los juegos que amas.
+            {{ 'MATCHES_INFO.SEARCH.DESC' | translate }}
           </p>
         </div>
         <div right-content>
@@ -32,12 +30,11 @@
 
     <!-- Sección 2: Chat -->
     <div class="mb-5 pb-5">
-      <app-organism-split-info title="Comunicación integrada, cero lag" [icon]="faComments"
+      <app-organism-split-info [title]="'MATCHES_INFO.CHAT.TITLE' | translate" [icon]="faComments"
         iconColorClass="text-primary" [reverseLayout]="true">
         <div left-content>
           <p class="fs-4 lh-base text-secondary mb-4">
-            Cada partida tiene su propia sala de chat de texto, voz y videollamada integrado. Coordina tácticas,
-            comparte pantalla y comunícate con tu equipo sin tener que usar aplicaciones de terceros pesadas.
+            {{ 'MATCHES_INFO.CHAT.DESC' | translate }}
           </p>
         </div>
         <div right-content>
@@ -48,12 +45,11 @@
 
     <!-- Sección 3: Conexión inmediata -->
     <div class="mb-5 pb-5">
-      <app-organism-split-info title="Directo a la acción" [icon]="faBolt" iconColorClass="text-warning"
+      <app-organism-split-info [title]="'MATCHES_INFO.CONNECTION.TITLE' | translate" [icon]="faBolt" iconColorClass="text-warning"
         [reverseLayout]="false">
         <div left-content>
           <p class="fs-4 lh-base text-secondary mb-4">
-            Selecciona tu juego, mira quién está activo y únete al lobby instantáneamente. Si es una red LAN privada,
-            Madnolia sincroniza la conexión mágicamente sin configurar puertos.
+            {{ 'MATCHES_INFO.CONNECTION.DESC' | translate }}
           </p>
         </div>
         <div right-content>
@@ -64,11 +60,11 @@
     </div>
 
     <section class="text-center mt-5 mb-5 pb-5">
-      <h2 class="display-5 fw-bold mb-4">Explora el Catálogo</h2>
-      <p class="fs-4 text-secondary mb-5">Miles de juegos te esperan. Encuentra el tuyo.</p>
+      <h2 class="display-5 fw-bold mb-4">{{ 'MATCHES_INFO.CTA.TITLE' | translate }}</h2>
+      <p class="fs-4 text-secondary mb-5">{{ 'MATCHES_INFO.CTA.DESC' | translate }}</p>
       <a routerLink="/platforms" class="btn btn-premium btn-lg px-5 py-3 rounded-pill fs-4 fw-bold shadow-lg"
         style="letter-spacing: 0.5px;">
-        Ver Plataformas Disponibles
+        {{ 'MATCHES_INFO.CTA.BTN' | translate }}
       </a>
     </section>
 

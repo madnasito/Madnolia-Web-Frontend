@@ -1,10 +1,10 @@
 <div class="container-fluid animate__animated animate__fadeIn platforms-page pt-5 p-0">
     <div class="container section-padding text-white">
         <header class="text-center mb-5 mt-5">
-            <app-atom-gradient-text tag="h1" text="Tu próxima partida empieza aquí."
+            <app-atom-gradient-text tag="h1" [text]="'PLATFORMS.HERO_TITLE' | translate"
                 gradientClass="text-gradient-platforms" additionalClasses="display-3 fw-bold mb-4">
             </app-atom-gradient-text>
-            <p class="lead fs-4">PC, emuladores o consola. Elige tu plataforma y encuentra tu próxima partida.</p>
+            <p class="lead fs-4">{{ 'PLATFORMS.HERO_DESC' | translate }}</p>
         </header>
 
         <app-atom-glass-panel additionalClasses="text-center">

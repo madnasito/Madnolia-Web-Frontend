@@ -13,6 +13,7 @@ import { MatchesInfoComponent } from './matches-info/matches-info.component';
 import { LanPartyComponent } from './lan-party/lan-party.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { RouterModule } from '@angular/router';
     ChildSafetyComponent,
     AuthModule,
     FontAwesomeModule,
-    RouterModule
+    RouterModule,
+    TranslateModule
   ],
   exports: []
 })

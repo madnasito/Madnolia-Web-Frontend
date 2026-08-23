@@ -1,26 +1,25 @@
 <div class="container-fluid animate__animated animate__fadeIn animate__duration-1s p-0 lan-page">
-  <div class="container section-padding text-white position-relative" style="z-index: 1;">
+  <div class="container-fluid section-padding text-white position-relative px-4 px-xl-5" style="max-width: 1600px; margin: 0 auto; z-index: 1;">
 
     <header class="text-center mb-5 d-flex flex-column align-items-center">
-      <app-atom-gradient-text tag="h1" text="Haz equipo al instante en cualquier juego LAN."
+      <app-atom-gradient-text tag="h1" [text]="'LAN_PARTY.HEADER.TITLE' | translate"
         gradientClass="text-gradient-lan"
         additionalClasses="display-2 fw-bolder mb-4 lh-tight"></app-atom-gradient-text>
       <p class="lead fs-4 text-secondary mb-5" style="max-width: 700px;">
-        Revive la época dorada de jugar en red local (LAN) sin tocar la configuración de tu router.
+        {{ 'LAN_PARTY.HEADER.DESC' | translate }}
       </p>
     </header>
 
     <!-- Sección 2: La Posibilidad (Emoción) -->
     <div class="mb-5 py-5 text-center">
-      <h2 class="display-4 fw-bolder mb-4 text-white">La experiencia LAN perfecta. <br>
+      <h2 class="display-4 fw-bolder mb-4 text-white">{{ 'LAN_PARTY.HERO.TITLE_1' | translate }}<br>
         <span
-          style="background: linear-gradient(90deg, #22d3ee, #a5b4fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 10px rgba(34,211,238,0.3));">
-          Donde sea que estés.
+          style="background: linear-gradient(90deg, #22d3ee, #a5b4fc); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 10px rgba(34,211,238,0.3));">
+          {{ 'LAN_PARTY.HERO.TITLE_2' | translate }}
         </span>
       </h2>
       <p class="fs-4 lh-base text-secondary mb-5 mx-auto" style="max-width: 800px;">
-        No importa si tus amigos están en la misma ciudad o al otro lado del mundo. Madnolia crea un túnel directo para
-        que tu juego piense que todos están conectados al mismo switch físico de la habitación.
+        {{ 'LAN_PARTY.HERO.DESC' | translate }}
       </p>
 
       <!-- Video Compilation Placeholder -->
@@ -39,9 +38,9 @@
     <div class="py-5 mt-5">
       <div class="text-center mb-5 pb-4">
         <h2 class="display-5 fw-bolder mb-3"
-          style="background: linear-gradient(90deg, #ffffff, #a5b4fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-          Partidas LAN en linea sin tecnicismos</h2>
-        <p class="fs-5 text-secondary">Tres pasos simples. Cero configuración de red.</p>
+          style="background: linear-gradient(90deg, #ffffff, #a5b4fc); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+          {{ 'LAN_PARTY.STEPS.TITLE' | translate }}</h2>
+        <p class="fs-5 text-secondary">{{ 'LAN_PARTY.STEPS.DESC' | translate }}</p>
       </div>
 
       <!-- Paso 1 -->
@@ -51,22 +50,19 @@
             <div
               class="rounded-circle bg-info bg-opacity-10 text-info d-flex align-items-center justify-content-center fw-bold fs-4 shadow"
               style="width: 50px; height: 50px; border: 1px solid rgba(34,211,238,0.3);">1</div>
-            <h3 class="fs-2 fw-bold mb-0 text-white">Activa el Switch</h3>
+            <h3 class="fs-2 fw-bold mb-0 text-white">{{ 'LAN_PARTY.STEPS.STEP1.TITLE' | translate }}</h3>
           </div>
           <p class="fs-5 text-secondary lh-base">
-            Al momento de crear tu sala de juego, simplemente enciende el botón "Activar LAN". Madnolia se encarga de
-            aprovisionar un túnel de red privado al instante.
+            {{ 'LAN_PARTY.STEPS.STEP1.DESC' | translate }}
           </p>
         </div>
         <div class="col-lg-7">
           <div class="rounded-4 overflow-hidden border border-info border-opacity-25 shadow-lg position-relative"
             style="background: rgba(34,211,238,0.02);">
-
             <video autoplay loop muted playsinline class="w-100 h-auto d-block border-0 responsive-media"
               style="background: transparent;">
               <source src="public/media/lan_toggle_en.mp4" type="video/mp4">
             </video>
-
           </div>
         </div>
       </div>
@@ -78,13 +74,10 @@
             <div
               class="rounded-circle bg-info bg-opacity-10 text-info d-flex align-items-center justify-content-center fw-bold fs-4 shadow"
               style="width: 50px; height: 50px; border: 1px solid rgba(34,211,238,0.3);">2</div>
-            <h3 class="fs-2 fw-bold mb-0 text-white">Conexión Directa</h3>
+            <h3 class="fs-2 fw-bold mb-0 text-white">{{ 'LAN_PARTY.STEPS.STEP2.TITLE' | translate }}</h3>
           </div>
           <p class="fs-5 text-secondary lh-base">
-            Tus amigos se unen a la sala y Madnolia establece una IP directa. Utilizamos el protocolo <strong
-              class="text-info" style="text-shadow: 0 0 8px rgba(34,211,238,0.5);">WireGuard®</strong>, la tecnología
-            más moderna para conexiones P2P, garantizando una transferencia de datos ultra rápida, estabilidad perfecta
-            y cero lag.
+            {{ 'LAN_PARTY.STEPS.STEP2.DESC' | translate }}
           </p>
         </div>
         <div class="col-lg-7">
@@ -104,10 +97,10 @@
             <div
               class="rounded-circle bg-info bg-opacity-10 text-info d-flex align-items-center justify-content-center fw-bold fs-4 shadow"
               style="width: 50px; height: 50px; border: 1px solid rgba(34,211,238,0.3);">3</div>
-            <h3 class="fs-2 fw-bold mb-0 text-white">Copia, pega y juega</h3>
+            <h3 class="fs-2 fw-bold mb-0 text-white">{{ 'LAN_PARTY.STEPS.STEP3.TITLE' | translate }}</h3>
           </div>
           <p class="fs-5 text-secondary lh-base">
-            Se te asignará una IP local simulada. Presiona "Iniciar LAN", copia la IP y compártela con tus amigos.
+            {{ 'LAN_PARTY.STEPS.STEP3.DESC' | translate }}
           </p>
         </div>
         <div class="col-lg-7">
@@ -125,42 +118,39 @@
     <!-- Sección 4: Compatibilidad / Autoridad -->
     <div class="py-5 mb-5 text-center">
       <h2 class="display-5 fw-bolder mb-4"
-        style="background: linear-gradient(90deg, #ffffff, #a5b4fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-        Compatible con tus clásicos favoritos</h2>
+        style="background: linear-gradient(90deg, #ffffff, #a5b4fc); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        {{ 'LAN_PARTY.COMPATIBILITY.TITLE' | translate }}</h2>
       <p class="fs-4 text-secondary mb-5 mx-auto" style="max-width: 700px;">
-        Nuestra infraestructura funciona a nivel de sistema operativo. Si tu juego o emulador tiene modo "Red Local"
-        (LAN), funcionará.
+        {{ 'LAN_PARTY.COMPATIBILITY.DESC' | translate }}
       </p>
 
       <div class="d-flex flex-wrap justify-content-center gap-4 mb-5">
 
         <div style="width: 180px; height: 180px;">
-          <app-molecule-platform-card imagePath="public/icon/pcsx2.png" title="PCSX2" subtitle="Emulador PS2">
-          </app-molecule-platform-card>
-        </div>
-
-
-
-        <div style="width: 180px; height: 180px;">
-          <app-molecule-platform-card imagePath="public/icon/pc.svg" title="PC Clásicos"
-            subtitle="Age of Empires, Halo CE">
+          <app-molecule-platform-card imagePath="public/icon/pcsx2.png" title="PCSX2" [subtitle]="'LAN_PARTY.COMPATIBILITY.ITEMS.PCSX2' | translate">
           </app-molecule-platform-card>
         </div>
 
         <div style="width: 180px; height: 180px;">
-          <app-molecule-platform-card imagePath="public/icon/PPSSPP.svg" title="PPSSPP" subtitle="Emulador PSP">
+          <app-molecule-platform-card imagePath="public/icon/pc.svg" [title]="'LAN_PARTY.COMPATIBILITY.ITEMS.PC' | translate"
+            [subtitle]="'LAN_PARTY.COMPATIBILITY.ITEMS.PC_DESC' | translate">
           </app-molecule-platform-card>
         </div>
 
         <div style="width: 180px; height: 180px;">
-          <app-molecule-platform-card imagePath="public/icon/network.svg" title="Cualquier App LAN"
-            subtitle="IP Directa IPv4">
+          <app-molecule-platform-card imagePath="public/icon/PPSSPP.svg" title="PPSSPP" [subtitle]="'LAN_PARTY.COMPATIBILITY.ITEMS.PPSSPP' | translate">
           </app-molecule-platform-card>
         </div>
 
         <div style="width: 180px; height: 180px;">
-          <app-molecule-platform-card imagePath="public/icon/ryujinx.svg" title="Ryujinx / Yuzu"
-            subtitle="Switch Local Wireless">
+          <app-molecule-platform-card imagePath="public/icon/network.svg" [title]="'LAN_PARTY.COMPATIBILITY.ITEMS.LAN_APP' | translate"
+            [subtitle]="'LAN_PARTY.COMPATIBILITY.ITEMS.LAN_APP_DESC' | translate">
+          </app-molecule-platform-card>
+        </div>
+
+        <div style="width: 180px; height: 180px;">
+          <app-molecule-platform-card imagePath="public/icon/ryujinx.svg" [title]="'LAN_PARTY.COMPATIBILITY.ITEMS.SWITCH' | translate"
+            [subtitle]="'LAN_PARTY.COMPATIBILITY.ITEMS.SWITCH_DESC' | translate">
           </app-molecule-platform-card>
         </div>
 
@@ -175,11 +165,10 @@
           style="background: radial-gradient(circle at center, rgba(34, 211, 238, 0.15) 0%, transparent 60%); z-index: 0; pointer-events: none;">
         </div>
         <div class="position-relative" style="z-index: 1;">
-          <h2 class="display-4 fw-bolder mb-3 text-white" style="text-shadow: 0 0 20px rgba(34,211,238,0.3);">No dejes
-            que la distancia <br>arruine la partida.</h2>
-          <p class="fs-4 text-secondary mb-5">Crea tu propia red local en segundos y enfócate solo en jugar.</p>
+          <h2 class="display-4 fw-bolder mb-3 text-white" style="text-shadow: 0 0 20px rgba(34,211,238,0.3);" [innerHTML]="'LAN_PARTY.CTA.TITLE' | translate"></h2>
+          <p class="fs-4 text-secondary mb-5">{{ 'LAN_PARTY.CTA.DESC' | translate }}</p>
           <a routerLink="/download" class="btn btn-premium btn-lg px-5 py-3 fs-4 shadow-lg rounded-pill">
-            Descargar Madnolia <app-atom-feature-icon [icon]="faArrowRight" sizeClass="ms-2"></app-atom-feature-icon>
+            {{ 'LAN_PARTY.CTA.BTN' | translate }} <app-atom-feature-icon [icon]="faArrowRight" sizeClass="ms-2"></app-atom-feature-icon>
           </a>
         </div>
       </div>

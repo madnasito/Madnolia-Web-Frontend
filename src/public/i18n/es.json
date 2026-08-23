@@ -44,27 +44,43 @@
 		"TITLE": "Selecciona la plataforma"
 	},
 	"DOWNLOAD": {
-		"ACTION": {
-			"LOBBY": "Aplicación GameMatch - Pantalla del lobby de partidas\n",
-			"MATCH": "Aplicación GameMatch - Pantalla de creación de partidas",
-			"NOTIFICATIONS": "Aplicación GameMatch - Centro de notificaciones",
-			"TITLE": "Ver en acción"
+		"HERO": {
+			"TITLE_1": "Descarga",
+			"TITLE_2": "Madnolia",
+			"DESC": "Lleva la comunidad en tu bolsillo o instala el centro de control en tu PC. Empieza tu experiencia LAN en segundos."
 		},
-		"BOTTOM": {
-			"SUBTITLE": "Descarga gratuita - Sin tarifas ocultas",
-			"TITLE": "¿Listo para transformar tu experiencia de juego?"
+		"DESKTOP": {
+			"TITLE": "Versión de Escritorio",
+			"DESC": "Para los que hostean. Crea partidas LAN directas, usa el videochat y organiza tu escuadrón con máximo rendimiento.",
+			"BTN_LINUX": "Descargar para Linux (.deb)",
+			"BTN_WINDOWS": "Descargar para Windows"
 		},
-		"CARDS": {
-			"SUBTITLE_1": "Conéctate con jugadores a través de PC, consola y dispositivos móviles",
-			"SUBTITLE_2": "Recibe alertas cuando comiencen las partidas o te inviten tus amigos",
-			"SUBTITLE_3": "Crea tu escuadrón de juego y jueguen juntos regularmente",
-			"TITLE": "Por qué a los jugadores les encanta nuestra aplicación",
-			"TITLE_1": "Emparejamiento multiplataforma",
-			"TITLE_2": "Notificaciones inteligentes",
-			"TITLE_3": "Construcción de la comunidad"
+		"MOBILE": {
+			"TITLE": "Versión Móvil",
+			"DESC": "Mantente conectado 24/7. Busca partidas mientras vas en el bus y únete al chat desde cualquier lugar.",
+			"IOS_SOON": "Disponible también en iOS próximamente."
 		},
-		"SUBTITLE": "Organiza partidos, conéctate con los jugadores y nunca vuelvas a jugar solo",
-		"TITLE": "Consigue la mejor compañía al jugar"
+		"FEATURES": {
+			"TITLE": "¿Por qué Madnolia?",
+			"DESC": "Tecnología de punta diseñada específicamente para gamers.",
+			"CARD1": {
+				"TITLE": "Conexión P2P Segura",
+				"DESC": "Túneles WireGuard® encriptados de extremo a extremo. Cero lag, máxima privacidad y estabilidad perfecta."
+			},
+			"CARD2": {
+				"TITLE": "Compatibilidad Total",
+				"DESC": "Funciona con cualquier juego clásico o emulador que tenga soporte para red local (LAN). Cero configuración de router."
+			},
+			"CARD3": {
+				"TITLE": "Voz Integrada",
+				"DESC": "Chat de voz espacial nativo sin consumir recursos extra. Habla con tu equipo desde PC o tu celular."
+			}
+		},
+		"CTA": {
+			"TITLE": "La comunidad te espera",
+			"DESC": "Miles de jugadores ya están creando partidas y reviviendo clásicos. Únete ahora.",
+			"BTN": "Comenzar la Descarga"
+		}
 	},
 	"GAME": {
 		"DATE": "Fecha",
@@ -116,91 +132,93 @@
 		"GAMES": "Juegos de {{platform}}",
 		"NO_MATCHES": "No hay partidas para {{platform}}",
 		"NO_MATCHES_CREATE": "Se el primero en crear una partida para {{platform}}",
-		"SELECT": "Selecciona una plataforma"
+		"SELECT": "Selecciona una plataforma",
+		"HERO_TITLE": "Tu próxima partida empieza aquí.",
+		"HERO_DESC": "PC, emuladores o consola. Elige tu plataforma y encuentra tu próxima partida."
 	},
 	"PRESENTATION": {
 		"SUBTITLE": "Organiza partidas para cualquier consola retro o moderna",
 		"TITLE": "Conecta con gamers de todo el mundo"
 	},
 	"FORM": {
-        "INPUT": {
-            "NAME": "Nombre",
-            "USERNAME": "Nombre de usuario",
-            "EMAIL": "Correo",
-            "PASSWORD": "Contraseña",
-            "PASSWORD2": "Repita la Contraseña",
-            "PLATFORMS": "Plataformas",
-            "REPLY": "Responder",
-            "MARK_AS_READ": "Marcar como leido",
-            "NEW_PASSWORD": "Nueva contraseña",
-            "USERNAME_EMAIL":"Nombre de Usuario o Correo"
-        },
-        "BUTTONS": {
-            "UPDATE_PASSWORD": "Actualizar contraseña"
-        },
-        "VALIDATIONS": {
-            "REQUIRED": "Este campo es requerido",
-            "REQUIRED_FIELD": "Campo requerido",
-            "INVALID_FORMAT": "Formato no válido",
-            "INVALID_INPUT": "Entrada no válida",
-            "TOO_SHORT": "Muy corto",
-            "TOO_LONG": "Muy largo",
-            "MIN_LENGTH": "Mínimo {{count}} caracteres",
-            "MAX_LENGTH": "Máximo {{count}} caracteres",
-            "MIN_MAX_LENGTH": "Entre {{min}} y {{max}} caracteres",
-            "ONLY_LETTERS": "Solo letras permitidas",
-            "ONLY_NUMBERS": "Solo números permitidos",
-            "LETTERS_AND_NUMBERS": "Solo letras y números permitidos",
-            "NO_SPECIAL_CHARS": "No se permiten caracteres especiales",
-            "INVALID_EMAIL": "Correo electrónico no válido",
-            "INVALID_EMAIL_FORMAT": "Formato de correo inválido",
-            "INVALID_URL": "URL no válida",
-            "INVALID_PHONE": "Número de teléfono no válido",
-            "INVALID_DATE": "Fecha no válida",
-            "INVALID_TIME": "Hora no válida",
-            "PASSWORDS_DONT_MATCH": "Las contraseñas no coinciden",
-            "PASSWORD_TOO_WEAK": "Contraseña muy débil",
-            "PASSWORD_MIN_LENGTH": "La contraseña debe tener al menos {count} caracteres",
-            "PASSWORD_REQUIREMENTS": "La contraseña debe incluir mayúsculas, minúsculas y números",
-            "USERNAME_INVALID": "Nombre de usuario no válido",
-            "USERNAME_TOO_SHORT": "Nombre de usuario muy corto",
-            "USERNAME_TOO_LONG": "Nombre de usuario muy largo",
-            "USERNAME_EXISTS": "Este nombre de usuario ya existe",
-            "EMAIL_EXISTS": "Este correo ya está registrado",
-            "INVALID_NAME": "Nombre no válido",
-            "NAME_TOO_LONG": "Nombre muy largo",
-            "INVALID_AGE": "Edad no válida",
-            "MIN_AGE": "Edad mínima: {age} años",
-            "MAX_AGE": "Edad máxima: {age} años",
-            "NUMERIC_ONLY": "Solo valores numéricos",
-            "POSITIVE_NUMBER": "Debe ser un número positivo",
-            "INVALID_RANGE": "Valor fuera del rango permitido",
-            "MIN_VALUE": "Valor mínimo: {value}",
-            "MAX_VALUE": "Valor máximo: {value}",
-            "WHITESPACE_NOT_ALLOWED": "No se permiten espacios en blanco",
-            "MUST_CONTAIN_UPPERCASE": "Debe contener al menos una mayúscula",
-            "MUST_CONTAIN_LOWERCASE": "Debe contener al menos una minúscula",
-            "MUST_CONTAIN_NUMBER": "Debe contener al menos un número",
-            "MUST_CONTAIN_SYMBOL": "Debe contener al menos un símbolo",
-            "FIELD_REQUIRED": "Campo obligatorio",
-            "PLEASE_FILL_FIELD": "Por favor completa este campo",
-            "CHECK_INPUT": "Revisa la información ingresada",
-            "INVALID_CHARACTERS": "Caracteres no válidos",
-            "TEXT_TOO_SHORT": "Texto muy corto",
-            "TEXT_TOO_LONG": "Texto muy largo",
-            "INVALID_SELECTION": "Selección no válida",
-            "REQUIRED_SELECTION": "Debes seleccionar una opción",
-            "INVALID_LENGTH": "Longitud no válida"
-        }
-    },
+		"INPUT": {
+			"NAME": "Nombre",
+			"USERNAME": "Nombre de usuario",
+			"EMAIL": "Correo",
+			"PASSWORD": "Contraseña",
+			"PASSWORD2": "Repita la Contraseña",
+			"PLATFORMS": "Plataformas",
+			"REPLY": "Responder",
+			"MARK_AS_READ": "Marcar como leido",
+			"NEW_PASSWORD": "Nueva contraseña",
+			"USERNAME_EMAIL": "Nombre de Usuario o Correo"
+		},
+		"BUTTONS": {
+			"UPDATE_PASSWORD": "Actualizar contraseña"
+		},
+		"VALIDATIONS": {
+			"REQUIRED": "Este campo es requerido",
+			"REQUIRED_FIELD": "Campo requerido",
+			"INVALID_FORMAT": "Formato no válido",
+			"INVALID_INPUT": "Entrada no válida",
+			"TOO_SHORT": "Muy corto",
+			"TOO_LONG": "Muy largo",
+			"MIN_LENGTH": "Mínimo {{count}} caracteres",
+			"MAX_LENGTH": "Máximo {{count}} caracteres",
+			"MIN_MAX_LENGTH": "Entre {{min}} y {{max}} caracteres",
+			"ONLY_LETTERS": "Solo letras permitidas",
+			"ONLY_NUMBERS": "Solo números permitidos",
+			"LETTERS_AND_NUMBERS": "Solo letras y números permitidos",
+			"NO_SPECIAL_CHARS": "No se permiten caracteres especiales",
+			"INVALID_EMAIL": "Correo electrónico no válido",
+			"INVALID_EMAIL_FORMAT": "Formato de correo inválido",
+			"INVALID_URL": "URL no válida",
+			"INVALID_PHONE": "Número de teléfono no válido",
+			"INVALID_DATE": "Fecha no válida",
+			"INVALID_TIME": "Hora no válida",
+			"PASSWORDS_DONT_MATCH": "Las contraseñas no coinciden",
+			"PASSWORD_TOO_WEAK": "Contraseña muy débil",
+			"PASSWORD_MIN_LENGTH": "La contraseña debe tener al menos {count} caracteres",
+			"PASSWORD_REQUIREMENTS": "La contraseña debe incluir mayúsculas, minúsculas y números",
+			"USERNAME_INVALID": "Nombre de usuario no válido",
+			"USERNAME_TOO_SHORT": "Nombre de usuario muy corto",
+			"USERNAME_TOO_LONG": "Nombre de usuario muy largo",
+			"USERNAME_EXISTS": "Este nombre de usuario ya existe",
+			"EMAIL_EXISTS": "Este correo ya está registrado",
+			"INVALID_NAME": "Nombre no válido",
+			"NAME_TOO_LONG": "Nombre muy largo",
+			"INVALID_AGE": "Edad no válida",
+			"MIN_AGE": "Edad mínima: {age} años",
+			"MAX_AGE": "Edad máxima: {age} años",
+			"NUMERIC_ONLY": "Solo valores numéricos",
+			"POSITIVE_NUMBER": "Debe ser un número positivo",
+			"INVALID_RANGE": "Valor fuera del rango permitido",
+			"MIN_VALUE": "Valor mínimo: {value}",
+			"MAX_VALUE": "Valor máximo: {value}",
+			"WHITESPACE_NOT_ALLOWED": "No se permiten espacios en blanco",
+			"MUST_CONTAIN_UPPERCASE": "Debe contener al menos una mayúscula",
+			"MUST_CONTAIN_LOWERCASE": "Debe contener al menos una minúscula",
+			"MUST_CONTAIN_NUMBER": "Debe contener al menos un número",
+			"MUST_CONTAIN_SYMBOL": "Debe contener al menos un símbolo",
+			"FIELD_REQUIRED": "Campo obligatorio",
+			"PLEASE_FILL_FIELD": "Por favor completa este campo",
+			"CHECK_INPUT": "Revisa la información ingresada",
+			"INVALID_CHARACTERS": "Caracteres no válidos",
+			"TEXT_TOO_SHORT": "Texto muy corto",
+			"TEXT_TOO_LONG": "Texto muy largo",
+			"INVALID_SELECTION": "Selección no válida",
+			"REQUIRED_SELECTION": "Debes seleccionar una opción",
+			"INVALID_LENGTH": "Longitud no válida"
+		}
+	},
 	"RECOVER_PASSWORD": {
-        "TITLE": "Recupera tu contraseña",
-        "RECOVER_PASSWORD": "Recuperar contraseña",
-        "EMAIL_SENDED": "¡Correo enviado!",
-        "ERROR_GETTING_INFO": "Hubo un error al cargar la recuperacion de contraseña",
-        "HOME_PAGE_REDIRECTING": "Redirigiendo a la pagina principal...",
-        "PASSWORD_UPDATED": "Contraseña actualizada exitosamente"
-    },
+		"TITLE": "Recupera tu contraseña",
+		"RECOVER_PASSWORD": "Recuperar contraseña",
+		"EMAIL_SENDED": "¡Correo enviado!",
+		"ERROR_GETTING_INFO": "Hubo un error al cargar la recuperacion de contraseña",
+		"HOME_PAGE_REDIRECTING": "Redirigiendo a la pagina principal...",
+		"PASSWORD_UPDATED": "Contraseña actualizada exitosamente"
+	},
 	"UTILS": {
 		"ANDROID_AVAILABLE": "Disponible para dispotivos Android",
 		"DATE": "Fecha",
@@ -213,8 +231,159 @@
 		"PLATFORM": "Plataforma"
 	},
 	"SEO": {
-		"MATCH_PAGE_TITLE": "Partida de {{game}} - {{matchTitle}} | {{platform}}",
-		"MATCH_PAGE_DESCRIPTION": "Unete a esta partida de {{game}} en {{platform}}. {{description}}",
-		"MATCH_PAGE_DEFAULT_DESCRIPTION": "Compite con jugadores de todo el mundo."
+		"PLATFORM": {
+			"TITLE": "Juegos de {{platform}} - Encuentra Jugadores y Partidas | Madnolia",
+			"DESC": "Encuentra y únete a partidas de {{platform}} o crea la tuya. Conéctate con jugadores para juegos de {{platform}}."
+		},
+		"PLATFORM_GAME": {
+			"TITLE": "Partidas de {{game}} en {{platform}} | Madnolia",
+			"DESC": "Encuentra y únete a partidas de {{game}} en {{platform}}. Programa partidas, conéctate con jugadores y compite."
+		}
+	},
+	"LANDING": {
+		"HERO": {
+			"TITLE_1": "Tu juego, ",
+			"HIGHLIGHT": "tu partida, ",
+			"TITLE_2": "tus reglas.",
+			"SUBTITLE": "Planifica tus partidas en segundos. Reúne a tu equipo, coordina horarios y lánzate a jugar en red local.",
+			"BTN": "Descargar Madnolia"
+		},
+		"VILLAIN": {
+			"TITLE": "Menos tiempo buscando. Más tiempo jugando.",
+			"CARD1": {
+				"TITLE": "Buscabas en 5 foros distintos",
+				"DESC": "Ahora encuentras tu partida en un solo clic. Deja de mendigar un +1 en Discord. Busca tu juego y entra directo al lobby."
+			},
+			"CARD2": {
+				"TITLE": "Usabas un programa de red distinto para cada juego",
+				"DESC": "Ahora juegas en LAN como si estuvieran en la misma red. Olvídate de probar apps de terceros o abrir puertos; el sistema conecta a tu equipo por detrás de escena."
+			},
+			"CARD3": {
+				"TITLE": "Tenías 3 apps consumiendo RAM",
+				"DESC": "Ahora todo tu centro de control está en una sola app. Voz, video y matchmaking integrados sin sacrificar los FPS de tu juego."
+			}
+		},
+		"SOLUTION": {
+			"TITLE": "Encuentra tu próxima partida o crea la tuya al instante",
+			"DESC": "Tú eliges el juego, yo pongo la infraestructura. Encuentra tu próxima partida, comunícate con un chat de voz de baja latencia y juega con la comunidad entera sin salir de una sola plataforma."
+		},
+		"TIMEZONE": {
+			"TITLE": "¿A qué hora dijiste que era la partida?",
+			"DESC": "Nunca más vuelvas a calcular la hora. Madnolia sincroniza y convierte automáticamente las invitaciones internacionales a tu zona local. Cero matemáticas, cero confusiones."
+		},
+		"VLAN": {
+			"TITLE": "Tu propia red LAN con un solo clic",
+			"DESC": "Crear una red virtual privada (VLAN) nunca fue tan fácil. Simplemente activa el interruptor de red LAN en tu sala y conecta a todos los participantes mágicamente. Cero puertos por abrir, cero configuraciones complejas.",
+			"BTN": "Conoce más sobre cómo funciona"
+		},
+		"PLAN": {
+			"TITLE": "El camino hacia la acción",
+			"CARD1": {
+				"TITLE": "Descarga y Configura",
+				"DESC": "Descarga la app, crea tu cuenta y selecciona las plataformas en las que juegas."
+			},
+			"CARD2": {
+				"TITLE": "Agenda tu partida",
+				"DESC": "Crea una sala, elige el juego, define la fecha e invita a tus amigos o a la comunidad."
+			},
+			"CARD3": {
+				"TITLE": "Únete y Juega",
+				"DESC": "Recibe una notificación cuando sea la hora, únete al lobby y comunícate al instante."
+			}
+		},
+		"CTA": {
+			"TITLE": "La comunidad te está esperando",
+			"BTN": "Comenzar Ahora"
+		}
+	},
+	"LAN_PARTY": {
+		"HERO": {
+			"TITLE_1": "La experiencia LAN perfecta. ",
+			"TITLE_2": "Donde sea que estés.",
+			"DESC": "No importa si tus amigos están en la misma ciudad o al otro lado del mundo. Madnolia crea un túnel directo para que tu juego piense que todos están conectados al mismo switch físico de la habitación."
+		},
+		"STEPS": {
+			"TITLE": "Partidas LAN en linea sin tecnicismos",
+			"DESC": "Tres pasos simples. Cero configuración de red.",
+			"STEP1": {
+				"TITLE": "Activa el Switch",
+				"DESC": "Al momento de crear tu sala de juego, simplemente enciende el botón \"Activar LAN\". Madnolia se encarga de aprovisionar un túnel de red privado al instante."
+			},
+			"STEP2": {
+				"TITLE": "Conexión Directa",
+				"DESC": "Tus amigos se unen a la sala y Madnolia establece una IP directa. Utilizamos el protocolo WireGuard®, la tecnología más moderna para conexiones P2P, garantizando una transferencia de datos ultra rápida, estabilidad perfecta y cero lag."
+			},
+			"STEP3": {
+				"TITLE": "Copia, pega y juega",
+				"DESC": "Se te asignará una IP local simulada. Presiona \"Iniciar LAN\", copia la IP y compártela con tus amigos."
+			}
+		},
+		"CTA": {
+			"TITLE": "No dejes que la distancia arruine la partida.",
+			"DESC": "Crea tu propia red local en segundos y enfócate solo en jugar.",
+			"BTN": "Descargar Madnolia"
+		},
+		"HEADER": {
+			"TITLE": "Haz equipo al instante en cualquier juego LAN.",
+			"DESC": "Revive la época dorada de jugar en red local (LAN) sin tocar la configuración de tu router."
+		},
+		"COMPATIBILITY": {
+			"TITLE": "Compatible con tus clásicos favoritos",
+			"DESC": "Nuestra infraestructura funciona a nivel de sistema operativo. Si tu juego o emulador tiene modo \"Red Local\" (LAN), funcionará.",
+			"ITEMS": {
+				"PCSX2": "Emulador PS2",
+				"PC": "PC Clásicos",
+				"PC_DESC": "Age of Empires, Halo CE",
+				"PPSSPP": "Emulador PSP",
+				"LAN_APP": "Cualquier App LAN",
+				"LAN_APP_DESC": "IP Directa IPv4",
+				"SWITCH": "Ryujinx / Yuzu",
+				"SWITCH_DESC": "Switch Local Wireless"
+			}
+		}
+	},
+	"NAVBAR": {
+		"MATCHES": "Partidas",
+		"LAN_PARTY": "LAN Party",
+		"PLATFORMS": "Plataformas",
+		"DOWNLOAD": "Descargas"
+	},
+	"PLATFORM_GAME": {
+		"NO_MATCHES_TITLE": "Aún no hay partidas disponibles",
+		"NO_MATCHES_DESC": "¡Sé el primero en crear una partida para {{game}} en {{platform}}!",
+		"DOWNLOAD_BTN": "Descarga la App para Crear Partida"
+	},
+	"MATCHES_INFO": {
+		"HERO": {
+			"TITLE_1": "Comunidades vivas. ",
+			"TITLE_2": "No foros fantasma.",
+			"DESC": "El lugar definitivo para organizar partidas y conectar con jugadores activos de tus títulos favoritos."
+		},
+		"SEARCH": {
+			"TITLE": "Encuentra exactamente lo que buscas",
+			"DESC": "Selecciona tu plataforma favorita y Madnolia te mostrará al instante las partidas listas para unirse. Cero filtros complejos, solo los juegos que amas."
+		},
+		"CHAT": {
+			"TITLE": "Comunicación integrada, cero lag",
+			"DESC": "Cada partida tiene su propia sala de chat de texto, voz y videollamada integrado. Coordina tácticas, comparte pantalla y comunícate con tu equipo sin tener que usar aplicaciones de terceros pesadas."
+		},
+		"CONNECTION": {
+			"TITLE": "Directo a la acción",
+			"DESC": "Selecciona tu juego, mira quién está activo y únete al lobby instantáneamente. Si es una red LAN privada, Madnolia sincroniza la conexión mágicamente sin configurar puertos."
+		},
+		"CTA": {
+			"TITLE": "Explora el Catálogo",
+			"DESC": "Miles de juegos te esperan. Encuentra el tuyo.",
+			"BTN": "Ver Plataformas Disponibles"
+		}
+	},
+	"PAGE_TITLES": {
+		"HOME": "Inicio | Madnolia",
+		"MATCHES": "Partidas | Madnolia",
+		"LAN_PARTY": "LAN Party | Madnolia",
+		"PLATFORMS": "Plataformas | Madnolia",
+		"DOWNLOAD": "Descargar | Madnolia",
+		"ABOUT": "Acerca de | Madnolia",
+		"CHILD_SAFETY": "Seguridad Infantil | Madnolia"
 	}
 }

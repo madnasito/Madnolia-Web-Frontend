@@ -65,10 +65,10 @@
   <!-- No matches section -->
   @if((matches$ | async)?.length === 0) {
     <div class="no-matches-section animate__animated animate__fadeIn">
-      <h2>No matches available yet</h2>
-      <p>Be the first to create a match for {{game.name}} on {{currentPlatformName}}!</p>
+      <h2>{{ 'PLATFORM_GAME.NO_MATCHES_TITLE' | translate }}</h2>
+      <p>{{ 'PLATFORM_GAME.NO_MATCHES_DESC' | translate: {game: game.name, platform: currentPlatformName} }}</p>
       <a routerLink="/download" class="btn btn-primary">
-        Download App to Create Match
+        {{ 'PLATFORM_GAME.DOWNLOAD_BTN' | translate }}
       </a>
     </div>
   }

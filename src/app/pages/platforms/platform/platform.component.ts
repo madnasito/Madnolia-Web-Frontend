@@ -7,6 +7,7 @@ import { Observable, switchMap, tap } from 'rxjs';
 import { resizeGameImage } from '../../../shared/utils/resize-imate.util';
 import { SeoService } from '../../../core/services/seo.service';
 import { isPlatformBrowser } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-platform',
@@ -49,19 +50,23 @@ export class PlatformComponent implements OnInit {
     );
   }
 
+  private translateService = inject(TranslateService);
+
   private setPlatformSEOMetadata(platformName: string): void {
-    const title = `${platformName} Games - Find Players & Matches | Madnolia`;
-    const description = `Find and join ${platformName} gaming matches or create your own. Connect with players for ${platformName} games.`;
     const url = isPlatformBrowser(this.platformId) ? window.location.href : '';
 
-    this.seoService.setTitle(title);
-    this.seoService.setMetaTags([
-      { name: 'description', content: description },
-      { property: 'og:title', content: title },
-      { property: 'og:description', content: description },
-      { property: 'og:url', content: url },
-      { name: 'twitter:card', content: 'summary_large_image' }
-    ]);
+    this.translateService.get('SEO.PLATFORM.TITLE', { platform: platformName }).subscribe(title => {
+      this.seoService.setTitle(title);
+      this.translateService.get('SEO.PLATFORM.DESC', { platform: platformName }).subscribe(description => {
+        this.seoService.setMetaTags([
+          { name: 'description', content: description },
+          { property: 'og:title', content: title },
+          { property: 'og:description', content: description },
+          { property: 'og:url', content: url },
+          { name: 'twitter:card', content: 'summary_large_image' }
+        ]);
+      });
+    });
   }
 
   private formatPlatformName(platformName: string): string {
